@@ -29,5 +29,5 @@ for (const tc of spec.cases) {
 }
 xml += '</testcases>\n';
 fs.writeFileSync(path.join(root, 'testlink/casos-paulo.xml'), xml);
-fs.writeFileSync(path.join(root, 'casos-manuais.md'), md);
+fs.writeFileSync(path.join(root, 'casos-manuais.md'), md.trimEnd() + '\n');
 console.log('Gerados 3 casos com 15 passos; resultados reais permanecem não preenchidos.');

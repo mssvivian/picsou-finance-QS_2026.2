@@ -133,4 +133,3 @@ Verificar que alterar o principal de 1200 para 2400 em uma conta existente atual
 | 5 | Não executado | — | — |
 
 Issue relacionada: preencher apenas com problema observado. Capturas previstas: `evidencias/manuais/CT-PCV-03-*.png`. Não existem capturas de aprovação até a execução real.
-
