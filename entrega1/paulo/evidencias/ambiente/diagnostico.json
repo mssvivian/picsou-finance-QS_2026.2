@@ -1,0 +1,13 @@
+{
+  "testlink": "URL não fornecida; sem importação/execução",
+  "version": "10.0.26200",
+  "alternativePostgres": "initdb.exe bloqueado por Controle de Aplicativo; PostgreSQL 18 existente exige senha não disponível",
+  "github": "Conector negou consulta de permissões com HTTP 403; trabalho mantido local",
+  "docker": "Falha de startup: sailor-ingest.sock não pode ser acessado/renomeado pelo sistema",
+  "architecture": "64 bits",
+  "manualCases": "Não executados",
+  "build": "26200",
+  "timezone": "America/Sao_Paulo",
+  "date": "2026-10-10T20:11:46.2447598-03:00",
+  "os": "Microsoft Windows 11 Pro"
+}
