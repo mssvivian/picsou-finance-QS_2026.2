@@ -31,7 +31,7 @@ Meta interna de integração: **11/10 às 20h**. Não configurar reset do Docker
 
 ## Aplicação dos patches se Paulo continuar sem permissão
 
-Os patches serão entregues na pasta irmã `../patches-paulo-entrega1/`, fora do repositório, evitando inclusão recursiva no próprio commit. O colega deve começar com checkout limpo da `main`, criar uma branch de integração e aplicar os patches com `git am <arquivo.patch>` na ordem numérica. Isso preserva autor e email de Paulo; não copiar arquivos e reatribuir toda a contribuição ao integrador.
+Os patches serão entregues na pasta irmã `../patches-paulo-entrega1/`, fora do repositório, evitando inclusão recursiva no próprio commit. O colega deve começar com checkout limpo da `main`, criar uma branch de integração e aplicar os patches com `git am --keep-cr --whitespace=nowarn <arquivo.patch>` na ordem numérica. Isso preserva autor e email de Paulo; `--keep-cr` também preserva os CRLF das evidências brutas do Windows. Não copiar arquivos e reatribuir toda a contribuição ao integrador.
 
 Executar os testes normais da classe, revisar artefatos e abrir PR. Durante a revisão, informar que regressões dos defeitos falham quando ativadas e que a suíte ampla está afetada pelo ambiente. Após merge, confirmar que `entrega1/paulo/` e o índice do README estão na `main`. Se surgir conflito, preservar alterações dos colegas e resolver pela revisão do diff; não usar reset/force push.
 
