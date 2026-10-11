@@ -128,7 +128,7 @@ p('Caminhos relativos à raiz do repositório. O README principal aponta para os
 path('backend/src/test/java/com/picsou/service/\n  LoanAmortizationServiceTest.java\n  LoanAmortizationServiceDefectTest.java')
 path('entrega1/paulo/\n  complexidade.md · matriz-de-testes.md · plano-de-teste.md\n  casos-manuais.md · resultados.md · ambiente-local.md\n  Tests_ScreenShots/README.md · Tests_ScreenShots/execucao.json\n  issues/README.md · issues/BUG-PCV-01.md · issues/BUG-PCV-02.md\n  evidencias/unitarios/ · evidencias/testlink/ · testlink/README.md')
 h('8 Integração e preparação da apresentação')
-p('Branch publicada, autoria preservada e issues #4/#5 registradas. O PR será encaminhado à revisão do grupo, sem merge automático. Após aceite, integrar na main e conferir os links. Consolidar o Plano IEEE 829 no Google Docs e verificar a submissão no Moodle até 11/10/2026 às 23h59, Brasília.')
+p('Branch publicada, autoria preservada e issues #4/#5 registradas. PR #6 aberto para revisão do grupo, sem merge automático. Após aceite, integrar na main e conferir os links. Consolidar o Plano IEEE 829 no Google Docs e verificar a submissão no Moodle até 11/10/2026 às 23h59, Brasília.')
 p('Para os slides: explicar o algoritmo e a complexidade 14; apresentar os cenários próprios e os resultados; demonstrar a composição 1370 do contrato com seguro e tarifa; explicar os dois defeitos e as limitações. Integração, E2E, cobertura de arestas e mutação pertencem à segunda entrega e não foram avaliados aqui.')
 d.core_properties.title = 'Relatório de testes de amortização de empréstimos'
 d.core_properties.author = 'Paulo Cesar Vaz'
