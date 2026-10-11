@@ -18,4 +18,4 @@ Na raiz do repositório, executar `docker compose -p picsou-paulo-entrega1 -f .l
 
 [Resultado da simulação HTTP](evidencias/simulacao-api/resultado.json): três cenários aprovados, contas 3 e 4. As contas 1 e 2 pertencem a uma tentativa preparatória anterior que consultou uma rota inexistente; não são defeitos do produto. O script corrigido usa a resposta de `GET /api/accounts/{id}` para conferir os parâmetros persistidos.
 
-As contas de simulação têm nomes diferentes dos casos manuais. CT-PCV-01/02/03 permanecem sem execução pela interface. Para finalizar, seguir os casos manualmente e anexar capturas no TestLink.
+As contas de simulação têm nomes diferentes dos casos executados pela interface. CT-PCV-01/02/03 foram aprovados em execução assistida pelo Codex, solicitada por Paulo, com contas 5 e 6: [30 capturas por passo](Tests_ScreenShots/README.md). Resultados registrados no TestLink, plano 46/build 5.

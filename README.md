@@ -12,6 +12,7 @@ Contribuição de Paulo: amortização de empréstimos. Código de produção pr
 | Rastreabilidade | [Matriz](entrega1/paulo/matriz-de-testes.md) |
 | Casos manuais e TestLink | [Casos e campos de execução](entrega1/paulo/casos-manuais.md) · [XML de importação](entrega1/paulo/testlink/casos-paulo.xml) · [Procedimento](entrega1/paulo/testlink/README.md) |
 | Resultados e evidências | [Relatório de execução](entrega1/paulo/resultados.md) · [Build](entrega1/paulo/evidencias/build/manifesto.json) |
+| Capturas dos testes manuais | [Índice por caso e passo](entrega1/paulo/Tests_ScreenShots/README.md) · [Resultados no TestLink](entrega1/paulo/evidencias/testlink/execucoes-verificadas.json) |
 | Problemas encontrados (publicação pendente) | [BUG-PCV-01](entrega1/paulo/issues/BUG-PCV-01.md) · [BUG-PCV-02](entrega1/paulo/issues/BUG-PCV-02.md) |
 | Responsabilidades e integração | [Mensagem ao grupo](entrega1/paulo/mensagem-para-o-grupo.md) · [Checklist](entrega1/paulo/integracao.md) |
 | Apresentação individual | [Roteiro](entrega1/paulo/apresentacao.md) |

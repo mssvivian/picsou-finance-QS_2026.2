@@ -29,23 +29,23 @@ Responsável: Paulo Cesar Vaz. Classe relacionada: LoanAmortizationService. Cód
 
 | Campo | Valor |
 |---|---|
-| Testador real | A preencher |
-| Data/hora e fuso | A preencher |
-| Commit/build | A preencher |
-| Navegador/versão e SO | A preencher |
-| ID nativo no TestLink / Plano / Build | dd-5 / plano e build de execução pendentes |
-| Situação atual | Cadastrado no TestLink; execução manual na interface pendente |
-| Resultado final | A preencher: Passou, Falhou ou Bloqueado |
+| Testador real | Codex, execução assistida solicitada por Paulo |
+| Data/hora e fuso | 2026-10-11T19:44:43.142Z; America/Sao_Paulo |
+| Commit/build | 58c71b93544c27ff6f9b032dfe2c4df69fe01aa0 / Paulo - Entrega1 - 58c71b9-lf |
+| Navegador/versão e SO | Codex In-app Browser (versão não exposta), Windows, idioma francês |
+| ID nativo no TestLink / Plano / Build | dd-5 / Plano de Testes Manuais (46) / build 5 |
+| Situação atual | Executado pela interface com assistência do Codex |
+| Resultado final | Passou |
 
 | Passo | Resultado real | Passou / Falhou / Bloqueado | Evidência |
 |---|---|---|---|
-| 1 | Não executado | — | — |
-| 2 | Não executado | — | — |
-| 3 | Não executado | — | — |
-| 4 | Não executado | — | — |
-| 5 | Não executado | — | — |
+| 1 | O formulário Manuel foi exibido após Ajouter un compte > Manuel. | Passou | [Capturas do passo 1](Tests_ScreenShots/dd-5-Parcela-automatica/README.md#passo-1) |
+| 2 | Emprestimo Paulo A foi criada em EUR, tipo Prêt, principal e saldo informado 1200, juros 0%, datas 01/11/2026 e 01/11/2027. Mensualité, seguro e tarifa deixados vazios. | Passou | [Capturas do passo 2](Tests_ScreenShots/dd-5-Parcela-automatica/README.md#passo-2) |
+| 3 | Detalhe mostrou parcela 100, capital 100, juros e seguro zero, 0 parcelas pagas, 12 restantes e saldo atual 1200. | Passou | [Capturas do passo 3](Tests_ScreenShots/dd-5-Parcela-automatica/README.md#passo-3) |
+| 4 | Síntese mostrou custo e capital total 1200, juros/seguro e tarifa zero. Tooltip do último ponto (outubro/2027) mostrou saldo 0,00 EUR. | Passou | [Capturas do passo 4](Tests_ScreenShots/dd-5-Parcela-automatica/README.md#passo-4) |
+| 5 | Após recarga, valores permaneceram 1200/100. A lista apresentou exatamente uma conta Emprestimo Paulo A. | Passou | [Capturas do passo 5](Tests_ScreenShots/dd-5-Parcela-automatica/README.md#passo-5) |
 
-Issue relacionada: preencher apenas com problema observado. Capturas previstas: `evidencias/manuais/CT-PCV-01-*.png`. Não existem capturas de aprovação até a execução real.
+Issue relacionada: nenhuma falha comprovada nestes três casos. [Capturas e resultados](Tests_ScreenShots/dd-5-Parcela-automatica/README.md).
 
 ## CT-PCV-02 — Composição com seguro e tarifa
 
@@ -72,23 +72,23 @@ Responsável: Paulo Cesar Vaz. Classe relacionada: LoanAmortizationService. Cód
 
 | Campo | Valor |
 |---|---|
-| Testador real | A preencher |
-| Data/hora e fuso | A preencher |
-| Commit/build | A preencher |
-| Navegador/versão e SO | A preencher |
-| ID nativo no TestLink / Plano / Build | dd-6 / plano e build de execução pendentes |
-| Situação atual | Cadastrado no TestLink; execução manual na interface pendente |
-| Resultado final | A preencher: Passou, Falhou ou Bloqueado |
+| Testador real | Codex, execução assistida solicitada por Paulo |
+| Data/hora e fuso | 2026-10-11T19:44:43.142Z; America/Sao_Paulo |
+| Commit/build | 58c71b93544c27ff6f9b032dfe2c4df69fe01aa0 / Paulo - Entrega1 - 58c71b9-lf |
+| Navegador/versão e SO | Codex In-app Browser (versão não exposta), Windows, idioma francês |
+| ID nativo no TestLink / Plano / Build | dd-6 / Plano de Testes Manuais (46) / build 5 |
+| Situação atual | Executado pela interface com assistência do Codex |
+| Resultado final | Passou |
 
 | Passo | Resultado real | Passou / Falhou / Bloqueado | Evidência |
 |---|---|---|---|
-| 1 | Não executado | — | — |
-| 2 | Não executado | — | — |
-| 3 | Não executado | — | — |
-| 4 | Não executado | — | — |
-| 5 | Não executado | — | — |
+| 1 | Formulário Manuel aberto com nome Emprestimo Paulo B, tipo Prêt e EUR. | Passou | [Capturas do passo 1](Tests_ScreenShots/dd-6-Seguro-e-tarifa/README.md#passo-1) |
+| 2 | Cadastro aceitou principal e saldo 1200, juros 0%, parcela 110, seguro 10, tarifa 50 e datas 01/11/2026 a 01/11/2027. | Passou | [Capturas do passo 2](Tests_ScreenShots/dd-6-Seguro-e-tarifa/README.md#passo-2) |
+| 3 | Detalhe mostrou parcela 110, capital 100, juros zero, seguro 10, 0 parcelas pagas, 12 restantes e saldo 1200. | Passou | [Capturas do passo 3](Tests_ScreenShots/dd-6-Seguro-e-tarifa/README.md#passo-3) |
+| 4 | Síntese mostrou capital 1200, juros/seguro 120, tarifa 50 e custo total 1370. Tooltip final mostrou saldo 0,00 EUR. | Passou | [Capturas do passo 4](Tests_ScreenShots/dd-6-Seguro-e-tarifa/README.md#passo-4) |
+| 5 | Após recarregar, parcela 110, seguro 10, tarifa 50 e custo 1370 permaneceram. | Passou | [Capturas do passo 5](Tests_ScreenShots/dd-6-Seguro-e-tarifa/README.md#passo-5) |
 
-Issue relacionada: preencher apenas com problema observado. Capturas previstas: `evidencias/manuais/CT-PCV-02-*.png`. Não existem capturas de aprovação até a execução real.
+Issue relacionada: nenhuma falha comprovada nestes três casos. [Capturas e resultados](Tests_ScreenShots/dd-6-Seguro-e-tarifa/README.md).
 
 ## CT-PCV-03 — Recálculo após edição do principal
 
@@ -115,20 +115,20 @@ Responsável: Paulo Cesar Vaz. Classe relacionada: LoanAmortizationService. Cód
 
 | Campo | Valor |
 |---|---|
-| Testador real | A preencher |
-| Data/hora e fuso | A preencher |
-| Commit/build | A preencher |
-| Navegador/versão e SO | A preencher |
-| ID nativo no TestLink / Plano / Build | dd-7 / plano e build de execução pendentes |
-| Situação atual | Cadastrado no TestLink; execução manual na interface pendente |
-| Resultado final | A preencher: Passou, Falhou ou Bloqueado |
+| Testador real | Codex, execução assistida solicitada por Paulo |
+| Data/hora e fuso | 2026-10-11T19:44:43.142Z; America/Sao_Paulo |
+| Commit/build | 58c71b93544c27ff6f9b032dfe2c4df69fe01aa0 / Paulo - Entrega1 - 58c71b9-lf |
+| Navegador/versão e SO | Codex In-app Browser (versão não exposta), Windows, idioma francês |
+| ID nativo no TestLink / Plano / Build | dd-7 / Plano de Testes Manuais (46) / build 5 |
+| Situação atual | Executado pela interface com assistência do Codex |
+| Resultado final | Passou |
 
 | Passo | Resultado real | Passou / Falhou / Bloqueado | Evidência |
 |---|---|---|---|
-| 1 | Não executado | — | — |
-| 2 | Não executado | — | — |
-| 3 | Não executado | — | — |
-| 4 | Não executado | — | — |
-| 5 | Não executado | — | — |
+| 1 | A edição da conta A carregou principal 1200, juros zero, datas originais e parcela mensal vazia. | Passou | [Capturas do passo 1](Tests_ScreenShots/dd-7-Recalculo-apos-edicao/README.md#passo-1) |
+| 2 | Somente Montant emprunté foi alterado para 2400; mensalidade permaneceu vazia. Salvamento aceito na conta original. | Passou | [Capturas do passo 2](Tests_ScreenShots/dd-7-Recalculo-apos-edicao/README.md#passo-2) |
+| 3 | Detalhe da mesma conta /accounts/5 mostrou parcela e capital 200, custo e saldo 2400, juros/seguro/tarifa zero, 0 parcelas pagas e 12 restantes. | Passou | [Capturas do passo 3](Tests_ScreenShots/dd-7-Recalculo-apos-edicao/README.md#passo-3) |
+| 4 | Após recarga, resumo permaneceu em 2400/200. Reabertura da edição confirmou principal 2400 e mensalidade vazia. | Passou | [Capturas do passo 4](Tests_ScreenShots/dd-7-Recalculo-apos-edicao/README.md#passo-4) |
+| 5 | Após cancelar a consulta da edição e recarregar Accounts, havia exatamente uma conta A, com principal 2400; nenhuma conta adicional foi criada. | Passou | [Capturas do passo 5](Tests_ScreenShots/dd-7-Recalculo-apos-edicao/README.md#passo-5) |
 
-Issue relacionada: preencher apenas com problema observado. Capturas previstas: `evidencias/manuais/CT-PCV-03-*.png`. Não existem capturas de aprovação até a execução real.
+Issue relacionada: nenhuma falha comprovada nestes três casos. [Capturas e resultados](Tests_ScreenShots/dd-7-Recalculo-apos-edicao/README.md).

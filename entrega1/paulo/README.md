@@ -24,6 +24,8 @@ Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amor
 - [Ambiente local operacional](ambiente-local.md)
 - [Simulação HTTP aprovada](evidencias/simulacao-api/resultado.json)
 - [Especificação exportada do TestLink](evidencias/testlink/especificacao-exportada.xml)
+- [Capturas por teste e passo](Tests_ScreenShots/README.md) e [registro estruturado](Tests_ScreenShots/execucao.json)
+- [Resultados conferidos no TestLink](evidencias/testlink/execucoes-verificadas.json)
 
 ## Situação
 
@@ -31,4 +33,4 @@ Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amor
 
 Frontend e backend compilados do código local com modo demo desativado. Os 20 erros da suíte ampla também foram reproduzidos no código original; as regressões opt-in explicam os dois ignorados adicionais. A conta de Paulo não tem permissão de push no fork.
 
-Os três casos manuais foram cadastrados no TestLink como dd-5/6/7, na suíte Paulo - Amortização de empréstimos. O ambiente local está operacional e a simulação HTTP passou; a execução manual pela interface e suas capturas ainda estão pendentes. O Plano de Teste é uma contribuição individual, pendente de consolidação pelo grupo e comparação com o template da aula. O material local precisa ser integrado à `main`; esta branch ainda não constitui a entrega final.
+Os três casos manuais foram cadastrados no TestLink como dd-5/6/7, na suíte Paulo - Amortização de empréstimos. Os três casos foram executados pela interface, com assistência do Codex solicitada por Paulo: 15 passos aprovados e 30 capturas originais. Os resultados Passed estão registrados no plano 46, build 5. O Plano de Teste é uma contribuição individual, pendente de consolidação pelo grupo e comparação com o template da aula. O material local precisa ser integrado à `main`; esta branch ainda não constitui a entrega final.

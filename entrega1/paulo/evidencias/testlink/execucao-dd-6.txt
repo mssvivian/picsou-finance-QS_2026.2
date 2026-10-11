@@ -1,0 +1,27 @@
+ 
+ 
+ 
+   
+ 
+
+
+
+
+ 
+        Test Case dd-6: CT-PCV-02 — Composição com seguro e tarifa  [Version : 1]   
+   Author:   admin - 10/11/2026 19:28:29  
+   Summary:  Responsável: Paulo Cesar Vaz. Classe relacionada: LoanAmortizationService. Código local: CT-PCV-02. Verificar capital, seguro e custo total de um contrato com parcela explícita. Oráculo: 110-10=100 de capital por mês; seguro total 12*10=120; custo total 1200+120+50=1370.     Preconditions:  1. Picsou do fork em execução, backend real e modo demo desativado; usuário de teste logado. 2. Registrar commit/build, navegador, sistema operacional e data de execução. Usar moeda EUR e dados fictícios. 3. Executar antes de 01/11/2026 para conferir zero parcelas pagas nos contratos futuros deste conjunto. 4. A conta Emprestimo Paulo B não deve existir antes deste caso; usar usuário de teste sem dados de terceiros.     #:    Step actions:    Expected Results:    Execution notes:    Execution Status:     1  Abrir Add account e escolher criação manual, tipo Loan, nome Emprestimo Paulo B e moeda EUR.  O formulário apresenta os parâmetros de empréstimo.  Formulário Manuel aberto com nome Emprestimo Paulo B, tipo Prêt e EUR.  Passed    2  Preencher principal 1200, juros 0%, parcela mensal explícita 110, seguro mensal 10, tarifa/file fees 50, início 01/11/2026 e término 01/11/2027; salvar.  O cadastro é aceito sem erro e os parâmetros informados são salvos.  Cadastro aceitou principal e saldo 1200, juros 0%, parcela 110, seguro 10, tarifa 50 e datas 01/11/2026 a 01/11/2027.  Passed     Execution Attachments        passo-02-parametros.jpg        3  Abrir o detalhe do empréstimo e conferir a composição mensal e o progresso.  Parcela total 110; capital 100; juros 0; seguro 10. Zero parcelas pagas, 12 restantes e saldo atual 1200.  Detalhe mostrou parcela 110, capital 100, juros zero, seguro 10, 0 parcelas pagas, 12 restantes e saldo 1200.  Passed     Execution Attachments        passo-03-progresso.jpg        4  Conferir o resumo de custos e o ponto final do gráfico de amortização.  Capital total 1200; juros e seguro combinados 120; tarifa 50; custo total 1370. Cronograma encerra com saldo zero.  Síntese mostrou capital 1200, juros/seguro 120, tarifa 50 e custo total 1370. Tooltip final mostrou saldo 0,00 EUR.  Passed    5  Recarregar o detalhe e registrar capturas dos parâmetros e resultados.  Seguro, tarifa, parcela e custo total permanecem iguais após a recarga.  Após recarregar, parcela 110, seguro 10, tarifa 50 e custo 1370 permaneceram.  Passed     Execution type:   Manual  
+   Estimated exec. duration (min):     
+   Importance:   High  
+       Requirements   None   
+   Keywords:    None   
+  Execution Details     
+  Tester  admin  
+   Execution Result:    Passed   
+   Execution Mode:    Manual   
+   Execution duration (min):        
+  Execution notes  Execucao assistida pela interface pelo Codex, sob solicitacao de Paulo Cesar Vaz; 11/10/2026, America/Sao_Paulo; Windows; Codex In-app Browser (versao nao exposta); interface em frances; http://localhost:8082; commit 58c71b93544c27ff6f9b032dfe2c4df69fe01aa0; imagem picsou-paulo:entrega1-58c71b9-lf; modo demo desativado. Cinco passos conferidos e aprovados. Capturas originais por passo anexadas. Nao se trata de execucao humana independente.  
+ 
+ 
+ Direct Link:http://147.15.86.250:8080/lnl.php?type=exec&id=9&apikey=[REMOVIDA] 
+

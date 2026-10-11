@@ -66,3 +66,13 @@ Resolver o ambiente e executar casos; usar TestLink e exportar registros; confir
 Docker iniciou. A imagem local identificada pelo commit 58c71b9 está em execução; [ambiente e reprodução](ambiente-local.md). Três cenários passaram na [simulação HTTP](evidencias/simulacao-api/resultado.json). Essa simulação não comprova execução manual da interface.
 
 Casos cadastrados no projeto Grupo DinDin, suíte Paulo - Amortização de empréstimos: dd-5, dd-6 e dd-7. [Exportação da especificação](evidencias/testlink/especificacao-exportada.xml). Execução manual, associação ao plano/build e capturas continuam pendentes. Os bloqueios de Docker descritos no registro inicial foram superados.
+
+## Atualização de 11/10 — execução pela interface concluída
+
+CT-PCV-01, CT-PCV-02 e CT-PCV-03 aprovados nos 15 passos, em execução assistida pelo Codex sob solicitação de Paulo; não representa execução humana independente. Backend real, modo demo desativado, commit 58c71b93544c27ff6f9b032dfe2c4df69fe01aa0, imagem local com adaptação de quebras de linha do entrypoint. Navegador Codex In-app Browser (versão não exposta), Windows, interface em francês.
+
+Conferidos: parcela automática 100 e custo 1200; parcela 110, capital 100, seguro total 120 e tarifa 50, custo 1370; edição do principal para 2400, parcela recalculada 200, persistência após recarga e ausência de duplicatas. Saldo final zero conferido no tooltip do gráfico. Contratos futuros: zero parcelas pagas.
+
+[30 capturas originais, com índice por caso e passo](Tests_ScreenShots/README.md). TestLink: plano Plano de Testes Manuais (46), build Paulo - Entrega1 - 58c71b9-lf (5), dd-5/6/7 Passed, execuções 8/9/10. [Conferência de resultados](evidencias/testlink/execucoes-verificadas.json). O servidor rejeitou parte dos anexos por validação de nome; as 30 imagens completas estão disponíveis localmente. A especificação continua em Draft para revisão do grupo; o resultado da execução é Passed.
+
+Os registros iniciais de bloqueio e pendência acima são históricos, superados nesta atualização. Permanecem a consolidação do Plano de Teste/Google Docs pelo grupo, integração na main e submissão.
