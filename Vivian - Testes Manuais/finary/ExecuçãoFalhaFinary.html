@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title></title>
+<link type="text/css" rel="stylesheet" href="Execu%C3%A7%C3%A3oFalhaFinary_files/tl_documents_qJcW.css">
+<style type="text/css" media="print">.notprintable { display:none;}</style>
+<script type="text/javascript" src="Execu%C3%A7%C3%A3oFalhaFinary_files/testlink_library_qJcW.js" language="javascript"></script>
+<script type="text/javascript" language="javascript"><!-- var fRoot = 'http://147.15.86.250:8080/'; --></script>
+
+</head>
+<body><p>&nbsp;</p><div> <table class="tc" width="90%" style="margin-left: 0;"><tbody><tr><th colspan="6">Test Case dd-3: Pré-visualização e importação com criação de novas contas (CREATE_NEW)&nbsp;<span style="font-size: 80%;">[Version : 1]</span></th></tr>
+<tr><td width="20%" valign="top"><span class="label">Author:</span></td><td colspan="5">admin - 10/11/2026 18:53:40</td></tr>
+<tr><td colspan="6"><span class="label">Summary:</span><br><p>Com uma planilha Excel exportada do Finary contendo 7 contas e 5 transações, verificar que o fluxo de importação:</p>
+
+<p>(1) faz o upload e o parse correto via preview;<br>
+(2) exibe a tela de mapeamento identificando com precisão o nome, instituição, saldo e categoria de cada conta;<br>
+(3) exibe o totalizador com 5 transações encontradas;<br>
+(4) executa a importação com a ação padrão CREATE_NEW, gravando as contas e transações no banco de dados;<br>
+(5) atualiza a tela Accounts e o Dashboard com os saldos recém-importados.</p>
+</td></tr><tr><td colspan="6"><span class="label">Preconditions:</span><br><ol>
+	<li>Picsou em execução (backend real, fora do modo demo) e usuário logado. O teste começa após o login.</li>
+	<li>Arquivo de dados finary_testlink_dummy.xlsx salvo na máquina da testadora contendo 7 contas e 5 transações, <strong>todas em EUR</strong>:
+	<ul>
+		<li><strong>Checkings:</strong> "Conta Corrente Principal" (€3,500.50, BNP Paribas) e "Compte Courant Secundário" (€1,250.00, Société Générale)</li>
+		<li><strong>Savings:</strong> "Livret A" (€15,000.00, BNP Paribas) e "Reserva de Teste" (€5,000.00, Société Générale)</li>
+		<li><strong>Investments:</strong> "Carteira de Investimentos" (€28,400.00, Bourse Direct)</li>
+		<li><strong>Real Estate:</strong> "Apartamento Paris" (€650,000.00)</li>
+		<li><strong>Cryptos:</strong> "Ledger Cold Wallet" (€45,000.00)</li>
+		<li><strong>Transactions:</strong> 5 transações vinculadas às contas acima.</li>
+	</ul>
+	</li>
+	<li>Não existem contas pré-existentes com esses mesmos nomes em <strong>Accounts</strong>.</li>
+</ol>
+
+<p><strong>Como preparar (se ainda não estiver limpo):</strong> a) Em <strong>Accounts</strong>, excluir quaisquer contas residuais de testes anteriores (passar o cursor sobre a conta, clicar na lixeira e confirmar no pop-up). b) Conferir em <strong>Accounts</strong> que a listagem de contas está limpa ou no estado inicial desejado.</p>
+</td></tr><tr><td><span class="label">#:</span></td><td><span class="label">Step actions:</span></td><td><span class="label">Expected Results:</span></td><td><span class="label">Execution notes:</span></td><td><span class="label">Execution Status:</span></td></tr><tr><td width="5">1</td><td><p>Clicar em <strong>Accounts</strong> no menu lateral. No canto superior direito da página, clicar no botão <strong>"+ Add account"</strong>.</p>
+</td><td><p>Abre-se o modal de adição de contas listando as opções disponíveis (Manual, Bank sync, Finary, Trade Republic, etc.).</p>
+</td><td></td><td>Passed</td></tr><tr><td colspan="5"><b>Execution Attachments</b><br><form method="POST" name="fda21" id="fda21'  action=" http:="" 147.15.86.250:8080="" lib="" execute="" execprint.php"=""><input type="hidden" name="id" value="7"><input type="hidden" name="deleteAttachmentID" value="21"><li>botao_account.png</li><li><img width="1920" height="1080" src="Execu%C3%A7%C3%A3oFalhaFinary_files/botao_account_qJcW.png"><input type="image" alt="Click here to delete this attachment" src="Execu%C3%A7%C3%A3oFalhaFinary_files/trash_qJcW.png"></li></form><form method="POST" name="fda20" id="fda20'  action=" http:="" 147.15.86.250:8080="" lib="" execute="" execprint.php"=""><input type="hidden" name="id" value="7"><input type="hidden" name="deleteAttachmentID" value="20"><li>resultado_account.png</li><li><img width="1920" height="1080" src="Execu%C3%A7%C3%A3oFalhaFinary_files/resultado_account_qJcW.png"><input type="image" alt="Click here to delete this attachment" src="Execu%C3%A7%C3%A3oFalhaFinary_files/trash_qJcW.png"></li></form></td></tr><tr><td width="5">2</td><td><p>No modal, clicar na opção <strong>"Finary"</strong>.</p>
+</td><td><p>O modal muda para a tela do Finary na etapa 1 File, exibindo a área de upload com o botão <strong>"Import Finary file (.xlsx)"</strong>.</p>
+</td><td></td><td>Passed</td></tr><tr><td colspan="5"><b>Execution Attachments</b><br><form method="POST" name="fda22" id="fda22'  action=" http:="" 147.15.86.250:8080="" lib="" execute="" execprint.php"=""><input type="hidden" name="id" value="7"><input type="hidden" name="deleteAttachmentID" value="22"><li>botao_finary.png</li><li><img width="1920" height="1080" src="Execu%C3%A7%C3%A3oFalhaFinary_files/botao_finary_qJcW.png"><input type="image" alt="Click here to delete this attachment" src="Execu%C3%A7%C3%A3oFalhaFinary_files/trash_qJcW.png"></li></form></td></tr><tr><td width="5">3</td><td><p>Clicar em <strong>"Import Finary file (.xlsx)"</strong> (ou arrastar) e selecionar o arquivo finary_testlink_dummy.xlsx.</p>
+</td><td><p>O arquivo é enviado. O modal avança automaticamente para a etapa <strong>2 Mapping</strong>.</p>
+</td><td>Erro HTTP405 ao tentar inserir o arquivo</td><td>Failed</td></tr><tr><td colspan="5"><b>Execution Attachments</b><br><form method="POST" name="fda23" id="fda23'  action=" http:="" 147.15.86.250:8080="" lib="" execute="" execprint.php"=""><input type="hidden" name="id" value="7"><input type="hidden" name="deleteAttachmentID" value="23"><li>erro_upload.png</li><li><img width="1920" height="1080" src="Execu%C3%A7%C3%A3oFalhaFinary_files/erro_upload_qJcW.png"><input type="image" alt="Click here to delete this attachment" src="Execu%C3%A7%C3%A3oFalhaFinary_files/trash_qJcW.png"></li></form></td></tr><tr><td width="5">4</td><td><p>Observar o cartão da primeira conta ("Conta Corrente Principal").</p>
+</td><td><p>O cabeçalho exibe: <strong>"Conta Corrente Principal"</strong>, <strong>"BNP Paribas · Checkings"</strong>, valor <strong>€3,500.50</strong> e <strong>3 tx</strong>. O botão <strong>"Create new account"</strong> está pré-selecionado em azul.</p>
+</td><td></td><td>Blocked</td></tr><tr><td width="5">5</td><td><p>Conferir os campos internos do cartão: Account name ("Conta Corrente Principal"), Exchange type ("Checking"), Provider ("BNP Paribas"), Moeda ("EUR") e cor selecionada na paleta.</p>
+</td><td><p>Todos os campos vêm preenchidos corretamente de forma automática, derivados da leitura da planilha.</p>
+</td><td></td><td>Blocked</td></tr><tr><td width="5">6</td><td><p>Rolar o modal e conferir os demais cartões: "Compte Courant Secundário" (€1,250.00), "Livret A" (€15,000.00), "Reserva de Teste" (€5,000.00), "Carteira de Investimentos" (€28,400.00), "Apartamento Paris" (€650,000.00) e "Ledger Cold Wallet" (€45,000.00).</p>
+</td><td><p>Todos os 7 cartões estão presentes com seus respectivos dados, saldos em EUR e Create new account pré-selecionado.</p>
+</td><td></td><td>Blocked</td></tr><tr><td width="5">7</td><td><p>No topo à direita do modal, clicar no botão azul <strong>"Import -&gt;"</strong>.</p>
+</td><td><p>O botão entra em carregamento. A requisição é concluída com sucesso. O stepper avança para <strong>3 Results</strong> exibindo o resumo de contas criadas e transações importadas.</p>
+</td><td></td><td>Blocked</td></tr><tr><td width="5">8</td><td><p>Fechar o modal clicando no "X" (ou botão de conclusão) e visualizar a página <strong>Accounts</strong>.</p>
+</td><td><p>As 7 contas aparecem criadas nas seções correspondentes (Cash, Savings, Investments, Real Estate, Cryptos) com seus respectivos saldos em EUR.</p>
+</td><td></td><td>Blocked</td></tr><tr><td width="5">9</td><td><p>Clicar sobre a conta "Conta Corrente Principal" para abrir seus detalhes/extrato.</p>
+</td><td><p>O extrato da conta exibe as 3 transações importadas ("Salário" +€4,500.00, "Supermercado" -€350.20 e "Restaurante" -€85.50).</p>
+</td><td></td><td>Blocked</td></tr><tr><td width="20%" valign="top"><span class="label">Execution type:</span></td><td colspan="5">Manual</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Estimated exec. duration (min):</span></td><td colspan="5"></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Importance:</span></td><td colspan="5">High</td></tr>
+<tr><td colspan="6"></td></tr><tr><td width="20%" valign="top"><span class="label">Requirements</span></td><td colspan="5">&nbsp;None<br></td></tr>
+<tr><td width="20%" valign="top"><span class="label">Keywords:</span></td><td colspan="5">&nbsp;None<br></td></tr>
+<tr style="font-weight: bold;background: #EEE;text-align: left;"><td width="20%" valign="top">Execution Details</td><td colspan="5">&nbsp;</td></tr>
+<tr><td width="20%" valign="top">Tester</td><td colspan="5">admin</td></tr>
+<tr><td width="20%" valign="top"><span class="label">Execution Result:</span></td><td colspan="5"><b>Failed</b></td></tr>
+<tr><td width="20%"><span class="label">Execution Mode:</span></td><td colspan="5"><b>Manual</b></td></tr>
+<tr><td width="20%"><span class="label">Execution duration (min):</span></td><td colspan="5"><b>5.00</b></td></tr>
+<tr><td width="20%" valign="top">Execution notes</td><td colspan="5">RESULTADO DA EXECUÇÃO: FALHOU (Bloqueante no Passo 3)<br>
+<br>
+Descrição da Falha:<br>
+No Passo 3, ao submeter o arquivo "finary_testlink_dummy.xlsx", a requisição de upload foi rejeitada pelo servidor com o erro "Request failed with status code 415" (Unsupported Media Type). A aplicação não avançou para a etapa "2 Mapping", tornando impossível a conclusão dos passos subsequentes (4 a 9).<br>
+<br>
+Próximos Passos:<br>
+- Será gerada uma nova Build no TestLink para execução do Re-teste (teste de regressão pós-mitigação), validando a aprovação de todos os 9 passos.<br>
+- Issue registrada no GitHub: https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/2</td></tr>
+</tbody></table>
+</div>
+<br>Direct Link:http://147.15.86.250:8080/lnl.php?type=exec&amp;id=7&amp;apikey=7d985e305abb021417738125c0acdbf522e12d5dae2056f0956c41fe0f2ab51a<br></body></html>

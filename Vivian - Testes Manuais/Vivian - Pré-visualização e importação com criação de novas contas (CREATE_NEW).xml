@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<testcases>
+<testcase internalid="48" name="Pré-visualização e importação com criação de novas contas (CREATE_NEW)">
+	<node_order><![CDATA[1000]]></node_order>
+	<externalid><![CDATA[3]]></externalid>
+	<version><![CDATA[1]]></version>
+	<summary><![CDATA[<p>Com uma planilha Excel exportada do Finary contendo 7 contas e 5 transa&ccedil;&otilde;es, verificar que o fluxo de importa&ccedil;&atilde;o:</p>
+
+<p>(1) faz o upload e o parse correto via preview;<br />
+(2) exibe a tela de mapeamento identificando com precis&atilde;o o nome, institui&ccedil;&atilde;o, saldo e categoria de cada conta;<br />
+(3) exibe o totalizador com 5 transa&ccedil;&otilde;es encontradas;<br />
+(4) executa a importa&ccedil;&atilde;o com a a&ccedil;&atilde;o padr&atilde;o CREATE_NEW, gravando as contas e transa&ccedil;&otilde;es no banco de dados;<br />
+(5) atualiza a tela Accounts e o Dashboard com os saldos rec&eacute;m-importados.</p>
+]]></summary>
+	<preconditions><![CDATA[<ol>
+	<li>Picsou em execu&ccedil;&atilde;o (backend real, fora do modo demo) e usu&aacute;rio logado. O teste come&ccedil;a ap&oacute;s o login.</li>
+	<li>Arquivo de dados finary_testlink_dummy.xlsx salvo na m&aacute;quina da testadora contendo 7 contas e 5 transa&ccedil;&otilde;es, <strong>todas em EUR</strong>:
+	<ul>
+		<li><strong>Checkings:</strong> &quot;Conta Corrente Principal&quot; (&euro;3,500.50, BNP Paribas) e &quot;Compte Courant Secund&aacute;rio&quot; (&euro;1,250.00, Soci&eacute;t&eacute; G&eacute;n&eacute;rale)</li>
+		<li><strong>Savings:</strong> &quot;Livret A&quot; (&euro;15,000.00, BNP Paribas) e &quot;Reserva de Teste&quot; (&euro;5,000.00, Soci&eacute;t&eacute; G&eacute;n&eacute;rale)</li>
+		<li><strong>Investments:</strong> &quot;Carteira de Investimentos&quot; (&euro;28,400.00, Bourse Direct)</li>
+		<li><strong>Real Estate:</strong> &quot;Apartamento Paris&quot; (&euro;650,000.00)</li>
+		<li><strong>Cryptos:</strong> &quot;Ledger Cold Wallet&quot; (&euro;45,000.00)</li>
+		<li><strong>Transactions:</strong> 5 transa&ccedil;&otilde;es vinculadas &agrave;s contas acima.</li>
+	</ul>
+	</li>
+	<li>N&atilde;o existem contas pr&eacute;-existentes com esses mesmos nomes em <strong>Accounts</strong>.</li>
+</ol>
+
+<p><strong>Como preparar (se ainda n&atilde;o estiver limpo):</strong> a) Em <strong>Accounts</strong>, excluir quaisquer contas residuais de testes anteriores (passar o cursor sobre a conta, clicar na lixeira e confirmar no pop-up). b) Conferir em <strong>Accounts</strong> que a listagem de contas est&aacute; limpa ou no estado inicial desejado.</p>
+]]></preconditions>
+	<execution_type><![CDATA[1]]></execution_type>
+	<importance><![CDATA[3]]></importance>
+	<estimated_exec_duration></estimated_exec_duration>
+	<status>7</status>
+	<is_open>1</is_open>
+	<active>1</active>
+<steps>
+<step>
+	<step_number><![CDATA[1]]></step_number>
+	<actions><![CDATA[<p>Clicar em <strong>Accounts</strong> no menu lateral. No canto superior direito da p&aacute;gina, clicar no bot&atilde;o <strong>&quot;+ Add account&quot;</strong>.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>Abre-se o modal de adi&ccedil;&atilde;o de contas listando as op&ccedil;&otilde;es dispon&iacute;veis (Manual, Bank sync, Finary, Trade Republic, etc.).</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[2]]></step_number>
+	<actions><![CDATA[<p>No modal, clicar na op&ccedil;&atilde;o <strong>&quot;Finary&quot;</strong>.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>O modal muda para a tela do Finary na etapa 1 File, exibindo a &aacute;rea de upload com o bot&atilde;o <strong>&quot;Import Finary file (.xlsx)&quot;</strong>.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[3]]></step_number>
+	<actions><![CDATA[<p>Clicar em <strong>&quot;Import Finary file (.xlsx)&quot;</strong> (ou arrastar) e selecionar o arquivo finary_testlink_dummy.xlsx.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>O arquivo &eacute; enviado. O modal avan&ccedil;a automaticamente para a etapa <strong>2 Mapping</strong>.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[4]]></step_number>
+	<actions><![CDATA[<p>Observar o cart&atilde;o da primeira conta (&quot;Conta Corrente Principal&quot;).</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>O cabe&ccedil;alho exibe: <strong>&quot;Conta Corrente Principal&quot;</strong>, <strong>&quot;BNP Paribas &middot; Checkings&quot;</strong>, valor <strong>&euro;3,500.50</strong> e <strong>3 tx</strong>. O bot&atilde;o <strong>&quot;Create new account&quot;</strong> est&aacute; pr&eacute;-selecionado em azul.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[5]]></step_number>
+	<actions><![CDATA[<p>Conferir os campos internos do cart&atilde;o: Account name (&quot;Conta Corrente Principal&quot;), Exchange type (&quot;Checking&quot;), Provider (&quot;BNP Paribas&quot;), Moeda (&quot;EUR&quot;) e cor selecionada na paleta.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>Todos os campos v&ecirc;m preenchidos corretamente de forma autom&aacute;tica, derivados da leitura da planilha.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[6]]></step_number>
+	<actions><![CDATA[<p>Rolar o modal e conferir os demais cart&otilde;es: &quot;Compte Courant Secund&aacute;rio&quot; (&euro;1,250.00), &quot;Livret A&quot; (&euro;15,000.00), &quot;Reserva de Teste&quot; (&euro;5,000.00), &quot;Carteira de Investimentos&quot; (&euro;28,400.00), &quot;Apartamento Paris&quot; (&euro;650,000.00) e &quot;Ledger Cold Wallet&quot; (&euro;45,000.00).</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>Todos os 7 cart&otilde;es est&atilde;o presentes com seus respectivos dados, saldos em EUR e Create new account pr&eacute;-selecionado.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[7]]></step_number>
+	<actions><![CDATA[<p>No topo &agrave; direita do modal, clicar no bot&atilde;o azul <strong>&quot;Import -&gt;&quot;</strong>.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>O bot&atilde;o entra em carregamento. A requisi&ccedil;&atilde;o &eacute; conclu&iacute;da com sucesso. O stepper avan&ccedil;a para <strong>3 Results</strong> exibindo o resumo de contas criadas e transa&ccedil;&otilde;es importadas.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[8]]></step_number>
+	<actions><![CDATA[<p>Fechar o modal clicando no &quot;X&quot; (ou bot&atilde;o de conclus&atilde;o) e visualizar a p&aacute;gina <strong>Accounts</strong>.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>As 7 contas aparecem criadas nas se&ccedil;&otilde;es correspondentes (Cash, Savings, Investments, Real Estate, Cryptos) com seus respectivos saldos em EUR.</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+
+<step>
+	<step_number><![CDATA[9]]></step_number>
+	<actions><![CDATA[<p>Clicar sobre a conta &quot;Conta Corrente Principal&quot; para abrir seus detalhes/extrato.</p>
+]]></actions>
+	<expectedresults><![CDATA[<p>O extrato da conta exibe as 3 transa&ccedil;&otilde;es importadas (&quot;Sal&aacute;rio&quot; +&euro;4,500.00, &quot;Supermercado&quot; -&euro;350.20 e &quot;Restaurante&quot; -&euro;85.50).</p>
+]]></expectedresults>
+	<execution_type><![CDATA[1]]></execution_type>
+</step>
+</steps>
+</testcase>
+</testcases>
