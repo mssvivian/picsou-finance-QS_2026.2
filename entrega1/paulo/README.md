@@ -12,6 +12,7 @@ Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amor
 - [Casos manuais](casos-manuais.md) e [XML para importação no TestLink](testlink/casos-paulo.xml)
 - [Guia do TestLink e registro de execução](testlink/README.md)
 - [Relatório de execução e limitações](resultados.md)
+- [Registro consolidado dos problemas e publicação pendente](issues/README.md)
 - [BUG-PCV-01 — arredondamento](issues/BUG-PCV-01.md)
 - [BUG-PCV-02 — parcela automática com seguro](issues/BUG-PCV-02.md)
 - [Checklist de integração e entrega](integracao.md)
