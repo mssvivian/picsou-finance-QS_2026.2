@@ -1,0 +1,269 @@
+{
+  "date": "2026-10-11T19:44:43.142Z",
+  "timezone": "America/Sao_Paulo",
+  "responsible": "Paulo Cesar Vaz",
+  "operator": "Codex — execução assistida pela interface, solicitada por Paulo",
+  "browser": "Codex In-app Browser; versão não exposta pela ferramenta",
+  "os": "Windows",
+  "language": "français",
+  "url": "http://localhost:8082",
+  "commit": "58c71b93544c27ff6f9b032dfe2c4df69fe01aa0",
+  "image": "picsou-paulo:entrega1-58c71b9-lf",
+  "build": "Paulo - Entrega1 - 58c71b9-lf",
+  "testlinkPlan": "Plano de Testes Manuais (46)",
+  "testlinkBuildId": 5,
+  "cases": [
+    {
+      "localId": "CT-PCV-01",
+      "testlinkId": "dd-5",
+      "title": "Parcela automática sem juros",
+      "folder": "dd-5-Parcela-automatica",
+      "result": "Passou",
+      "steps": [
+        {
+          "number": 1,
+          "result": "Passou",
+          "actual": "O formulário Manuel foi exibido após Ajouter un compte > Manuel.",
+          "screenshots": [
+            {
+              "file": "dd-5-Parcela-automatica/passo-01-formulario-manual.jpg",
+              "sha256": "5c0ffa5c5904c3af5aafd17337785f71184038880b1106f6961259ce7c36cb91"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "result": "Passou",
+          "actual": "Emprestimo Paulo A foi criada em EUR, tipo Prêt, principal e saldo informado 1200, juros 0%, datas 01/11/2026 e 01/11/2027. Mensualité, seguro e tarifa deixados vazios.",
+          "screenshots": [
+            {
+              "file": "dd-5-Parcela-automatica/passo-02-conta-criada.jpg",
+              "sha256": "00e3cf9edef4ac3c4ffc8912eed251c561346d77ff4a063d8b42b80b0df477bd"
+            },
+            {
+              "file": "dd-5-Parcela-automatica/passo-02-parametros.jpg",
+              "sha256": "ce5b1c761564897bc215879e2a305d26e52e3229c35fec338f5187f4b56a9d6e"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "result": "Passou",
+          "actual": "Detalhe mostrou parcela 100, capital 100, juros e seguro zero, 0 parcelas pagas, 12 restantes e saldo atual 1200.",
+          "screenshots": [
+            {
+              "file": "dd-5-Parcela-automatica/passo-03-resumo-e-progresso.jpg",
+              "sha256": "747bcfa7e38c4434e9f5175c56fa9ad4f87d722d07fbdded70bfbc71edeaa117"
+            },
+            {
+              "file": "dd-5-Parcela-automatica/passo-03-resumo-legivel.jpg",
+              "sha256": "5922cc9b8f574e82d45b5ae64deba53e14cbba981ef89614bd7935e3d09f863b"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "result": "Passou",
+          "actual": "Síntese mostrou custo e capital total 1200, juros/seguro e tarifa zero. Tooltip do último ponto (outubro/2027) mostrou saldo 0,00 EUR.",
+          "screenshots": [
+            {
+              "file": "dd-5-Parcela-automatica/passo-04-custos-e-saldo-final.jpg",
+              "sha256": "367ca7d39b8fe5c7ec56ea2ed807a16d31dc01942fa2b93cc5b4709bfbf58f38"
+            },
+            {
+              "file": "dd-5-Parcela-automatica/passo-04-grafico.jpg",
+              "sha256": "40ec213d5acf37d8dfbdd0187c386333269be313a680a5670f05390984f53850"
+            },
+            {
+              "file": "dd-5-Parcela-automatica/passo-04-saldo-final-zero.jpg",
+              "sha256": "1497c4ddb6e1e5f03cdc83a1ea3805e3a1341fd0a29afd7b1a87c1cfdc2aaaed"
+            }
+          ]
+        },
+        {
+          "number": 5,
+          "result": "Passou",
+          "actual": "Após recarga, valores permaneceram 1200/100. A lista apresentou exatamente uma conta Emprestimo Paulo A.",
+          "screenshots": [
+            {
+              "file": "dd-5-Parcela-automatica/passo-05-apos-recarregar.jpg",
+              "sha256": "5922cc9b8f574e82d45b5ae64deba53e14cbba981ef89614bd7935e3d09f863b"
+            },
+            {
+              "file": "dd-5-Parcela-automatica/passo-05-conta-unica.jpg",
+              "sha256": "eb06634a1ea244cea20ab9cfa21f9fc30f057057e999ae99700bbdee1d2c32ef"
+            },
+            {
+              "file": "dd-5-Parcela-automatica/passo-05-progresso-e-custos.jpg",
+              "sha256": "0c6afb90b82a2d409f3856ede5a24b5d7d2bce906519eed9ee0e2be910547681"
+            },
+            {
+              "file": "dd-5-Parcela-automatica/passo-05-resumo-persistido.jpg",
+              "sha256": "5922cc9b8f574e82d45b5ae64deba53e14cbba981ef89614bd7935e3d09f863b"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "localId": "CT-PCV-02",
+      "testlinkId": "dd-6",
+      "title": "Composição com seguro e tarifa",
+      "folder": "dd-6-Seguro-e-tarifa",
+      "result": "Passou",
+      "steps": [
+        {
+          "number": 1,
+          "result": "Passou",
+          "actual": "Formulário Manuel aberto com nome Emprestimo Paulo B, tipo Prêt e EUR.",
+          "screenshots": [
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-01-formulario-emprestimo.jpg",
+              "sha256": "bd79864dd498ad79a2c7a38d3d1d05d919107c3007ffc60c64460307eb574a72"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "result": "Passou",
+          "actual": "Cadastro aceitou principal e saldo 1200, juros 0%, parcela 110, seguro 10, tarifa 50 e datas 01/11/2026 a 01/11/2027.",
+          "screenshots": [
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-02-conta-criada.jpg",
+              "sha256": "d7f3527de493eeda8b2296283650600472c2635d3269d22676e9850de1893d96"
+            },
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-02-parametros.jpg",
+              "sha256": "620366aaacdfa78aa2e69a509d2227dfbf0c981e1c40ba1108e1fc24f6bf00ca"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "result": "Passou",
+          "actual": "Detalhe mostrou parcela 110, capital 100, juros zero, seguro 10, 0 parcelas pagas, 12 restantes e saldo 1200.",
+          "screenshots": [
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-03-composicao-mensal.jpg",
+              "sha256": "aae41fe4dc085ffb897fe5fdffe369bd897af6e66b66a8642eee4313d638a88d"
+            },
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-03-progresso.jpg",
+              "sha256": "85f6a7252bba402eb9c5280e36bc278ba699be43e68c9511b60edcf98f7a1485"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "result": "Passou",
+          "actual": "Síntese mostrou capital 1200, juros/seguro 120, tarifa 50 e custo total 1370. Tooltip final mostrou saldo 0,00 EUR.",
+          "screenshots": [
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-04-custos-legiveis.jpg",
+              "sha256": "93ebf98d692762227ff7a7086d5dd5040f2d0313e5d1df74c653170b18d08383"
+            },
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-04-resumo-custos.jpg",
+              "sha256": "85f6a7252bba402eb9c5280e36bc278ba699be43e68c9511b60edcf98f7a1485"
+            },
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-04-saldo-final-zero.jpg",
+              "sha256": "0315b216ca0c7625fd589a95b345f5ec3c5b4e191fc4c1b0f6d0bfbe7e15478d"
+            }
+          ]
+        },
+        {
+          "number": 5,
+          "result": "Passou",
+          "actual": "Após recarregar, parcela 110, seguro 10, tarifa 50 e custo 1370 permaneceram.",
+          "screenshots": [
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-05-custos-persistidos.jpg",
+              "sha256": "93ebf98d692762227ff7a7086d5dd5040f2d0313e5d1df74c653170b18d08383"
+            },
+            {
+              "file": "dd-6-Seguro-e-tarifa/passo-05-resumo-persistido.jpg",
+              "sha256": "aae41fe4dc085ffb897fe5fdffe369bd897af6e66b66a8642eee4313d638a88d"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "localId": "CT-PCV-03",
+      "testlinkId": "dd-7",
+      "title": "Recálculo após edição do principal",
+      "folder": "dd-7-Recalculo-apos-edicao",
+      "result": "Passou",
+      "steps": [
+        {
+          "number": 1,
+          "result": "Passou",
+          "actual": "A edição da conta A carregou principal 1200, juros zero, datas originais e parcela mensal vazia.",
+          "screenshots": [
+            {
+              "file": "dd-7-Recalculo-apos-edicao/passo-01-edicao-valores-originais.jpg",
+              "sha256": "9a6b17d5e2d7219389ed5e13253e0a3b3bc4f59ac318c67f86bdc1e059e1804d"
+            },
+            {
+              "file": "dd-7-Recalculo-apos-edicao/passo-01-principal-1200.jpg",
+              "sha256": "01f699fcf549cb17ce0ab3e200d7fcd3dc895f4dae802084a3856bfbe44059b1"
+            }
+          ]
+        },
+        {
+          "number": 2,
+          "result": "Passou",
+          "actual": "Somente Montant emprunté foi alterado para 2400; mensalidade permaneceu vazia. Salvamento aceito na conta original.",
+          "screenshots": [
+            {
+              "file": "dd-7-Recalculo-apos-edicao/passo-02-principal-2400-parcela-em-branco.jpg",
+              "sha256": "870be46b14e08856302a220007c29403e55fd6ae4ee869593c3f856b13ca81b0"
+            }
+          ]
+        },
+        {
+          "number": 3,
+          "result": "Passou",
+          "actual": "Detalhe da mesma conta /accounts/5 mostrou parcela e capital 200, custo e saldo 2400, juros/seguro/tarifa zero, 0 parcelas pagas e 12 restantes.",
+          "screenshots": [
+            {
+              "file": "dd-7-Recalculo-apos-edicao/passo-03-custo-total-2400.jpg",
+              "sha256": "a016f96fe1e9f23ef87729a90a582bcdf7d7b54bba089f302f372a11602ad995"
+            },
+            {
+              "file": "dd-7-Recalculo-apos-edicao/passo-03-resumo-recalculado.jpg",
+              "sha256": "60091c83d2c1579b7fcb9f23fed1dfa42f2db08c4d3fee5abee5ca8f9f5418d4"
+            }
+          ]
+        },
+        {
+          "number": 4,
+          "result": "Passou",
+          "actual": "Após recarga, resumo permaneceu em 2400/200. Reabertura da edição confirmou principal 2400 e mensalidade vazia.",
+          "screenshots": [
+            {
+              "file": "dd-7-Recalculo-apos-edicao/passo-04-principal-persistido.jpg",
+              "sha256": "faf772092019281f80912dc8826e6cdb1f980db33c64998292a61b59b7c7d41d"
+            },
+            {
+              "file": "dd-7-Recalculo-apos-edicao/passo-04-resumo-apos-recarregar.jpg",
+              "sha256": "60091c83d2c1579b7fcb9f23fed1dfa42f2db08c4d3fee5abee5ca8f9f5418d4"
+            }
+          ]
+        },
+        {
+          "number": 5,
+          "result": "Passou",
+          "actual": "Após cancelar a consulta da edição e recarregar Accounts, havia exatamente uma conta A, com principal 2400; nenhuma conta adicional foi criada.",
+          "screenshots": [
+            {
+              "file": "dd-7-Recalculo-apos-edicao/passo-05-conta-original-sem-duplicata.jpg",
+              "sha256": "4bdb046ec9cda3903ec7479aea6a17aa148c42465961b654ddac0bcd92af26c6"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

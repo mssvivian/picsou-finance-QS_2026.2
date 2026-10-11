@@ -1,0 +1,105 @@
+$ tsc -b && vite build
+vite v7.3.5 building client environment for production...
+transforming...
+
+/fonts/HomemadeApple-Regular.woff2 referenced in /fonts/HomemadeApple-Regular.woff2 didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 2946 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                              0.60 kB │ gzip:   0.37 kB
+dist/assets/horizontal-white-picsou-Dm-k44t1.svg             4.21 kB │ gzip:   1.94 kB
+dist/assets/geist-cyrillic-ext-wght-normal-DjL33-gN.woff2    7.42 kB
+dist/assets/geist-vietnamese-wght-normal-6IgcOCM7.woff2      8.00 kB
+dist/assets/geist-cyrillic-wght-normal-BEAKL7Jp.woff2       15.08 kB
+dist/assets/geist-latin-ext-wght-normal-DC-KSUi6.woff2      16.51 kB
+dist/assets/geist-latin-wght-normal-BgDaEnEv.woff2          29.40 kB
+dist/assets/index-Dzw_nY_n.css                             131.63 kB │ gzip:  21.46 kB
+dist/assets/setup-credentials-C7BYZJ9d.js                    0.11 kB │ gzip:   0.11 kB
+dist/assets/plus-DkZ_cYgn.js                                 0.15 kB │ gzip:   0.15 kB
+dist/assets/arrow-left-C9-UsQ0O.js                           0.17 kB │ gzip:   0.16 kB
+dist/assets/chart-line-sn4c2Jfc.js                           0.19 kB │ gzip:   0.17 kB
+dist/assets/user-B1RZqksp.js                                 0.20 kB │ gzip:   0.18 kB
+dist/assets/smartphone-jFsquflL.js                           0.20 kB │ gzip:   0.18 kB
+dist/assets/lock-zBBoGgua.js                                 0.21 kB │ gzip:   0.19 kB
+dist/assets/circle-plus-CAG1jmDK.js                          0.21 kB │ gzip:   0.18 kB
+dist/assets/upload-D6eW7zB5.js                               0.23 kB │ gzip:   0.19 kB
+dist/assets/circle-alert-Rojl_HP8.js                         0.25 kB │ gzip:   0.19 kB
+dist/assets/external-link-CtNnq8PG.js                        0.25 kB │ gzip:   0.20 kB
+dist/assets/link-C3KMKZqe.js                                 0.26 kB │ gzip:   0.19 kB
+dist/assets/calendar-Dr8e2b5W.js                             0.26 kB │ gzip:   0.20 kB
+dist/assets/pencil-CE70CpWK.js                               0.28 kB │ gzip:   0.22 kB
+dist/assets/CurrencyDisplay-CSFasqzD.js                      0.30 kB │ gzip:   0.26 kB
+dist/assets/shield-check-DYrB28Zl.js                         0.32 kB │ gzip:   0.25 kB
+dist/assets/briefcase-business-DWOt4gAl.js                   0.33 kB │ gzip:   0.24 kB
+dist/assets/trash-2-Ca3B3Imm.js                              0.33 kB │ gzip:   0.21 kB
+dist/assets/bitcoin-BNNhpdV2.js                              0.34 kB │ gzip:   0.26 kB
+dist/assets/key-round-D5L_rZjt.js                            0.36 kB │ gzip:   0.26 kB
+dist/assets/landmark-CAtjyx1d.js                             0.39 kB │ gzip:   0.25 kB
+dist/assets/shield-off-DNIX0WLs.js                           0.40 kB │ gzip:   0.28 kB
+dist/assets/piggy-bank-DVWUDIcM.js                           0.41 kB │ gzip:   0.26 kB
+dist/assets/download-D-RWRXmu.js                             0.42 kB │ gzip:   0.30 kB
+dist/assets/NumericInput-Bi6JcW5c.js                         0.48 kB │ gzip:   0.32 kB
+dist/assets/ErrorState-04-Nxt-I.js                           0.49 kB │ gzip:   0.31 kB
+dist/assets/navigation-CVf-TP54.js                           0.52 kB │ gzip:   0.25 kB
+dist/assets/label-WVUKe_TN.js                                0.61 kB │ gzip:   0.40 kB
+dist/assets/house-DcW4bDrB.js                                0.62 kB │ gzip:   0.33 kB
+dist/assets/eye-CFdqoMtz.js                                  0.64 kB │ gzip:   0.34 kB
+dist/assets/PageHeader--KAVjq3u.js                           0.66 kB │ gzip:   0.41 kB
+dist/assets/separator-QH-hXo9J.js                            0.69 kB │ gzip:   0.40 kB
+dist/assets/input-WUF4F-Nt.js                                0.72 kB │ gzip:   0.40 kB
+dist/assets/setup-flow-store-BNV-ZniN.js                     0.85 kB │ gzip:   0.37 kB
+dist/assets/boxes-DB2REOJf.js                                0.85 kB │ gzip:   0.40 kB
+dist/assets/EmptyState-D8-e-wDd.js                           0.87 kB │ gzip:   0.49 kB
+dist/assets/NotFoundPage-BRZWsAuZ.js                         0.88 kB │ gzip:   0.50 kB
+dist/assets/schemas-BNHu--JW.js                              0.88 kB │ gzip:   0.46 kB
+dist/assets/ForbiddenPage-0IW50NgY.js                        0.89 kB │ gzip:   0.53 kB
+dist/assets/ServerErrorPage-DUwhLZWi.js                      1.09 kB │ gzip:   0.55 kB
+dist/assets/ConfirmDialog-CXZv-vCn.js                        1.10 kB │ gzip:   0.61 kB
+dist/assets/DateInput-BUKfYGLN.js                            1.13 kB │ gzip:   0.61 kB
+dist/assets/badge-BDYamreb.js                                1.24 kB │ gzip:   0.62 kB
+dist/assets/SetupStepFinary-Com1OXul.js                      1.40 kB │ gzip:   0.65 kB
+dist/assets/SetupStepTradeRepublic-DjB61Z3L.js               1.41 kB │ gzip:   0.65 kB
+dist/assets/SetupStepBourseDirect-msH9FiuU.js                1.47 kB │ gzip:   0.66 kB
+dist/assets/progress-BcoODt2S.js                             1.93 kB │ gzip:   0.95 kB
+dist/assets/AccountTypeBadge-BbcOJoDV.js                     2.03 kB │ gzip:   1.12 kB
+dist/assets/errors-Dbfdc7ml.js                               2.31 kB │ gzip:   0.93 kB
+dist/assets/SetupStepIntro-CHPqDBAc.js                       2.39 kB │ gzip:   1.10 kB
+dist/assets/SetupStepBoursoBank-CoV97j4D.js                  2.62 kB │ gzip:   1.03 kB
+dist/assets/SetupStepCrypto-CcPcKu4I.js                      2.69 kB │ gzip:   1.07 kB
+dist/assets/ActivationPage-BEoKspOr.js                       2.87 kB │ gzip:   1.21 kB
+dist/assets/hooks-CuG7ofe8.js                                2.87 kB │ gzip:   0.67 kB
+dist/assets/SetupLayout-3iQfj1SM.js                          2.93 kB │ gzip:   1.33 kB
+dist/assets/hooks-CpbcwUDA.js                                2.97 kB │ gzip:   0.89 kB
+dist/assets/MfaChallengePage-DbsLccZB.js                     3.14 kB │ gzip:   1.43 kB
+dist/assets/switch-BRhFLGSe.js                               3.19 kB │ gzip:   1.42 kB
+dist/assets/SetupStepIntegrations-CkTEmg2k.js                3.36 kB │ gzip:   1.34 kB
+dist/assets/SetupStepComplete-DYZ1o_ur.js                    3.49 kB │ gzip:   1.46 kB
+dist/assets/FamilyDashboardPage-BMdNYwCa.js                  3.55 kB │ gzip:   1.02 kB
+dist/assets/SetupStepSecurity-Cna1MVoK.js                    3.65 kB │ gzip:   1.40 kB
+dist/assets/LoginPage-CUo6x5Nf.js                            3.93 kB │ gzip:   1.57 kB
+dist/assets/GoalDetailModal-B_FrGl5Y.js                      4.19 kB │ gzip:   1.46 kB
+dist/assets/tabs-BYcf1W6H.js                                 4.56 kB │ gzip:   1.76 kB
+dist/assets/SetupStepAdmin-yjh6Z9q_.js                       4.91 kB │ gzip:   1.80 kB
+dist/assets/FamilySettingsPage-DHKHJQIG.js                   5.03 kB │ gzip:   1.85 kB
+dist/assets/GoalsPage-Du7gJwdP.js                            7.32 kB │ gzip:   2.52 kB
+dist/assets/hooks-Q5MWddSZ.js                               10.57 kB │ gzip:   2.51 kB
+dist/assets/hooks-DrNuwq2a.js                               14.25 kB │ gzip:   2.52 kB
+dist/assets/SetupStepEnableBanking-BiVsN9cH.js              19.17 kB │ gzip:   4.59 kB
+dist/assets/GoalCalendarPage-Cmr2yZUJ.js                    19.27 kB │ gzip:   5.62 kB
+dist/assets/AdminPage-DaUUFvgD.js                           19.45 kB │ gzip:   5.44 kB
+dist/assets/api-CxvqZFYV.js                                 26.45 kB │ gzip:   5.41 kB
+dist/assets/NetWorthChart-uoXwfnEt.js                       34.84 kB │ gzip:  10.19 kB
+dist/assets/SettingsPage-ClOsga_T.js                        36.23 kB │ gzip:   9.28 kB
+dist/assets/SyncPage-auiiXfVf.js                            36.39 kB │ gzip:   8.93 kB
+dist/assets/DashboardPage-DJNsfBEk.js                       58.28 kB │ gzip:  17.38 kB
+dist/assets/AccountDetailPage-Du9LLB3e.js                   64.43 kB │ gzip:  16.27 kB
+dist/assets/AccountsPage-DR5DEvKz.js                        72.06 kB │ gzip:  20.39 kB
+dist/assets/schemas-XdVa5pgZ.js                            105.04 kB │ gzip:  31.19 kB
+dist/assets/TimeRangeSelector-C8prGWTU.js                  358.13 kB │ gzip: 107.56 kB
+dist/assets/index-et0kQNt-.js                              887.46 kB │ gzip: 287.36 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 6.09s

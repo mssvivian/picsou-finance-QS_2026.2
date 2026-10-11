@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.picsou.service.LoanAmortizationServiceTest
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 s -- in com.picsou.service.LoanAmortizationServiceTest

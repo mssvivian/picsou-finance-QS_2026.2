@@ -1,0 +1,41 @@
+{
+  "planId": 46,
+  "cases": [
+    {
+      "id": "dd-5",
+      "build": 5,
+      "submittedScreenshots": 12,
+      "node": 74,
+      "version": 75,
+      "submittedSteps": 5,
+      "executionId": 8,
+      "notesVerified": true
+    },
+    {
+      "id": "dd-6",
+      "build": 5,
+      "submittedScreenshots": 10,
+      "node": 81,
+      "version": 82,
+      "submittedSteps": 5,
+      "executionId": 9,
+      "notesVerified": true
+    },
+    {
+      "id": "dd-7",
+      "build": 5,
+      "submittedScreenshots": 8,
+      "node": 88,
+      "version": 89,
+      "submittedSteps": 5,
+      "executionId": 10,
+      "notesVerified": true
+    }
+  ],
+  "passed": 3,
+  "buildName": "Paulo - Entrega1 - 58c71b9-lf",
+  "date": "2026-10-11T16:45:33.7800003-03:00",
+  "notRun": 0,
+  "buildId": 5,
+  "attachmentLimitation": "Server rejected some attachments: File Name does not pass REGEXP checkings. All 30 original JPEGs are stored locally in Tests_ScreenShots. submittedScreenshots counts requests, not confirmed uploads."
+}

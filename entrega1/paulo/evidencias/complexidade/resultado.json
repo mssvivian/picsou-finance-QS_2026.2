@@ -1,0 +1,148 @@
+{
+  "source": "backend/src/main/java/com/picsou/service/LoanAmortizationService.java",
+  "sha256": "be3ec1a2bdf86ab79ab135d8be228dadfa48abb7ced7ff682f88ac3caa485950",
+  "convention": "1 + if/for/while/case/catch + ternários + operadores curtos &&/||; exclui código gerado de records e construtor implícito",
+  "methods": [
+    {
+      "method": "compute(Debt debt)",
+      "line": 56,
+      "decisions": [],
+      "complexity": 1
+    },
+    {
+      "method": "compute(Debt debt, LocalDate asOf)",
+      "line": 60,
+      "decisions": [
+        {
+          "token": "?",
+          "line": 72
+        },
+        {
+          "token": "for",
+          "line": 87
+        },
+        {
+          "token": "if",
+          "line": 91
+        },
+        {
+          "token": "if",
+          "line": 94
+        },
+        {
+          "token": "?",
+          "line": 100
+        },
+        {
+          "token": "if",
+          "line": 113
+        },
+        {
+          "token": "if",
+          "line": 117
+        },
+        {
+          "token": "?",
+          "line": 125
+        },
+        {
+          "token": "?",
+          "line": 127
+        },
+        {
+          "token": "?",
+          "line": 138
+        },
+        {
+          "token": "?",
+          "line": 144
+        },
+        {
+          "token": "?",
+          "line": 146
+        },
+        {
+          "token": "?",
+          "line": 147
+        }
+      ],
+      "complexity": 14
+    },
+    {
+      "method": "computeRemainingBalance(Debt debt, LocalDate asOf)",
+      "line": 178,
+      "decisions": [],
+      "complexity": 1
+    },
+    {
+      "method": "nz(BigDecimal value)",
+      "line": 182,
+      "decisions": [
+        {
+          "token": "?",
+          "line": 183
+        }
+      ],
+      "complexity": 2
+    },
+    {
+      "method": "computeTotalInstallments(LocalDate startDate, LocalDate endDate)",
+      "line": 186,
+      "decisions": [
+        {
+          "token": "if",
+          "line": 187
+        },
+        {
+          "token": "||",
+          "line": 187
+        },
+        {
+          "token": "||",
+          "line": 187
+        }
+      ],
+      "complexity": 4
+    },
+    {
+      "method": "computePaidInstallments(LocalDate startDate, LocalDate asOf, int totalInstallments)",
+      "line": 192,
+      "decisions": [
+        {
+          "token": "if",
+          "line": 193
+        },
+        {
+          "token": "||",
+          "line": 193
+        },
+        {
+          "token": "||",
+          "line": 193
+        },
+        {
+          "token": "if",
+          "line": 194
+        }
+      ],
+      "complexity": 5
+    },
+    {
+      "method": "computeMonthlyPayment(BigDecimal principal, BigDecimal monthlyRate, int n)",
+      "line": 203,
+      "decisions": [
+        {
+          "token": "if",
+          "line": 204
+        },
+        {
+          "token": "if",
+          "line": 205
+        }
+      ],
+      "complexity": 3
+    }
+  ],
+  "sumOfMethodComplexities": 30,
+  "maximumMethodComplexity": 14
+}

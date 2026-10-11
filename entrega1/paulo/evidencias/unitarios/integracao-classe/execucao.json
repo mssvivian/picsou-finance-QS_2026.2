@@ -1,0 +1,12 @@
+{
+  "recordedAt": "2026-10-11T18:01:54.2899823-03:00",
+  "totals": {
+    "errors": 0,
+    "failures": 0,
+    "skipped": 0,
+    "tests": 31
+  },
+  "mode": "integracao-classe",
+  "commit": "4d7a2d362cc12bd24e0d6352beceaac7fc0ec6c6",
+  "branch": "feat/teste_LoanAmortizationService_paulo"
+}

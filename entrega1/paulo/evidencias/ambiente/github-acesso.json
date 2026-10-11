@@ -1,0 +1,14 @@
+{
+  "issuesSource": "https://github.com/mssvivian/picsou-finance-QS_2026.2/issues",
+  "permissions": {
+    "triage": false,
+    "pull": true,
+    "push": false,
+    "admin": false
+  },
+  "issuesCreation": "Only collaborators can create issues",
+  "username": "PaulcVaz",
+  "checkedAt": "2026-10-10T20:17:30.3047549-03:00",
+  "repository": "mssvivian/picsou-finance-QS_2026.2",
+  "source": "Conector GitHub get_repo"
+}

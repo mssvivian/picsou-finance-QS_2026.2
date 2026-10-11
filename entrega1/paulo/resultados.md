@@ -1,0 +1,94 @@
+# Resultados da execução — 10/10/2026
+
+Autoria dos testes acrescentados e responsabilidade acadêmica: **Paulo Cesar Vaz**. Execução técnica assistida no workspace de Paulo. Base original `6b020c76cf093b8995a68df12a32e8c5b21e9144`; branch `feature/paulo-entrega1-amortizacao`. Os resultados abaixo vieram de execuções reais, não de estimativas. O código de produção não foi alterado.
+
+## Testes unitários
+
+| Execução | Casos | Falhas de asserção | Erros | Ignorados | Resultado |
+|---|---:|---:|---:|---:|---|
+| Classe original antes da alteração | 9 | 0 | 0 | 0 | Aprovada |
+| Classe ampliada | 31 | 0 | 0 | 0 | Aprovada; 22 execuções próprias adicionais |
+| Reproduções de defeitos ativadas explicitamente | 2 | 2 | 0 | 0 | Dois defeitos confirmados; código de saída 1 esperado |
+| Suíte completa do código original em cópia isolada | 1247 | 0 | 20 | 33 | Não aprovada globalmente; limitações já presentes antes desta contribuição |
+| Suíte completa com a contribuição | 1271 | 0 | 20 | 35 | Mesmos 20 erros; dois ignorados adicionais são as regressões opt-in |
+| Diagnóstico da suíte com preferIPv4Stack=true | 1271 | 0 | 20 | 35 | Mesma limitação; não resolveu |
+
+Original: 1194 aprovados, 20 erros, 33 ignorados. Com contribuição: 1216 aprovados, 20 erros, 35 ignorados. Diferença: 22 novos casos aprovados e 2 reproduções opt-in não executadas no modo padrão.
+
+Evidências:
+
+- [Baseline da classe](evidencias/unitarios/baseline/maven-output.txt) e [XML](evidencias/unitarios/baseline/TEST-com.picsou.service.LoanAmortizationServiceTest.xml).
+- [Classe ampliada](evidencias/unitarios/ampliados/maven-output.txt) e [XML](evidencias/unitarios/ampliados/TEST-com.picsou.service.LoanAmortizationServiceTest.xml).
+- [Defeitos](evidencias/unitarios/defeitos/maven-output.txt) e [XML](evidencias/unitarios/defeitos/TEST-com.picsou.service.LoanAmortizationServiceDefectTest.xml).
+- [Suíte original](evidencias/unitarios/baseline-suite/maven-output.txt), [resumo](evidencias/unitarios/baseline-suite/resumo.json) e [relatórios completos ZIP](evidencias/unitarios/baseline-suite/surefire-reports.zip).
+- [Suíte com contribuição](evidencias/unitarios/suite-completa/maven-output.txt), [resumo](evidencias/unitarios/suite-completa/resumo.json) e [relatórios completos ZIP](evidencias/unitarios/suite-completa/surefire-reports.zip).
+- [Diagnóstico IPv4](evidencias/unitarios/suite-ipv4/maven-output.txt), [resumo](evidencias/unitarios/suite-ipv4/resumo.json) e [relatórios ZIP](evidencias/unitarios/suite-ipv4/surefire-reports.zip).
+
+### Limitações da suíte ampla
+
+Os 20 erros ocorrem nas mesmas quatro classes originais: `MeriaAdapterWiringTest` (1), `TradeRepublicAdapterTest` (10), `ValuationAdapterWiringTest` (1) e `IbkrFlexClientTest` (8). As mensagens incluem `Unable to establish loopback connection`, `failed to create a child event loop` e `SocketException: Invalid argument: connect`. A reprodução no código original confirma que esta contribuição não introduziu esses erros. A causa final da configuração de rede do Windows não foi corrigida nem determinada completamente.
+
+33 casos originais são ignorados por disponibilidade de infraestrutura, principalmente Docker/PostgreSQL real; consultar os motivos individuais no resumo/ZIP. Os 2 adicionais ignorados na suíte padrão são `LoanAmortizationServiceDefectTest`, exigindo `-Dpicsou.entrega1.defect-regressions=true`. Não são testes aprovados e não foram silenciosamente removidos.
+
+A baseline completa foi extraída do commit original com `git archive`, sem sobrescrever os testes da branch. Uma tentativa inicial arquivou somente `backend`, causando um skip extra no teste que lê `docker/entrypoint.sh`; essa tentativa foi substituída pela cópia completa do repositório e não é usada na comparação final.
+
+## Defeitos confirmados
+
+**BUG-PCV-01:** na parcela automática, 1000 em três meses resulta em capitais exibidos que somam 999,99; esperado 1000,00. **BUG-PCV-02:** parcela automática para principal 1200, 12 meses, seguro 10 retorna 100,00; esperado total 110,00. As duas asserções foram executadas e falharam em 10/10 às 20h03, Brasília. Relatos completos em [issues](issues/).
+
+As regressões são opt-in para distinguir a suíte normal dos relatos de defeitos, mantendo os resultados vermelhos disponíveis e reproduzíveis. Esta contribuição não corrige produção nem adapta o esperado ao resultado defeituoso.
+
+## Compilação e versão
+
+- Backend: `mvn -f backend/pom.xml package -DskipTests`, compilação aprovada; testes foram executados separadamente.
+- Frontend: Bun 1.4.3, `bun install --frozen-lockfile`, `VITE_DEMO_MODE=false`, `VITE_APP_VERSION=qs-entrega1-6b020c7`, `bun run build`, compilação aprovada. Vite emitiu aviso de chunks maiores que 500 kB; não impediu o build.
+- [Manifesto com hashes SHA-256](evidencias/build/manifesto.json), [build backend](evidencias/build/backend-build.txt), [instalação frontend](evidencias/build/frontend-install.txt), [build frontend](evidencias/build/frontend-build.txt).
+- Artefatos gerados localmente: `backend/target/picsou-backend-1.0.9.jar` e `frontend/dist/`. Ficam ignorados pelo Git; os comandos e hashes permitem reproduzir/verificar. Build aprovado não comprova inicialização ou execução manual.
+
+## Manual, TestLink e acessos — registro inicial de 10/10
+
+CT-PCV-01/02/03 estão projetados, **não executados**. Não há capturas de aprovação nem exportação de execução do TestLink. A instância não foi fornecida; o XML foi gerado localmente e validado como XML bem formado com três casos e 15 passos, sem importar na ferramenta.
+
+Docker Desktop falha ao iniciar por um socket `sailor-ingest.sock` inacessível. A revisão automática bloqueou a tentativa de encerrar processos à força/remover o socket (motivo informado: bloqueado por política). O encerramento oficial e a tentativa de preservar o socket com outro nome não resolveram. Nenhum reset de fábrica foi feito.
+
+Foi tentada uma alternativa com PostgreSQL isolado: o Windows bloqueou `initdb.exe` por Controle de Aplicativo. O PostgreSQL 18 já instalado exige credenciais não disponíveis. Nenhuma configuração de segurança foi enfraquecida e o banco existente não foi alterado. [Diagnóstico do ambiente](evidencias/ambiente/diagnostico.json).
+
+A conta conectada de Paulo tem `pull=true` e `push=false` no fork, conforme metadados do conector GitHub. A [página de issues do fork](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues) informa que somente colaboradores podem criar issues. Sem publicação de branch/PR, issues ou merge nesta etapa. Os relatos estão prontos localmente. Os patches preservam autoria para um integrante integrar.
+
+O documento de contribuição foi criado pela conta Google conectada `paulc.vaz@gmail.com`, preenchido e conferido por leitura do conector. O compartilhamento não foi alterado. [Google Docs](https://docs.google.com/document/d/1244Hgfv4YOyM4nBO8PSXadMBxtFPmg2J8so5xoWCy_o/edit?usp=drivesdk). Não substitui a colaboração individual dos demais integrantes nem a consolidação conforme o template da aula.
+
+## Fechamento pendente
+
+Resolver o ambiente e executar casos; usar TestLink e exportar registros; confirmar classe e responsabilidades com o grupo; obter template; consolidar Google Docs; publicar issues; integrar à main; verificar README e submissão Moodle. Prazo externo: 11/10/2026 às 23h59, Brasília. [Checklist](integracao.md).
+
+## Atualização de 11/10 — ambiente operacional e casos cadastrados
+
+Docker iniciou. A imagem local identificada pelo commit 58c71b9 está em execução; [ambiente e reprodução](ambiente-local.md). Três cenários passaram na [simulação HTTP](evidencias/simulacao-api/resultado.json). Essa simulação não comprova execução manual da interface.
+
+Casos cadastrados no projeto Grupo DinDin, suíte Paulo - Amortização de empréstimos: dd-5, dd-6 e dd-7. [Exportação da especificação](evidencias/testlink/especificacao-exportada.xml). Execução manual, associação ao plano/build e capturas continuam pendentes. Os bloqueios de Docker descritos no registro inicial foram superados.
+
+## Atualização de 11/10 — execução pela interface concluída
+
+CT-PCV-01, CT-PCV-02 e CT-PCV-03 aprovados nos 15 passos, em execução assistida pelo Codex sob solicitação de Paulo; não representa execução humana independente. Backend real, modo demo desativado, commit 58c71b93544c27ff6f9b032dfe2c4df69fe01aa0, imagem local com adaptação de quebras de linha do entrypoint. Navegador Codex In-app Browser (versão não exposta), Windows, interface em francês.
+
+Conferidos: parcela automática 100 e custo 1200; parcela 110, capital 100, seguro total 120 e tarifa 50, custo 1370; edição do principal para 2400, parcela recalculada 200, persistência após recarga e ausência de duplicatas. Saldo final zero conferido no tooltip do gráfico. Contratos futuros: zero parcelas pagas.
+
+[30 capturas originais, com índice por caso e passo](Tests_ScreenShots/README.md). TestLink: plano Plano de Testes Manuais (46), build Paulo - Entrega1 - 58c71b9-lf (5), dd-5/6/7 Passed, execuções 8/9/10. [Conferência de resultados](evidencias/testlink/execucoes-verificadas.json). O servidor rejeitou parte dos anexos por validação de nome; as 30 imagens completas estão disponíveis localmente. A especificação continua em Draft para revisão do grupo; o resultado da execução é Passed.
+
+Os registros iniciais de bloqueio e pendência acima são históricos, superados nesta atualização. Permanecem a consolidação do Plano de Teste/Google Docs pelo grupo, integração na main e submissão.
+
+## Atualização de 11/10 após incorporar a main do grupo
+
+Branch publicada: `feat/teste_LoanAmortizationService_paulo`. Commit de integração: `4d7a2d362cc12bd24e0d6352beceaac7fc0ec6c6`, incorporando a main `9231231dca0377d56dee877f89765371202b83d5` sem alterações próprias de produção. A main removeu os testes originais do backend; mantivemos apenas a classe de amortização com nove herdados e 22 execuções acrescentadas, além das duas reproduções opt-in.
+
+| Execução atual | Casos | Aprovados | Falhas | Erros | Ignorados |
+|---|---:|---:|---:|---:|---:|
+| Classe normal | 31 | 31 | 0 | 0 | 0 |
+| Defeitos ativados | 2 | 0 | 2 | 0 | 0 |
+| Suíte atual após clean | 33 | 31 | 0 | 0 | 2 |
+
+[Resumo das execuções](evidencias/unitarios/integracao-resumo.json), [classe](evidencias/unitarios/integracao-classe/maven-output.txt), [defeitos](evidencias/unitarios/integracao-defeitos/maven-output.txt) e [suíte](evidencias/unitarios/integracao-suite/maven-output.txt). Maven clean evita executar classes compiladas dos testes que o grupo removeu. Os números históricos de 1271 casos não descrevem esta suíte atual.
+
+Issues publicadas e abertas: [#4](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4) e [#5](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5), atribuídas a PaulcVaz. O acesso anterior sem push foi superado. Os relatos estão ligados às evidências e não incluem correções.
+
+As 30 capturas continuam associadas ao build 58c71b9, com hashes conferidos. Comparação do código de empréstimos e dos componentes do fluxo não apresentou alteração após integração; a mudança de produção da main diz respeito ao upload do Finary, fora do escopo destes casos. Não foi necessária nova execução pela interface.

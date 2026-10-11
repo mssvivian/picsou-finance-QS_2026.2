@@ -1,0 +1,18 @@
+{
+  "branch": "feature/paulo-entrega1-amortizacao",
+  "frontendIndexSha256": "440a7a4953a0c3d03ae026da439842f19b2b402fdbed059af7103c443d13b289",
+  "productionChanges": false,
+  "maven": "3.9.16",
+  "frontendVersion": "qs-entrega1-6b020c7",
+  "backendBuild": "package -DskipTests (tests separately recorded)",
+  "runtimeValidated": false,
+  "builtAt": "2026-10-10T20:11:45.8510762-03:00",
+  "backendJar": "backend/target/picsou-backend-1.0.9.jar",
+  "demo": false,
+  "sourceBase": "6b020c76cf093b8995a68df12a32e8c5b21e9144",
+  "java": "Temurin 21.0.12.1",
+  "backendSha256": "7ca7974fe50a679d054b596718f00a6ce1adec36a6346e89840a17826b78b9ff",
+  "bun": "1.4.3",
+  "frontendBuild": "bun install --frozen-lockfile; VITE_DEMO_MODE=false; bun run build",
+  "testsCommit": "ac8775e7156a78a0f24fb988ca9df0df2d25a563"
+}

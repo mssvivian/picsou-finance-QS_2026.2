@@ -1,0 +1,27 @@
+ 
+ 
+ 
+   
+ 
+
+
+
+
+ 
+        Test Case dd-5: CT-PCV-01 — Parcela automática sem juros  [Version : 1]   
+   Author:   admin - 10/11/2026 19:28:29  
+   Summary:  Responsável: Paulo Cesar Vaz. Classe relacionada: LoanAmortizationService. Código local: CT-PCV-01. Verificar cronograma e resumo de um empréstimo de EUR 1200 em 12 meses, com juros zero e parcela automática. Oráculo: 1200/12=100; custo total 1200; zero parcelas pagas antes do início.     Preconditions:  1. Picsou do fork em execução, backend real e modo demo desativado; usuário de teste logado. 2. Registrar commit/build, navegador, sistema operacional e data de execução. Usar moeda EUR e dados fictícios. 3. Executar antes de 01/11/2026 para conferir zero parcelas pagas nos contratos futuros deste conjunto. 4. A conta Emprestimo Paulo A não deve existir antes deste caso; usar usuário de teste sem dados de terceiros.     #:    Step actions:    Expected Results:    Execution notes:    Execution Status:     1  Abrir Accounts, clicar Add account e escolher a opção de criação manual.  O formulário de criação manual de conta é exibido.  O formulário Manuel foi exibido após Ajouter un compte > Manuel.  Passed    2  Informar nome Emprestimo Paulo A, moeda EUR e tipo Loan; preencher principal/borrowed amount 1200, juros 0%, início 01/11/2026, término 01/11/2027. Deixar parcela mensal em branco; seguro e tarifa em branco ou zero. Salvar.  A conta é criada sem erro. Parcela automática é solicitada mantendo o campo mensal vazio, sem inserir zero.  Emprestimo Paulo A foi criada em EUR, tipo Prêt, principal e saldo informado 1200, juros 0%, datas 01/11/2026 e 01/11/2027. Mensualité, seguro e tarifa deixados vazios.  Passed     Execution Attachments        passo-02-parametros.jpg        3  Abrir o detalhe da conta Emprestimo Paulo A e aguardar o carregamento do resumo de empréstimo.  Parcela mensal 100, capital mensal 100, juros 0, seguro 0. Progresso: 0 parcelas pagas e 12 restantes. Saldo atual 1200.  Detalhe mostrou parcela 100, capital 100, juros e seguro zero, 0 parcelas pagas, 12 restantes e saldo atual 1200.  Passed    4  Conferir o resumo de custos e o gráfico de amortização; inspecionar o ponto final do cronograma.  Custo total 1200; capital total 1200; juros/seguro e tarifas zero. O cronograma termina com saldo zero. Datas são apresentadas no formato configurado na aplicação.  Síntese mostrou custo e capital total 1200, juros/seguro e tarifa zero. Tooltip do último ponto (outubro/2027) mostrou saldo 0,00 EUR.  Passed     Execution Attachments        passo-04-grafico.jpg        5  Recarregar a página e conferir novamente os valores; capturar resumo, progresso e gráfico.  Os mesmos parâmetros e valores permanecem. Nenhuma duplicata de Emprestimo Paulo A é criada.  Após recarga, valores permaneceram 1200/100. A lista apresentou exatamente uma conta Emprestimo Paulo A.  Passed     Execution Attachments        passo-05-conta-unica.jpg         Execution type:   Manual  
+   Estimated exec. duration (min):     
+   Importance:   High  
+       Requirements   None   
+   Keywords:    None   
+  Execution Details     
+  Tester  admin  
+   Execution Result:    Passed   
+   Execution Mode:    Manual   
+   Execution duration (min):        
+  Execution notes  Execucao assistida pela interface pelo Codex, sob solicitacao de Paulo Cesar Vaz; 11/10/2026, America/Sao_Paulo; Windows; Codex In-app Browser (versao nao exposta); interface em frances; http://localhost:8082; commit 58c71b93544c27ff6f9b032dfe2c4df69fe01aa0; imagem picsou-paulo:entrega1-58c71b9-lf; modo demo desativado. Cinco passos conferidos e aprovados. Capturas originais por passo anexadas. Nao se trata de execucao humana independente.  
+ 
+ 
+ Direct Link:http://147.15.86.250:8080/lnl.php?type=exec&id=8&apikey=[REMOVIDA] 
+

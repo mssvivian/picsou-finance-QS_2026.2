@@ -1,3 +1,26 @@
+## COS482 — Qualidade de Software — Entrega 1 (2026.2)
+
+Contribuição de Paulo: amortização de empréstimos. Código de produção preservado; três casos pela interface aprovados, duas issues publicadas e contribuição na branch `feat/teste_LoanAmortizationService_paulo`. Consolidação do grupo, revisão e integração à `main` pendentes.
+
+| Artefato | Link direto |
+|---|---|
+| Índice e situação da contribuição | [Entrega 1 — Paulo](entrega1/paulo/README.md) · [PR #6](https://github.com/mssvivian/picsou-finance-QS_2026.2/pull/6) |
+| Relatório individual de Paulo | [Google Docs](https://docs.google.com/document/d/1a1vX4Uais7X7nwQXB1aPTmWpnuptHEkYsVlMXl88kIw/edit?usp=drivesdk) · [Word em três páginas](entrega1/paulo/Relatorio-Paulo-Entrega1.docx) |
+| Plano de Teste / contribuição individual | [Google Docs](https://docs.google.com/document/d/1244Hgfv4YOyM4nBO8PSXadMBxtFPmg2J8so5xoWCy_o/edit?usp=drivesdk) · [Cópia local](entrega1/paulo/plano-de-teste.md) |
+| Classe sob teste | [LoanAmortizationService](backend/src/main/java/com/picsou/service/LoanAmortizationService.java) |
+| Testes unitários e regressões | [31 casos normais](backend/src/test/java/com/picsou/service/LoanAmortizationServiceTest.java) · [2 reproduções opt-in](backend/src/test/java/com/picsou/service/LoanAmortizationServiceDefectTest.java) |
+| Justificativa e complexidade | [Relatório](entrega1/paulo/complexidade.md) · [Decisões/linhas](entrega1/paulo/evidencias/complexidade/resultado.json) |
+| Rastreabilidade | [Matriz](entrega1/paulo/matriz-de-testes.md) |
+| Casos manuais e TestLink | [Casos e campos de execução](entrega1/paulo/casos-manuais.md) · [XML de importação](entrega1/paulo/testlink/casos-paulo.xml) · [Procedimento](entrega1/paulo/testlink/README.md) |
+| Resultados e evidências | [Relatório de execução](entrega1/paulo/resultados.md) · [Validação após integrar a main](entrega1/paulo/evidencias/unitarios/integracao-resumo.json) · [Build](entrega1/paulo/evidencias/build/manifesto.json) · [Manifesto de publicação](entrega1/paulo/evidencias/publicacao/manifesto.json) |
+| Capturas dos testes manuais | [Índice por caso e passo](entrega1/paulo/Tests_ScreenShots/README.md) · [Resultados no TestLink](entrega1/paulo/evidencias/testlink/execucoes-verificadas.json) |
+| Problemas encontrados | [Registro consolidado](entrega1/paulo/issues/README.md) · [Issue #4](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4) · [Issue #5](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5) · [Relatos e evidências](entrega1/paulo/issues/README.md) |
+| Responsabilidades e integração | [Mensagem ao grupo](entrega1/paulo/mensagem-para-o-grupo.md) · [Checklist](entrega1/paulo/integracao.md) |
+| Apresentação individual | [Roteiro](entrega1/paulo/apresentacao.md) |
+| Reprodução | [Scripts](entrega1/paulo/scripts/) |
+
+---
+
 <div align="center">
 
 # Picsou

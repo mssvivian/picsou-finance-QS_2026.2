@@ -1,0 +1,4 @@
+# Raw Surefire copies remain locally; ZIP archives and summaries are delivered.
+evidencias/unitarios/suite-*/TEST-*.xml
+evidencias/unitarios/baseline-suite/TEST-*.xml
+evidencias/unitarios/baseline-suite/tentativa-backend-isolado.txt

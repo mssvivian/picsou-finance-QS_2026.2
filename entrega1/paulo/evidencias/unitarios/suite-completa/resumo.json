@@ -1,0 +1,1460 @@
+{
+  "totals": {
+    "tests": 1271,
+    "errors": 20,
+    "failures": 0,
+    "skipped": 35
+  },
+  "classes": [
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.AmundiAdapterTest",
+      "tests": 13,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.AmundiAdapterWiringTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.BourseDirectAdapterTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.BourseDirectAdapterWiringTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.BoursoAdapterTest",
+      "tests": 16,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.BoursoAdapterWiringTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.BoursoramaCompositionProviderTest",
+      "tests": 6,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.BoursoramaLabelsTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.CeremaDv3fValuationProviderTest",
+      "tests": 14,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.CoinGeckoPriceProviderTest",
+      "tests": 20,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.EnableBankingBankConnectorTest",
+      "tests": 13,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.EvmWalletAdapterTest",
+      "tests": 22,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.EvmWalletSyncFlowTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.GeoplateformeGeocoderTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.MeriaAdapterTest",
+      "tests": 40,
+      "failures": 0
+    },
+    {
+      "problems": [
+        {
+          "error": "Unable to establish loopback connection",
+          "test": "theProductionClientReadsAStakingPayloadBiggerThanTheFrameworkDefault",
+          "failure": null
+        }
+      ],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 1,
+      "name": "com.picsou.adapter.MeriaAdapterWiringTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.OpenFigiIsinConverterTest",
+      "tests": 23,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.SolanaWalletAdapterTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_validResponseKeepsPreviousRefreshTokenWhenNotRotated",
+          "failure": null
+        },
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_rejectedStatusMapsToSessionExpired(int)[1]",
+          "failure": null
+        },
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_rejectedStatusMapsToSessionExpired(int)[2]",
+          "failure": null
+        },
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_transientStatusMapsToUnavailable(int)[1]",
+          "failure": null
+        },
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_transientStatusMapsToUnavailable(int)[2]",
+          "failure": null
+        },
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_transientStatusMapsToUnavailable(int)[3]",
+          "failure": null
+        },
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_missingSessionTokenIsNotSessionExpired",
+          "failure": null
+        },
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_timeoutMapsToUnavailable",
+          "failure": null
+        },
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_emptySuccessBodyIsNotSessionExpired",
+          "failure": null
+        },
+        {
+          "error": "failed to create a child event loop",
+          "test": "refreshSession_validResponseUsesRotatedRefreshToken",
+          "failure": null
+        }
+      ],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 10,
+      "name": "com.picsou.adapter.TradeRepublicAdapterTest",
+      "tests": 11,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.util.JsonRpcResponseTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [
+        {
+          "error": "Unable to establish loopback connection",
+          "test": "theProductionClientReadsACommunePayloadBiggerThanTheFrameworkDefault",
+          "failure": null
+        }
+      ],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 1,
+      "name": "com.picsou.adapter.ValuationAdapterWiringTest",
+      "tests": 5,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.adapter.YahooFinancePriceProviderTest",
+      "tests": 24,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.AccessKeyAuthFilterTest",
+      "tests": 11,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.AuthCookieWriterTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.BourseDirectSyncRecoveryTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.BoursoSyncRecoveryTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.ClientIpTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.DynamicCorsConfigurationSourceTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.EnableBankingConfigProviderTest",
+      "tests": 6,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.ForwardedHeadersCorsTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.IsinTickerRepairRunnerTest",
+      "tests": 14,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.JwtUtilTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.PersistentTokenAuthFilterTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.RateLimitConfigTest",
+      "tests": 2,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.SecureCookieProviderTest",
+      "tests": 2,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.SecurityConfigHstsHeaderTest",
+      "tests": 0,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.SecurityConfigHstsHeaderTest$WhenDisabled",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.SecurityConfigHstsHeaderTest$WhenEnabled",
+      "tests": 2,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.SecurityConfigHstsHeaderTest$WhenUnrecognised",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.SecurityConfigHstsParsingTest",
+      "tests": 5,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.config.SecurityContextThreadLocalAccessorTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.AccessKeyControllerTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.AccountControllerLoanTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.AdminControllerTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.AdminMfaControllerTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.AmundiControllerTest",
+      "tests": 12,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.AuthControllerTest",
+      "tests": 20,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.BourseDirectControllerTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.BoursoControllerTest",
+      "tests": 11,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.DegiroControllerTest",
+      "tests": 6,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.IbkrControllerTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.MfaControllerTest",
+      "tests": 14,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.SessionControllerTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.SetupControllerTest",
+      "tests": 16,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.SyncControllerTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.controller.WalletControllerTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.exception.GlobalExceptionHandlerSyncTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.export.BalanceSnapshotsExporterTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.export.CsvWriterTest",
+      "tests": 6,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.export.DataExportServiceTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.finary.dto.FinaryLoanDtoTest",
+      "tests": 2,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.finary.FinaryApiSyncServiceTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [
+        {
+          "error": "java.io.IOException: Unable to establish loopback connection",
+          "test": "parse_readsAllAttributesOfAPosition",
+          "failure": null
+        },
+        {
+          "error": "java.io.IOException: Unable to establish loopback connection",
+          "test": "parse_groupsMultipleAccountsAndReadsShortAndSparsePositions",
+          "failure": null
+        },
+        {
+          "error": "java.io.IOException: Unable to establish loopback connection",
+          "test": "parse_emptyPositionsYieldsTheAccountWithNoPositions",
+          "failure": null
+        },
+        {
+          "error": "java.io.IOException: Unable to establish loopback connection",
+          "test": "parse_noAccountInformationSection_yieldsNullBaseCurrency",
+          "failure": null
+        },
+        {
+          "error": "java.io.IOException: Unable to establish loopback connection",
+          "test": "parse_multipleStatementsForSameAccount_throwsActionable",
+          "failure": null
+        },
+        {
+          "error": "java.io.IOException: Unable to establish loopback connection",
+          "test": "parse_distinguishesLotRowsFromSummary",
+          "failure": null
+        },
+        {
+          "error": "java.io.IOException: Unable to establish loopback connection",
+          "test": "parse_groupsPositionsByAccount",
+          "failure": null
+        },
+        {
+          "error": "java.io.IOException: Unable to establish loopback connection",
+          "test": "parse_readsAccountInformationBaseCurrency",
+          "failure": null
+        }
+      ],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 8,
+      "name": "com.picsou.ibkr.client.IbkrFlexClientTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.imports.csv.CsvDialectDetectorTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.imports.csv.CsvReaderTest",
+      "tests": 9,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.imports.csv.CsvValueParserTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.imports.TransactionAmountCalculatorTest",
+      "tests": 5,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.imports.TransactionRowMapperTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.AccessKeyServiceTest",
+      "tests": 19,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.AccessKeyUsageRecorderTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.ScopeEnforcementAspectTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.ScopeSetConverterTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.ScopesTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.tools.AccountToolsTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.tools.GoalToolsTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.tools.InsightToolsTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.tools.McpToolCatalogTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.tools.SyncToolsTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.mcp.tools.TransactionToolsTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "backfilledKeyMatchesTheServiceDefault"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "leavesAccountsThatOnlyLookLikeWalletsAlone"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "backfillsEveryExistingWalletWithTheDefaultKey"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "replayKeepsAChoiceTheUserHasSinceMade"
+        }
+      ],
+      "skipped": 4,
+      "errors": 0,
+      "name": "com.picsou.migration.AccountLogoKeyMigrationTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "leavesUnduplicatedAndManualAccountsAlone"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "keepsOneHoldingPerTickerAndPrefersTheMoreRecentAccount"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "movesEverythingElseTheLosersOwned"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "mergingAnAllDeletedGroupKeepsItDeleted"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "neverMergesTwoBanksThatShareAnOpaqueAccountId"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "reconcilesExchangePositionsOnTheirCompositeKey"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "resolvesSameDayCollisionsInFavourOfTheMostRecentAccount"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "survivorAbsorbsTheWholeHistory"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "takesOneOwnershipSetWholeRatherThanUnioningThem"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "keepsTheLiveRowAndDropsTheDuplicates"
+        }
+      ],
+      "skipped": 10,
+      "errors": 0,
+      "name": "com.picsou.migration.DuplicateSyncAccountMergeMigrationTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "v66_cascadesOnAccountDeletion"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "v66_preservesExistingPropertiesAndEnforcesShareBounds"
+        }
+      ],
+      "skipped": 2,
+      "errors": 0,
+      "name": "com.picsou.migration.RealEstateValuationMigrationTest",
+      "tests": 2,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "everyEntityMatchesTheMigratedSchema"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "everyAccountTypeExistsInThePostgresEnum"
+        }
+      ],
+      "skipped": 2,
+      "errors": 0,
+      "name": "com.picsou.migration.SchemaMappingValidationTest",
+      "tests": 2,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "backfillsOnlyCompleteExactlyReconciledLegacyTradeRepublicAccounts"
+        }
+      ],
+      "skipped": 1,
+      "errors": 0,
+      "name": "com.picsou.migration.TradeRepublicValuationMigrationTest",
+      "tests": 1,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "rewrittenIdMatchesWhatTheServiceWillCompute"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "preservesHoldingsAndCostBasis"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "convertsEthereumWalletToEvm"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "rewritesExternalAccountId_keepingTheSameAccountRow"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "leavesOtherChainsUntouched"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "leavesUnrelatedExternalAccountIdsUntouched"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "renamesDefaultChainNamedAccount_butKeepsUserLabels"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "latestSchema_hardensAndBackfillsOnlyReconciledBourseDirectData"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "v55IsIdempotent_whenReplayedOnAlreadyRenamedAccounts"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "migrationSqlIsIdempotent_whenReplayedOnAlreadyMigratedData"
+        }
+      ],
+      "skipped": 10,
+      "errors": 0,
+      "name": "com.picsou.migration.WalletEvmMigrationTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.model.AccessKeyTest",
+      "tests": 6,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.model.BourseDirectSessionTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.port.BankConnectorPortTest",
+      "tests": 6,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.repository.CryptoExchangePositionRepositoryTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.repository.TransactionRepositoryTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.AccountAccessResolverTest",
+      "tests": 23,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.AccountConnectionServiceTest",
+      "tests": 18,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "replace_thenClear_restoresTheOwnerAtFullShare"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "replace_clearsTheSplitAndReportsTheOwnerAtFullShare"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "replace_overwritesAnExistingSplitWithoutTrippingTheUniqueKey"
+        },
+        {
+          "reason": "@EnabledIf(\"dockerAvailable\") evaluated to false",
+          "test": "replace_writesANewSplitAcrossMembers"
+        }
+      ],
+      "skipped": 4,
+      "errors": 0,
+      "name": "com.picsou.service.AccountOwnershipReplaceIntegrationTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.AccountOwnershipServiceTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.AccountServiceTest",
+      "tests": 45,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.AmundiSyncServiceTest",
+      "tests": 26,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.BourseDirectSyncServiceTest",
+      "tests": 19,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.BoursoSyncServiceTest",
+      "tests": 23,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.CryptoExchangeSyncServiceTest",
+      "tests": 18,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.CryptoKeyGeneratorServiceTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.DashboardServiceTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.DegiroSyncServiceTest",
+      "tests": 10,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.EnableBankingKeyPairServiceTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.FamilyServiceTest",
+      "tests": 16,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.FamilyViewServiceTest",
+      "tests": 5,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.GoalServiceTest",
+      "tests": 20,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.HistoryServiceTest",
+      "tests": 17,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.HoldingComputeServiceTest",
+      "tests": 14,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.HoldingDedupTest",
+      "tests": 11,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.IbkrStatusWriterTest",
+      "tests": 2,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.IbkrSyncServiceTest",
+      "tests": 16,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.InstrumentFieldResolverTest",
+      "tests": 4,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.IntegrationsServiceTest",
+      "tests": 13,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [
+        {
+          "reason": "System property [picsou.entrega1.defect-regressions] does not exist",
+          "test": "automaticRoundedPayment_displayedCapitalMustSumToPrincipal"
+        },
+        {
+          "reason": "System property [picsou.entrega1.defect-regressions] does not exist",
+          "test": "automaticPaymentWithInsurance_mustIncludeInsuranceInMonthlyTotal"
+        }
+      ],
+      "skipped": 2,
+      "errors": 0,
+      "name": "com.picsou.service.LoanAmortizationServiceDefectTest",
+      "tests": 2,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.LoanAmortizationServiceTest",
+      "tests": 31,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.ManualTransactionServiceTest",
+      "tests": 14,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.MfaServiceTest",
+      "tests": 19,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.PersistentSessionServiceTest",
+      "tests": 21,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.PriceServiceTest",
+      "tests": 17,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.PropertyAdjustmentsTest",
+      "tests": 28,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.PropertyValuationServiceTest",
+      "tests": 21,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.RealEstateSummaryServiceTest",
+      "tests": 9,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.RealizedPnlServiceTest",
+      "tests": 9,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.ReAuthServiceTest",
+      "tests": 7,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.RequisitionLifecycleWriterTest",
+      "tests": 3,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.SecurityInsightServiceTest",
+      "tests": 9,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.SetupServiceTest",
+      "tests": 12,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.SyncServiceTest",
+      "tests": 20,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.TradeRepublicSyncServiceTest",
+      "tests": 8,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.TransactionImportServiceTest",
+      "tests": 9,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.UserContextTest",
+      "tests": 6,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.service.WalletSyncServiceTest",
+      "tests": 29,
+      "failures": 0
+    },
+    {
+      "problems": [],
+      "skippedCases": [],
+      "skipped": 0,
+      "errors": 0,
+      "name": "com.picsou.validation.CurrencyValidatorTest",
+      "tests": 3,
+      "failures": 0
+    }
+  ],
+  "reportCount": 133
+}

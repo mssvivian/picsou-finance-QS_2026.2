@@ -1,0 +1,105 @@
+{
+  "project": "Grupo DinDin",
+  "suite": "Paulo - Amortização de empréstimos",
+  "author": "Paulo Cesar Vaz",
+  "preconditions": [
+    "Picsou do fork em execução, backend real e modo demo desativado; usuário de teste logado.",
+    "Registrar commit/build, navegador, sistema operacional e data de execução. Usar moeda EUR e dados fictícios.",
+    "Executar antes de 01/11/2026 para conferir zero parcelas pagas nos contratos futuros deste conjunto."
+  ],
+  "cases": [
+    {
+      "id": "CT-PCV-01",
+      "title": "Parcela automática sem juros",
+      "summary": "Responsável: Paulo Cesar Vaz. Classe relacionada: LoanAmortizationService. Código local: CT-PCV-01. Verificar cronograma e resumo de um empréstimo de EUR 1200 em 12 meses, com juros zero e parcela automática. Oráculo: 1200/12=100; custo total 1200; zero parcelas pagas antes do início.",
+      "steps": [
+        {
+          "action": "Abrir Accounts, clicar Add account e escolher a opção de criação manual.",
+          "expected": "O formulário de criação manual de conta é exibido."
+        },
+        {
+          "action": "Informar nome Emprestimo Paulo A, moeda EUR e tipo Loan; preencher principal/borrowed amount 1200, juros 0%, início 01/11/2026, término 01/11/2027. Deixar parcela mensal em branco; seguro e tarifa em branco ou zero. Salvar.",
+          "expected": "A conta é criada sem erro. Parcela automática é solicitada mantendo o campo mensal vazio, sem inserir zero."
+        },
+        {
+          "action": "Abrir o detalhe da conta Emprestimo Paulo A e aguardar o carregamento do resumo de empréstimo.",
+          "expected": "Parcela mensal 100, capital mensal 100, juros 0, seguro 0. Progresso: 0 parcelas pagas e 12 restantes. Saldo atual 1200."
+        },
+        {
+          "action": "Conferir o resumo de custos e o gráfico de amortização; inspecionar o ponto final do cronograma.",
+          "expected": "Custo total 1200; capital total 1200; juros/seguro e tarifas zero. O cronograma termina com saldo zero. Datas são apresentadas no formato configurado na aplicação."
+        },
+        {
+          "action": "Recarregar a página e conferir novamente os valores; capturar resumo, progresso e gráfico.",
+          "expected": "Os mesmos parâmetros e valores permanecem. Nenhuma duplicata de Emprestimo Paulo A é criada."
+        }
+      ],
+      "preconditions": [
+        "A conta Emprestimo Paulo A não deve existir antes deste caso; usar usuário de teste sem dados de terceiros."
+      ],
+      "testlinkId": "dd-5"
+    },
+    {
+      "id": "CT-PCV-02",
+      "title": "Composição com seguro e tarifa",
+      "summary": "Responsável: Paulo Cesar Vaz. Classe relacionada: LoanAmortizationService. Código local: CT-PCV-02. Verificar capital, seguro e custo total de um contrato com parcela explícita. Oráculo: 110-10=100 de capital por mês; seguro total 12*10=120; custo total 1200+120+50=1370.",
+      "steps": [
+        {
+          "action": "Abrir Add account e escolher criação manual, tipo Loan, nome Emprestimo Paulo B e moeda EUR.",
+          "expected": "O formulário apresenta os parâmetros de empréstimo."
+        },
+        {
+          "action": "Preencher principal 1200, juros 0%, parcela mensal explícita 110, seguro mensal 10, tarifa/file fees 50, início 01/11/2026 e término 01/11/2027; salvar.",
+          "expected": "O cadastro é aceito sem erro e os parâmetros informados são salvos."
+        },
+        {
+          "action": "Abrir o detalhe do empréstimo e conferir a composição mensal e o progresso.",
+          "expected": "Parcela total 110; capital 100; juros 0; seguro 10. Zero parcelas pagas, 12 restantes e saldo atual 1200."
+        },
+        {
+          "action": "Conferir o resumo de custos e o ponto final do gráfico de amortização.",
+          "expected": "Capital total 1200; juros e seguro combinados 120; tarifa 50; custo total 1370. Cronograma encerra com saldo zero."
+        },
+        {
+          "action": "Recarregar o detalhe e registrar capturas dos parâmetros e resultados.",
+          "expected": "Seguro, tarifa, parcela e custo total permanecem iguais após a recarga."
+        }
+      ],
+      "preconditions": [
+        "A conta Emprestimo Paulo B não deve existir antes deste caso; usar usuário de teste sem dados de terceiros."
+      ],
+      "testlinkId": "dd-6"
+    },
+    {
+      "id": "CT-PCV-03",
+      "title": "Recálculo após edição do principal",
+      "summary": "Responsável: Paulo Cesar Vaz. Classe relacionada: LoanAmortizationService. Código local: CT-PCV-03. Verificar que alterar o principal de 1200 para 2400 em uma conta existente atualiza o resumo e persiste os novos parâmetros. Oráculo: 2400/12=200; custo total 2400.",
+      "preconditions": [
+        "CT-PCV-01 executado com sucesso e Emprestimo Paulo A existente, com parcela automática, sem juros, seguro ou tarifa."
+      ],
+      "steps": [
+        {
+          "action": "Em Accounts, localizar Emprestimo Paulo A e abrir a ação de edição. Aguardar o carregamento dos parâmetros de empréstimo.",
+          "expected": "Os parâmetros atuais são principal 1200, juros 0%, início 01/11/2026 e término 01/11/2027; a parcela mensal permanece não informada."
+        },
+        {
+          "action": "Alterar apenas o principal/borrowed amount para 2400, manter a parcela mensal em branco e salvar.",
+          "expected": "A edição é aceita sem criar uma nova conta."
+        },
+        {
+          "action": "Abrir ou retornar ao detalhe e aguardar a atualização do resumo.",
+          "expected": "Parcela e capital mensal 200; custo total 2400; saldo atual 2400; zero parcelas pagas e 12 restantes; juros, seguro e tarifa zero."
+        },
+        {
+          "action": "Recarregar a página e conferir o resumo; reabrir a edição para conferir o principal salvo.",
+          "expected": "Principal 2400 persistido, parcela automática não informada e resumo calculado em 200 por mês. Não reaparecem os valores antigos de 1200/100."
+        },
+        {
+          "action": "Voltar a Accounts, conferir que existe uma única conta Emprestimo Paulo A e guardar as capturas de antes/depois.",
+          "expected": "A alteração pertence à conta original, sem duplicidade; valores persistem após navegação e recarga."
+        }
+      ],
+      "testlinkId": "dd-7"
+    }
+  ]
+}
