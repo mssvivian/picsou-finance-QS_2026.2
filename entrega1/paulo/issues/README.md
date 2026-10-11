@@ -4,16 +4,16 @@ Responsável: Paulo Cesar Vaz. Atualizado em 11/10/2026. Dois defeitos confirmad
 
 | Identificador | Problema | Esperado | Observado | Estado |
 |---|---|---|---|---|
-| [BUG-PCV-01](BUG-PCV-01.md) | Arredondamento do capital na parcela automática | Principal 1000 em três parcelas: soma dos capitais 1000,00 | Soma 999,99 | Reproduzido; publicação pendente |
-| [BUG-PCV-02](BUG-PCV-02.md) | Seguro omitido do total da parcela automática | Principal 1200 em 12 meses, seguro mensal 10: parcela 110,00 | Parcela 100,00 | Reproduzido; publicação pendente |
+| [BUG-PCV-01](BUG-PCV-01.md) | Arredondamento do capital na parcela automática | Principal 1000 em três parcelas: soma dos capitais 1000,00 | Soma 999,99 | Reproduzido; publicado e aberto |
+| [BUG-PCV-02](BUG-PCV-02.md) | Seguro omitido do total da parcela automática | Principal 1200 em 12 meses, seguro mensal 10: parcela 110,00 | Parcela 100,00 | Reproduzido; publicado e aberto |
 
-Cada relato contém dados de entrada, passos para reprodução, resultado esperado e observado, ambiente, commit, severidade proposta e links para o teste e a saída real do Maven. Os identificadores BUG-PCV são locais; ainda não são números de issues no GitHub.
+Cada relato contém dados de entrada, passos para reprodução, resultado esperado e observado, ambiente, commit, severidade proposta e links para o teste e a saída real do Maven. BUG-PCV-01 corresponde à [issue #4](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4); BUG-PCV-02 corresponde à [issue #5](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5). Ambas estão abertas e atribuídas a PaulcVaz.
 
 ## Relação com a entrega 1
 
-A especificação da disciplina exige “Issues reportadas para os problemas encontrados, em um bug tracker à escolha (GitHub Issues, Mantis, Bugzilla)”. Os relatos estão preparados aqui, mas precisam ser publicados no tracker do grupo e seus links acrescentados ao README para concluir esse requisito. TestLink guarda os casos e resultados; o cadastro dos casos não substitui o registro dos defeitos no tracker.
+A especificação da disciplina exige “Issues reportadas para os problemas encontrados, em um bug tracker à escolha (GitHub Issues, Mantis, Bugzilla)”. Os dois relatos foram publicados no GitHub Issues do grupo e seus links constam do README. TestLink guarda os casos e resultados; o cadastro dos casos não substitui o registro dos defeitos no tracker.
 
-A conta conectada de Paulo não possui permissão de escrita no fork. Um integrante com acesso pode publicar o conteúdo dos dois relatos em https://github.com/mssvivian/picsou-finance-QS_2026.2/issues, identificando Paulo como responsável pela descoberta e anexando os links das evidências após integração na main. Registrar aqui os números e URLs atribuídos pelo GitHub quando a publicação ocorrer.
+Paulo recebeu acesso de escrita em 11/10/2026. Os registros foram publicados por sua conta usando a autenticação Git existente, pois o conector de issues retornou 403. Os testes e evidências estão na branch `feat/teste_LoanAmortizationService_paulo`, pendente de merge na main.
 
 ## Evidências e interpretação
 

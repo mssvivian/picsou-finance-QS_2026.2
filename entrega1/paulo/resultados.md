@@ -76,3 +76,19 @@ Conferidos: parcela automática 100 e custo 1200; parcela 110, capital 100, segu
 [30 capturas originais, com índice por caso e passo](Tests_ScreenShots/README.md). TestLink: plano Plano de Testes Manuais (46), build Paulo - Entrega1 - 58c71b9-lf (5), dd-5/6/7 Passed, execuções 8/9/10. [Conferência de resultados](evidencias/testlink/execucoes-verificadas.json). O servidor rejeitou parte dos anexos por validação de nome; as 30 imagens completas estão disponíveis localmente. A especificação continua em Draft para revisão do grupo; o resultado da execução é Passed.
 
 Os registros iniciais de bloqueio e pendência acima são históricos, superados nesta atualização. Permanecem a consolidação do Plano de Teste/Google Docs pelo grupo, integração na main e submissão.
+
+## Atualização de 11/10 após incorporar a main do grupo
+
+Branch publicada: `feat/teste_LoanAmortizationService_paulo`. Commit de integração: `4d7a2d362cc12bd24e0d6352beceaac7fc0ec6c6`, incorporando a main `9231231dca0377d56dee877f89765371202b83d5` sem alterações próprias de produção. A main removeu os testes originais do backend; mantivemos apenas a classe de amortização com nove herdados e 22 execuções acrescentadas, além das duas reproduções opt-in.
+
+| Execução atual | Casos | Aprovados | Falhas | Erros | Ignorados |
+|---|---:|---:|---:|---:|---:|
+| Classe normal | 31 | 31 | 0 | 0 | 0 |
+| Defeitos ativados | 2 | 0 | 2 | 0 | 0 |
+| Suíte atual após clean | 33 | 31 | 0 | 0 | 2 |
+
+[Resumo das execuções](evidencias/unitarios/integracao-resumo.json), [classe](evidencias/unitarios/integracao-classe/maven-output.txt), [defeitos](evidencias/unitarios/integracao-defeitos/maven-output.txt) e [suíte](evidencias/unitarios/integracao-suite/maven-output.txt). Maven clean evita executar classes compiladas dos testes que o grupo removeu. Os números históricos de 1271 casos não descrevem esta suíte atual.
+
+Issues publicadas e abertas: [#4](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4) e [#5](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5), atribuídas a PaulcVaz. O acesso anterior sem push foi superado. Os relatos estão ligados às evidências e não incluem correções.
+
+As 30 capturas continuam associadas ao build 58c71b9, com hashes conferidos. Comparação do código de empréstimos e dos componentes do fluxo não apresentou alteração após integração; a mudança de produção da main diz respeito ao upload do Finary, fora do escopo destes casos. Não foi necessária nova execução pela interface.

@@ -1,10 +1,10 @@
 # PT-PCV-01 — Contribuição individual ao Plano de Teste
 
-**Projeto:** Picsou Finance, fork Grupo DinDin. **Entrega:** COS482 2026.2, primeira entrega. **Autor:** Paulo Cesar Vaz. **Revisão:** 1, 10/10/2026. **Estado:** contribuição preparada; consolidação do grupo pendente. Baseado na estrutura clássica IEEE 829; o template específico da aula ainda não foi fornecido e deve prevalecer na consolidação.
+**Projeto:** Picsou Finance, fork Grupo DinDin. **Entrega:** COS482 2026.2, primeira entrega. **Autor:** Paulo Cesar Vaz. **Revisão:** 2, 11/10/2026. **Estado:** contribuição preparada; consolidação do grupo pendente. Baseado na estrutura clássica IEEE 829; o template específico da aula ainda não foi fornecido e deve prevalecer na consolidação.
 
 ## 1. Identificação e referências
 
-Código-base `6b020c76cf093b8995a68df12a32e8c5b21e9144`, branch `feature/paulo-entrega1-amortizacao`. Referências: especificação da disciplina, documentação de empréstimos, ADR de amortização sob demanda, convenções de testes e [matriz de rastreabilidade](matriz-de-testes.md).
+Código-base `6b020c76cf093b8995a68df12a32e8c5b21e9144`, branch `feat/teste_LoanAmortizationService_paulo`. Referências: especificação da disciplina, documentação de empréstimos, ADR de amortização sob demanda, convenções de testes e [matriz de rastreabilidade](matriz-de-testes.md).
 
 ## 2. Introdução e escopo
 
@@ -44,11 +44,11 @@ Confirmar reserva da classe; executar baseline; ampliar testes; medir complexida
 
 ## 11. Ambiente e ferramentas
 
-Unitários: Windows 11 amd64, Java Temurin 21.0.12.1, Maven 3.9.16 local, JUnit 5/AssertJ herdados do POM, Surefire 3.5.3. Métrica: Node.js 24.19.0 e script específico auditável. Backend original: Spring Boot 3.4.9. Ambiente manual previsto: frontend e backend construídos do fork, PostgreSQL 16 via Compose, navegador com versão registrada, usuário e dados fictícios. Há PostgreSQL 18 instalado, mas a tentativa de criar cluster isolado foi bloqueada pelo Windows. TestLink: endereço/acesso pendentes. Google Docs: conta de Paulo confirmada pelo conector.
+Unitários: Windows 11 amd64, Java Temurin 21.0.12.1, Maven 3.9.16 local, JUnit 5/AssertJ herdados do POM, Surefire 3.5.3. Métrica: Node.js 24.19.0 e script específico auditável. Backend original: Spring Boot 3.4.9. Ambiente manual previsto: frontend e backend construídos do fork, PostgreSQL 16 via Compose, navegador com versão registrada, usuário e dados fictícios. Há PostgreSQL 18 instalado, mas a tentativa de criar cluster isolado foi bloqueada pelo Windows. TestLink: http://147.15.86.250:8080/index.php, projeto Grupo DinDin; dd-5/6/7 Passed, plano 46/build 5; 15 passos aprovados em execução assistida identificada. Ambiente real em localhost:8082, Windows, Codex In-app Browser (versão não exposta). Google Docs: conta de Paulo confirmada pelo conector.
 
 ## 12. Responsabilidades
 
-Paulo: esta classe, seus casos/evidências, relatos, contribuição documental e apresentação individual. Vivian: cenário de exclusão da conta/conexão informado por ela; demais responsabilidades devem ser confirmadas. Não atribuir classes a Carol a partir da contagem. O grupo precisa nomear revisores, consolidador dos documentos e responsável pelo Moodle.
+Paulo: esta classe, seus casos/evidências, relatos, contribuição documental e apresentação individual. Vivian: branch atual de FinaryImportService; Carolina: FamilyViewService; Arthur: TransactionRowMapper, conforme branches do fork. As responsabilidades documentais gerais devem ser confirmadas. Não atribuir classes a Carol a partir da contagem. O grupo precisa nomear revisores, consolidador dos documentos e responsável pelo Moodle.
 
 ## 13. Necessidades de capacitação
 
@@ -60,8 +60,8 @@ Paulo deve dominar o algoritmo, convenção da complexidade, oráculos monetári
 
 ## 15. Riscos e contingências
 
-Sem permissão GitHub: aplicar patches preservando autoria. Sem TestLink: obter instância do grupo; casos locais não comprovam uso da ferramenta. Docker quebrado: executar em ambiente do colega baseado no mesmo código ou resolver localmente sem reset de dados. Sem template: adaptar esta contribuição ao template quando recebido. Prazo próximo: priorizar requisitos da Entrega 1. Dois defeitos comprovados e erros da suíte ampla precisam ser apresentados com suas limitações, sem correção de produção nesta branch.
+Permissão GitHub concedida; branch publicada e issues #4/#5 registradas. Patches preparados anteriormente permanecem como histórico. Sem TestLink: obter instância do grupo; casos locais não comprovam uso da ferramenta. Docker quebrado: executar em ambiente do colega baseado no mesmo código ou resolver localmente sem reset de dados. Sem template: adaptar esta contribuição ao template quando recebido. Prazo próximo: priorizar requisitos da Entrega 1. Dois defeitos comprovados e erros da suíte ampla precisam ser apresentados com suas limitações, sem correção de produção nesta branch.
 
 ## 16. Aprovações
 
-Revisão e aceite do grupo pendentes. Reserva da classe, responsáveis gerais, template, links e registros manuais devem ser confirmados antes da submissão. Este documento não declara cumprimento integral da entrega.
+Revisão e aceite do grupo pendentes. Registros manuais estão executados. Reserva da classe, responsáveis gerais, template, links e revisão do grupo devem ser confirmados antes da submissão. Este documento não declara cumprimento integral da entrega.

@@ -1,6 +1,6 @@
 # COS482 — Entrega 1 — Paulo
 
-Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amortização de empréstimos. Classe: `LoanAmortizationService`. Branch: `feature/paulo-entrega1-amortizacao`. Código-base: `6b020c76cf093b8995a68df12a32e8c5b21e9144`.
+Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amortização de empréstimos. Classe: `LoanAmortizationService`. Branch: `feat/teste_LoanAmortizationService_paulo`. Código-base: `6b020c76cf093b8995a68df12a32e8c5b21e9144`.
 
 ## Artefatos
 
@@ -14,7 +14,7 @@ Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amor
 - [Casos manuais](casos-manuais.md) e [XML para importação no TestLink](testlink/casos-paulo.xml)
 - [Guia do TestLink e registro de execução](testlink/README.md)
 - [Relatório de execução e limitações](resultados.md)
-- [Registro consolidado dos problemas e publicação pendente](issues/README.md)
+- [Registro consolidado dos problemas e issues publicadas](issues/README.md)
 - [BUG-PCV-01 — arredondamento](issues/BUG-PCV-01.md)
 - [BUG-PCV-02 — parcela automática com seguro](issues/BUG-PCV-02.md)
 - [Checklist de integração e entrega](integracao.md)
@@ -32,8 +32,8 @@ Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amor
 
 ## Situação
 
-9 testes originais aprovados; classe ampliada com 22 execuções adicionais, totalizando 31 aprovadas. Dois defeitos reproduzidos em testes separados, opt-in, com duas falhas esperadas. Suíte completa: 1271 casos, 20 erros de infraestrutura/conexão local, 35 ignorados, nenhuma falha de asserção na execução padrão.
+9 testes originais aprovados; classe ampliada com 22 execuções adicionais, totalizando 31 aprovadas. Dois defeitos reproduzidos em testes separados, opt-in, com duas falhas esperadas. Suíte histórica anterior à remoção dos testes originais pelo grupo: 1271 casos, 20 erros de infraestrutura/conexão local, 35 ignorados, nenhuma falha de asserção na execução padrão.
 
-Frontend e backend compilados do código local com modo demo desativado. Os 20 erros da suíte ampla também foram reproduzidos no código original; as regressões opt-in explicam os dois ignorados adicionais. A conta de Paulo não tem permissão de push no fork.
+Frontend e backend compilados do código local com modo demo desativado. Os 20 erros da suíte ampla também foram reproduzidos no código original; as regressões opt-in explicam os dois ignorados adicionais. Acesso de escrita concedido em 11/10; branch publicada no fork. Após incorporar a main, a suíte disponível tem 33 casos: 31 aprovados, zero erros e duas reproduções ignoradas por padrão. As duas reproduções ativadas falharam por asserção conforme os defeitos esperados. [Evidências atuais](evidencias/unitarios/integracao-resumo.json).
 
-Os três casos manuais foram cadastrados no TestLink como dd-5/6/7, na suíte Paulo - Amortização de empréstimos. Os três casos foram executados pela interface, com assistência do Codex solicitada por Paulo: 15 passos aprovados e 30 capturas originais. Os resultados Passed estão registrados no plano 46, build 5. O Plano de Teste é uma contribuição individual, pendente de consolidação pelo grupo e comparação com o template da aula. O material local precisa ser integrado à `main`; esta branch ainda não constitui a entrega final.
+Os três casos manuais foram cadastrados no TestLink como dd-5/6/7, na suíte Paulo - Amortização de empréstimos. Os três casos foram executados pela interface, com assistência do Codex solicitada por Paulo: 15 passos aprovados e 30 capturas originais. Os resultados Passed estão registrados no plano 46, build 5. O Plano de Teste é uma contribuição individual, pendente de consolidação pelo grupo e comparação com o template da aula. Issues [#4](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4) e [#5](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5) publicadas e abertas. O material publicado na branch precisa ser integrado à `main`; esta branch ainda não constitui a entrega final.

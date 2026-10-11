@@ -1,0 +1,19 @@
+{
+  "groupMain": "9231231dca0377d56dee877f89765371202b83d5",
+  "branch": "feat/teste_LoanAmortizationService_paulo",
+  "issues": [
+    "https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4",
+    "https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5"
+  ],
+  "baseOriginal": "6b020c76cf093b8995a68df12a32e8c5b21e9144",
+  "testedManualBuild": "58c71b93544c27ff6f9b032dfe2c4df69fe01aa0",
+  "docsVerified": {
+    "pages": 3,
+    "report": "https://docs.google.com/document/d/1a1vX4Uais7X7nwQXB1aPTmWpnuptHEkYsVlMXl88kIw/edit",
+    "plan": "https://docs.google.com/document/d/1244Hgfv4YOyM4nBO8PSXadMBxtFPmg2J8so5xoWCy_o/edit"
+  },
+  "integrationCommit": "4d7a2d362cc12bd24e0d6352beceaac7fc0ec6c6",
+  "productionChangesInContribution": false,
+  "merged": false,
+  "repository": "https://github.com/mssvivian/picsou-finance-QS_2026.2"
+}

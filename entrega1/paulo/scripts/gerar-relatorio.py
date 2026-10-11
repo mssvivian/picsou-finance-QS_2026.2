@@ -84,14 +84,14 @@ def table(headers, rows, widths):
 
 p('Relatório de testes de\namortização de empréstimos', 'Title')
 p('Contribuição individual de Paulo Cesar Vaz', 'Subtitle')
-p('Este relatório reúne a contribuição de Paulo à primeira entrega do Picsou Finance: seleção da classe, testes próprios, execução pela interface e problemas encontrados. Foram aprovados 31 testes unitários da classe e 15 passos de três casos pela interface; dois defeitos adicionais foram confirmados. A publicação no fork e a consolidação pelo grupo permanecem pendentes.')
+p('Este relatório reúne a contribuição de Paulo à primeira entrega do Picsou Finance: seleção da classe, testes próprios, execução pela interface e problemas encontrados. Foram aprovados 31 testes unitários da classe e 15 passos de três casos pela interface; dois defeitos adicionais foram confirmados. A branch está publicada no fork; revisão, merge na main e consolidação do grupo permanecem pendentes.')
 h('1 Escopo e escolha da classe')
 p('LoanAmortizationService calcula parcelas, capital amortizado, juros, seguro, custos e saldo em uma data de referência. A classe possui laço de amortização, decisões sobre datas e valores e fórmulas financeiras, atendendo à exigência de uma classe com algoritmo e complexidade razoável.')
 p('Complexidade ciclomática: 14 no método compute(Debt, LocalDate), com 13 decisões; soma dos métodos explícitos 30. Convenção: 1 + decisões, incluindo condicionais, laços, ternários e operadores de curto-circuito. O maior método permanece com 14 mesmo sem contar esses operadores.')
 h('2 Versão e ambiente testados')
-p('Fork do grupo: github.com/mssvivian/picsou-finance-QS_2026.2. Branch local: feature/paulo-entrega1-amortizacao. Os commits locais ainda precisam ser publicados; as hashes abaixo distinguem a base do fork do build executado.')
-path('Base do fork   6b020c76cf093b8995a68df12a32e8c5b21e9144\nBuild local    58c71b93544c27ff6f9b032dfe2c4df69fe01aa0')
-p('Código de produção sem alterações entre essas versões. Aplicação construída localmente, backend real e demo desativado, em localhost:8082. Imagem picsou-paulo:entrega1-58c71b9-lf; adaptação operacional de CRLF para LF no entrypoint. Testes pela interface em 11/10/2026: Windows, Codex In-app Browser, versão não exposta, idioma francês.')
+p('Fork do grupo: github.com/mssvivian/picsou-finance-QS_2026.2. Branch publicada: feat/teste_LoanAmortizationService_paulo. As hashes distinguem a base original do fork, o build executado e a integração da main.')
+path('Base do fork   6b020c76cf093b8995a68df12a32e8c5b21e9144\nBuild testado  58c71b93544c27ff6f9b032dfe2c4df69fe01aa0\nIntegração     4d7a2d362cc12bd24e0d6352beceaac7fc0ec6c6')
+p('Código de empréstimos preservado; a main inclui ajuste do upload Finary, fora deste escopo. Aplicação construída localmente, backend real e demo desativado, em localhost:8082. Imagem picsou-paulo:entrega1-58c71b9-lf; adaptação operacional de CRLF para LF no entrypoint. Testes pela interface em 11/10/2026: Windows, Codex In-app Browser, versão não exposta, idioma francês.')
 h('3 Responsabilidade individual')
 p('Paulo é responsável pelos cenários unitários acrescentados, casos de empréstimos, evidências, relatos de defeitos e contribuição ao Plano de Teste IEEE 829. A execução técnica foi assistida pelo Codex sob solicitação de Paulo e está identificada nos registros. Este relatório também fornece os números e exemplos para os slides.')
 
@@ -103,9 +103,9 @@ table(['Execução','Resultado'], [
     ['Classe original','9 aprovados'],
     ['Classe ampliada','31 aprovados no total'],
     ['Reprodução dos defeitos','2 falhas de asserção confirmadas; ativação explícita'],
-    ['Suíte completa do backend','1271 casos: 1216 aprovados, 20 erros e 35 ignorados'],
+    ['Suíte atual após integração','33 casos: 31 aprovados, zero erros e 2 ignorados'],
 ], [2.2,4.8])
-p('Os 20 erros de infraestrutura também ocorreram no código original e não foram atribuídos à classe de empréstimos. Dos 35 ignorados, 33 já existiam; dois são as reproduções de defeitos, desativadas na execução padrão. A suíte ampla não foi aprovada globalmente.')
+p('A main removeu os testes originais do backend. A suíte atual contém somente os dois arquivos de amortização; as duas reproduções são ignoradas por padrão. Os resultados anteriores de 1271 casos, 20 erros e 35 ignorados são históricos, associados à versão anterior. Os defeitos persistem na integração.')
 h('5 Casos pela interface e TestLink')
 table(['Caso','Verificação principal','Resultado'], [
     ['dd-5  CT-PCV-01','1200 em 12 meses, juros zero: parcela 100, custo 1200 e saldo final zero','5 passos aprovados'],
@@ -122,13 +122,13 @@ table(['Registro local','Esperado','Observado'], [
     ['BUG-PCV-02\nSeguro na parcela automática\nSeveridade proposta alta','Principal 1200 em 12 meses, seguro mensal 10: parcela total 110,00','Parcela 100,00'],
 ], [2.15,3.75,1.1])
 p('Os dois defeitos foram reproduzidos em testes unitários sobre o código original, com saída Maven e relatório Surefire. Os casos manuais aprovados usam divisões exatas e, no cenário com seguro, parcela explícita; portanto não exercitam essas falhas. Não há execução pela interface dos cenários específicos dos defeitos.')
-p('Os relatos completos estão prontos, mas ainda precisam ser publicados no GitHub Issues do fork. Os identificadores BUG-PCV são locais. A entrega 1 exige registro em um bug tracker; arquivos locais e casos no TestLink não substituem essa publicação. Nenhuma regra de negócio foi corrigida nesta contribuição.')
+p('Relatos publicados e abertos: BUG-PCV-01 corresponde à issue #4; BUG-PCV-02, à issue #5, ambas atribuídas a PaulcVaz. A produção não foi corrigida nesta contribuição.\nhttps://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4\nhttps://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5')
 h('7 Localização dos artefatos')
 p('Caminhos relativos à raiz do repositório. O README principal aponta para os artefatos; entrega1/paulo/README.md reúne o índice individual.')
 path('backend/src/test/java/com/picsou/service/\n  LoanAmortizationServiceTest.java\n  LoanAmortizationServiceDefectTest.java')
 path('entrega1/paulo/\n  complexidade.md · matriz-de-testes.md · plano-de-teste.md\n  casos-manuais.md · resultados.md · ambiente-local.md\n  Tests_ScreenShots/README.md · Tests_ScreenShots/execucao.json\n  issues/README.md · issues/BUG-PCV-01.md · issues/BUG-PCV-02.md\n  evidencias/unitarios/ · evidencias/testlink/ · testlink/README.md')
 h('8 Integração e preparação da apresentação')
-p('Após receber acesso: publicar a branch preservando autoria; abrir PR; cadastrar as duas issues com evidências; integrar artefatos na main e conferir os links do README. Consolidar o Plano IEEE 829 no Google Docs com o grupo e verificar a submissão no Moodle até 11/10/2026 às 23h59, Brasília.')
+p('Branch publicada, autoria preservada e issues #4/#5 registradas. O PR será encaminhado à revisão do grupo, sem merge automático. Após aceite, integrar na main e conferir os links. Consolidar o Plano IEEE 829 no Google Docs e verificar a submissão no Moodle até 11/10/2026 às 23h59, Brasília.')
 p('Para os slides: explicar o algoritmo e a complexidade 14; apresentar os cenários próprios e os resultados; demonstrar a composição 1370 do contrato com seguro e tarifa; explicar os dois defeitos e as limitações. Integração, E2E, cobertura de arestas e mutação pertencem à segunda entrega e não foram avaliados aqui.')
 d.core_properties.title = 'Relatório de testes de amortização de empréstimos'
 d.core_properties.author = 'Paulo Cesar Vaz'

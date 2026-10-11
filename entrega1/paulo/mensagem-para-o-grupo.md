@@ -1,4 +1,16 @@
-# Mensagem de Paulo para enviar ao grupo
+# Mensagem atual de Paulo para enviar ao grupo
+
+Pessoal, publiquei minha contribuição na branch `feat/teste_LoanAmortizationService_paulo`, incorporando a main atual e preservando minha autoria. A classe é LoanAmortizationService, com complexidade 14 no método principal. Mantive nove testes herdados identificados e acrescentei 22 execuções próprias: 31 aprovados. A suíte atual tem 33 casos, dois ignorados por padrão; as duas reproduções de defeitos ativadas falham conforme esperado.
+
+Os casos dd-5/6/7 passaram nos 15 passos pela interface, em execução assistida pelo Codex e identificada nas notas. Há 30 capturas por teste e passo. Issues abertas: https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4 e https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5. Não corrigi produção nesta contribuição.
+
+Os testes e documentos estão no README da branch e em entrega1/paulo/. Precisamos revisar o PR, integrar na main e consolidar o Plano IEEE 829 conforme o template da aula. O relatório de três páginas está em https://docs.google.com/document/d/1a1vX4Uais7X7nwQXB1aPTmWpnuptHEkYsVlMXl88kIw/edit.
+
+Esta mensagem foi preparada para Paulo enviar pessoalmente; não foi enviada automaticamente.
+
+---
+
+# Mensagem inicial de 10/10 preservada como histórico
 
 Pessoal, vou trabalhar na Entrega 1 com a classe **LoanAmortizationService**, responsável por calcular o cronograma e o resumo de amortização dos empréstimos. Meu cenário manual será a criação de empréstimo com parcela automática, composição com seguro/tarifa e recálculo após edição.
 
