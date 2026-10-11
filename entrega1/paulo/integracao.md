@@ -12,6 +12,8 @@
 - [x] Relatos publicados como [issue #4](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4) e [issue #5](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5), abertas e sem correção de produção.
 - [x] Relatório de três páginas e contribuição ao Plano de Teste em Google Docs; documentos atualizados com os resultados.
 
+- [x] [PR #6](https://github.com/mssvivian/picsou-finance-QS_2026.2/pull/6) aberto para revisão, sem merge.
+
 ## Fechamento pelo grupo
 
 - [ ] Revisar o PR da contribuição de Paulo e integrar os artefatos na main. Não fazer merge automático nesta tarefa.

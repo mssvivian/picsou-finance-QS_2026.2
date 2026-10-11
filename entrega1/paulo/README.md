@@ -30,6 +30,8 @@ Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amor
 - [Capturas por teste e passo](Tests_ScreenShots/README.md) e [registro estruturado](Tests_ScreenShots/execucao.json)
 - [Resultados conferidos no TestLink](evidencias/testlink/execucoes-verificadas.json)
 
+[PR #6 aberto para revisão](https://github.com/mssvivian/picsou-finance-QS_2026.2/pull/6). [Manifesto da publicação](evidencias/publicacao/manifesto.json) e [validação de links e capturas](evidencias/publicacao/validacao.json).
+
 ## Situação
 
 9 testes originais aprovados; classe ampliada com 22 execuções adicionais, totalizando 31 aprovadas. Dois defeitos reproduzidos em testes separados, opt-in, com duas falhas esperadas. Suíte histórica anterior à remoção dos testes originais pelo grupo: 1271 casos, 20 erros de infraestrutura/conexão local, 35 ignorados, nenhuma falha de asserção na execução padrão.
