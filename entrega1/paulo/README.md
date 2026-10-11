@@ -4,6 +4,8 @@ Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amor
 
 ## Artefatos
 
+- [Relatório individual em três páginas](Relatorio-Paulo-Entrega1.docx) · [Google Docs](https://docs.google.com/document/d/1a1vX4Uais7X7nwQXB1aPTmWpnuptHEkYsVlMXl88kIw/edit?usp=drivesdk)
+
 - [Mensagem pronta para o grupo](mensagem-para-o-grupo.md)
 - [Contribuição ao Plano de Teste IEEE 829](plano-de-teste.md)
 - [Documento de contribuição no Google Docs](https://docs.google.com/document/d/1244Hgfv4YOyM4nBO8PSXadMBxtFPmg2J8so5xoWCy_o/edit?usp=drivesdk)

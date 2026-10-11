@@ -5,6 +5,7 @@ Contribuição de Paulo: amortização de empréstimos. Código de produção pr
 | Artefato | Link direto |
 |---|---|
 | Índice e situação da contribuição | [Entrega 1 — Paulo](entrega1/paulo/README.md) |
+| Relatório individual de Paulo | [Google Docs](https://docs.google.com/document/d/1a1vX4Uais7X7nwQXB1aPTmWpnuptHEkYsVlMXl88kIw/edit?usp=drivesdk) · [Word em três páginas](entrega1/paulo/Relatorio-Paulo-Entrega1.docx) |
 | Plano de Teste / contribuição individual | [Google Docs](https://docs.google.com/document/d/1244Hgfv4YOyM4nBO8PSXadMBxtFPmg2J8so5xoWCy_o/edit?usp=drivesdk) · [Cópia local](entrega1/paulo/plano-de-teste.md) |
 | Classe sob teste | [LoanAmortizationService](backend/src/main/java/com/picsou/service/LoanAmortizationService.java) |
 | Testes unitários e regressões | [31 casos normais](backend/src/test/java/com/picsou/service/LoanAmortizationServiceTest.java) · [2 reproduções opt-in](backend/src/test/java/com/picsou/service/LoanAmortizationServiceDefectTest.java) |
