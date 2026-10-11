@@ -45,7 +45,7 @@ As regressões são opt-in para distinguir a suíte normal dos relatos de defeit
 - [Manifesto com hashes SHA-256](evidencias/build/manifesto.json), [build backend](evidencias/build/backend-build.txt), [instalação frontend](evidencias/build/frontend-install.txt), [build frontend](evidencias/build/frontend-build.txt).
 - Artefatos gerados localmente: `backend/target/picsou-backend-1.0.9.jar` e `frontend/dist/`. Ficam ignorados pelo Git; os comandos e hashes permitem reproduzir/verificar. Build aprovado não comprova inicialização ou execução manual.
 
-## Manual, TestLink e acessos
+## Manual, TestLink e acessos — registro inicial de 10/10
 
 CT-PCV-01/02/03 estão projetados, **não executados**. Não há capturas de aprovação nem exportação de execução do TestLink. A instância não foi fornecida; o XML foi gerado localmente e validado como XML bem formado com três casos e 15 passos, sem importar na ferramenta.
 
@@ -60,3 +60,9 @@ O documento de contribuição foi criado pela conta Google conectada `paulc.vaz@
 ## Fechamento pendente
 
 Resolver o ambiente e executar casos; usar TestLink e exportar registros; confirmar classe e responsabilidades com o grupo; obter template; consolidar Google Docs; publicar issues; integrar à main; verificar README e submissão Moodle. Prazo externo: 11/10/2026 às 23h59, Brasília. [Checklist](integracao.md).
+
+## Atualização de 11/10 — ambiente operacional e casos cadastrados
+
+Docker iniciou. A imagem local identificada pelo commit 58c71b9 está em execução; [ambiente e reprodução](ambiente-local.md). Três cenários passaram na [simulação HTTP](evidencias/simulacao-api/resultado.json). Essa simulação não comprova execução manual da interface.
+
+Casos cadastrados no projeto Grupo DinDin, suíte Paulo - Amortização de empréstimos: dd-5, dd-6 e dd-7. [Exportação da especificação](evidencias/testlink/especificacao-exportada.xml). Execução manual, associação ao plano/build e capturas continuam pendentes. Os bloqueios de Docker descritos no registro inicial foram superados.

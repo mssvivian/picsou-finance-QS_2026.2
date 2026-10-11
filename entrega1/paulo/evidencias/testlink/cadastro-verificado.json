@@ -1,0 +1,31 @@
+{
+  "suiteId": "73",
+  "suite": "Paulo - Amortização de empréstimos",
+  "project": "Grupo DinDin",
+  "state": "Draft; sem execução manual atribuída",
+  "projectId": 20,
+  "cases": [
+    {
+      "title": "CT-PCV-01 — Parcela automática sem juros",
+      "hasFiveSteps": true,
+      "nodeId": "74",
+      "hasAuthor": true,
+      "text": "dd-5:CT-PCV-01 — Parcela automática sem juros"
+    },
+    {
+      "title": "CT-PCV-02 — Composição com seguro e tarifa",
+      "hasFiveSteps": true,
+      "nodeId": "81",
+      "hasAuthor": true,
+      "text": "dd-6:CT-PCV-02 — Composição com seguro e tarifa"
+    },
+    {
+      "title": "CT-PCV-03 — Recálculo após edição do principal",
+      "hasFiveSteps": true,
+      "nodeId": "88",
+      "hasAuthor": true,
+      "text": "dd-7:CT-PCV-03 — Recálculo após edição do principal"
+    }
+  ],
+  "date": "2026-10-11T16:28:54.6526896-03:00"
+}

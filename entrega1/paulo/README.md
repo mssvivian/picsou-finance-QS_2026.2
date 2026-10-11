@@ -21,6 +21,9 @@ Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amor
 - [Evidências de complexidade](evidencias/complexidade/resultado.json)
 - [Evidências originais da classe](evidencias/unitarios/baseline/), [suíte original](evidencias/unitarios/baseline-suite/), [ampliadas](evidencias/unitarios/ampliados/), [defeitos](evidencias/unitarios/defeitos/), [suíte completa](evidencias/unitarios/suite-completa/) e [diagnóstico IPv4](evidencias/unitarios/suite-ipv4/)
 - [Scripts de reprodução](scripts/)
+- [Ambiente local operacional](ambiente-local.md)
+- [Simulação HTTP aprovada](evidencias/simulacao-api/resultado.json)
+- [Especificação exportada do TestLink](evidencias/testlink/especificacao-exportada.xml)
 
 ## Situação
 
@@ -28,4 +31,4 @@ Responsável: Paulo Cesar Vaz. Funcionalidade: cálculo e visualização da amor
 
 Frontend e backend compilados do código local com modo demo desativado. Os 20 erros da suíte ampla também foram reproduzidos no código original; as regressões opt-in explicam os dois ignorados adicionais. A conta de Paulo não tem permissão de push no fork.
 
-Os três casos manuais estão projetados, mas sua execução e a importação no TestLink dependem de um ambiente operacional e do endereço da instância. O Plano de Teste é uma contribuição individual, pendente de consolidação pelo grupo e comparação com o template da aula. O material local precisa ser integrado à `main`; esta branch ainda não constitui a entrega final.
+Os três casos manuais foram cadastrados no TestLink como dd-5/6/7, na suíte Paulo - Amortização de empréstimos. O ambiente local está operacional e a simulação HTTP passou; a execução manual pela interface e suas capturas ainda estão pendentes. O Plano de Teste é uma contribuição individual, pendente de consolidação pelo grupo e comparação com o template da aula. O material local precisa ser integrado à `main`; esta branch ainda não constitui a entrega final.

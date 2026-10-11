@@ -22,7 +22,7 @@ for (const tc of spec.cases) {
   });
   xml += '    </steps>\n  </testcase>\n';
   md += '\n### Registro real — preencher após executar\n\n';
-  md += '| Campo | Valor |\n|---|---|\n| Testador real | A preencher |\n| Data/hora e fuso | A preencher |\n| Commit/build | A preencher |\n| Navegador/versão e SO | A preencher |\n| ID nativo no TestLink / Plano / Build | A preencher |\n| Situação atual | Não executado — ambiente e acesso TestLink pendentes |\n| Resultado final | A preencher: Passou, Falhou ou Bloqueado |\n\n';
+  md += '| Campo | Valor |\n|---|---|\n| Testador real | A preencher |\n| Data/hora e fuso | A preencher |\n| Commit/build | A preencher |\n| Navegador/versão e SO | A preencher |\n| ID nativo no TestLink / Plano / Build | ' + (tc.testlinkId || 'A preencher') + ' / plano e build de execução pendentes |\n| Situação atual | Cadastrado no TestLink; execução manual na interface pendente |\n| Resultado final | A preencher: Passou, Falhou ou Bloqueado |\n\n';
   md += '| Passo | Resultado real | Passou / Falhou / Bloqueado | Evidência |\n|---|---|---|---|\n';
   tc.steps.forEach((_, i) => md += `| ${i + 1} | Não executado | — | — |\n`);
   md += '\nIssue relacionada: preencher apenas com problema observado. Capturas previstas: `evidencias/manuais/' + tc.id + '-*.png`. Não existem capturas de aprovação até a execução real.\n\n';

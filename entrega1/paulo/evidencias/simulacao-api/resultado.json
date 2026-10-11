@@ -1,0 +1,420 @@
+{
+  "baseUrl": "http://localhost:8082",
+  "commit": "58c71b93544c27ff6f9b032dfe2c4df69fe01aa0",
+  "time": "2026-10-11T16:28:05.7899702-03:00",
+  "type": "Simulacao automatizada via HTTP; nao comprova execucao manual da interface",
+  "image": "picsou-paulo:entrega1-58c71b9-lf",
+  "persistedDebt": {
+    "borrowedAmount": 2400.0,
+    "interestRate": 0.0,
+    "startDate": "2026-11-01",
+    "endDate": "2027-11-01",
+    "insuranceMonthly": 0.0,
+    "fileFees": 0.0
+  },
+  "case2": {
+    "summary": {
+      "totalInstallments": 12,
+      "paidInstallments": 0,
+      "remainingInstallments": 12,
+      "endDate": "2027-11-01",
+      "monthlyPayment": 110.0,
+      "monthlyCapital": 100.0,
+      "monthlyInterest": 0.0,
+      "monthlyInsurance": 10.0,
+      "totalCost": 1370.0,
+      "totalCapitalCost": 1200.0,
+      "totalInterestCost": 0.0,
+      "totalInsuranceCost": 120.0,
+      "fileFees": 50.0,
+      "totalRepaid": 0.0,
+      "capitalRepaid": 0.0,
+      "interestRepaid": 0.0,
+      "insuranceRepaid": 0.0,
+      "remainingBalance": 1200.0,
+      "capitalRepaidPct": 0.0
+    },
+    "schedule": [
+      {
+        "number": 1,
+        "date": "2026-12-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 1100.0
+      },
+      {
+        "number": 2,
+        "date": "2027-01-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 1000.0
+      },
+      {
+        "number": 3,
+        "date": "2027-02-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 900.0
+      },
+      {
+        "number": 4,
+        "date": "2027-03-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 800.0
+      },
+      {
+        "number": 5,
+        "date": "2027-04-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 700.0
+      },
+      {
+        "number": 6,
+        "date": "2027-05-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 600.0
+      },
+      {
+        "number": 7,
+        "date": "2027-06-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 500.0
+      },
+      {
+        "number": 8,
+        "date": "2027-07-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 400.0
+      },
+      {
+        "number": 9,
+        "date": "2027-08-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 300.0
+      },
+      {
+        "number": 10,
+        "date": "2027-09-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 200.0
+      },
+      {
+        "number": 11,
+        "date": "2027-10-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 100.0
+      },
+      {
+        "number": 12,
+        "date": "2027-11-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 10.0,
+        "totalPayment": 110.0,
+        "remainingBalance": 0.0
+      }
+    ]
+  },
+  "case1": {
+    "summary": {
+      "totalInstallments": 12,
+      "paidInstallments": 0,
+      "remainingInstallments": 12,
+      "endDate": "2027-11-01",
+      "monthlyPayment": 100.0,
+      "monthlyCapital": 100.0,
+      "monthlyInterest": 0.0,
+      "monthlyInsurance": 0.0,
+      "totalCost": 1200.0,
+      "totalCapitalCost": 1200.0,
+      "totalInterestCost": 0.0,
+      "totalInsuranceCost": 0.0,
+      "fileFees": 0.0,
+      "totalRepaid": 0.0,
+      "capitalRepaid": 0.0,
+      "interestRepaid": 0.0,
+      "insuranceRepaid": 0.0,
+      "remainingBalance": 1200.0,
+      "capitalRepaidPct": 0.0
+    },
+    "schedule": [
+      {
+        "number": 1,
+        "date": "2026-12-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 1100.0
+      },
+      {
+        "number": 2,
+        "date": "2027-01-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 1000.0
+      },
+      {
+        "number": 3,
+        "date": "2027-02-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 900.0
+      },
+      {
+        "number": 4,
+        "date": "2027-03-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 800.0
+      },
+      {
+        "number": 5,
+        "date": "2027-04-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 700.0
+      },
+      {
+        "number": 6,
+        "date": "2027-05-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 600.0
+      },
+      {
+        "number": 7,
+        "date": "2027-06-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 500.0
+      },
+      {
+        "number": 8,
+        "date": "2027-07-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 400.0
+      },
+      {
+        "number": 9,
+        "date": "2027-08-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 300.0
+      },
+      {
+        "number": 10,
+        "date": "2027-09-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 200.0
+      },
+      {
+        "number": 11,
+        "date": "2027-10-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 100.0
+      },
+      {
+        "number": 12,
+        "date": "2027-11-01",
+        "capital": 100.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 100.0,
+        "remainingBalance": 0.0
+      }
+    ]
+  },
+  "result": "Todas as verificacoes da simulacao passaram",
+  "accounts": [
+    3,
+    4
+  ],
+  "case3": {
+    "summary": {
+      "totalInstallments": 12,
+      "paidInstallments": 0,
+      "remainingInstallments": 12,
+      "endDate": "2027-11-01",
+      "monthlyPayment": 200.0,
+      "monthlyCapital": 200.0,
+      "monthlyInterest": 0.0,
+      "monthlyInsurance": 0.0,
+      "totalCost": 2400.0,
+      "totalCapitalCost": 2400.0,
+      "totalInterestCost": 0.0,
+      "totalInsuranceCost": 0.0,
+      "fileFees": 0.0,
+      "totalRepaid": 0.0,
+      "capitalRepaid": 0.0,
+      "interestRepaid": 0.0,
+      "insuranceRepaid": 0.0,
+      "remainingBalance": 2400.0,
+      "capitalRepaidPct": 0.0
+    },
+    "schedule": [
+      {
+        "number": 1,
+        "date": "2026-12-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 2200.0
+      },
+      {
+        "number": 2,
+        "date": "2027-01-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 2000.0
+      },
+      {
+        "number": 3,
+        "date": "2027-02-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 1800.0
+      },
+      {
+        "number": 4,
+        "date": "2027-03-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 1600.0
+      },
+      {
+        "number": 5,
+        "date": "2027-04-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 1400.0
+      },
+      {
+        "number": 6,
+        "date": "2027-05-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 1200.0
+      },
+      {
+        "number": 7,
+        "date": "2027-06-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 1000.0
+      },
+      {
+        "number": 8,
+        "date": "2027-07-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 800.0
+      },
+      {
+        "number": 9,
+        "date": "2027-08-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 600.0
+      },
+      {
+        "number": 10,
+        "date": "2027-09-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 400.0
+      },
+      {
+        "number": 11,
+        "date": "2027-10-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 200.0
+      },
+      {
+        "number": 12,
+        "date": "2027-11-01",
+        "capital": 200.0,
+        "interest": 0.0,
+        "insurance": 0.0,
+        "totalPayment": 200.0,
+        "remainingBalance": 0.0
+      }
+    ]
+  },
+  "runtimeAdaptation": "entrypoint CRLF normalizado para LF"
+}
