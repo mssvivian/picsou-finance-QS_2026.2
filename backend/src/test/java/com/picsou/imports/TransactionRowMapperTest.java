@@ -59,7 +59,7 @@ class TransactionRowMapperTest {
         when(instrumentFieldResolver.resolve(anyString(), anyString())).thenReturn(inst);
     }
 
-  // GRUPO DE TESTE 1: MÉTODO map(...)
+  // GRUPO DE TESTES 1: MÉTODO map(...)
     
     @Test
     @DisplayName("01. map: Caminho Feliz com todos os campos válidos")
@@ -172,7 +172,7 @@ class TransactionRowMapperTest {
         assertEquals("Missing ticker/ISIN", ex.getMessage());
     }
 
-    // GRUPO DE TESTE 2: método resolveSide()
+    // GRUPO DE TESTES 2: método resolveSide()
     
     @Test
     @DisplayName("10. resolveSide: sideCell preenchido encontra correspondência no sideValueMap")
@@ -341,6 +341,75 @@ class TransactionRowMapperTest {
         assertEquals("Cannot determine BUY/SELL", ex.getMessage());
     }
 
+     // GRUPO DE TESTES 3: método resolvePrice()
     
+    @Test
+    @DisplayName("25. resolvePrice: price presente e positivo é retornado diretamente")
+    void test25_resolvePrice_explicitPositivePrice_returned() {
+        mockResolvedInstrument();
+        List<String> row = Arrays.asList("2026-03-15", "BUY", "AAPL", "Apple Inc.", "10", "150.00", "0", "USD", "-1500.00");
+
+        Transaction tx = mapper.map(row, defaultMapping(), defaultDialect, null, false, defaultAccount);
+
+        assertEquals(new BigDecimal("150.00"), tx.getPricePerUnit());
+    }
+
+    @Test
+    @DisplayName("26. resolvePrice: price negativo lança IllegalArgumentException")
+    void test26_resolvePrice_negativePrice_throwsException() {
+        List<String> row = Arrays.asList("2026-03-15", "BUY", "AAPL", "Apple Inc.", "10", "-10.00", "0", "USD", "-1500.00");
+
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+            mapper.map(row, defaultMapping(), defaultDialect, null, false, defaultAccount)
+        );
+        assertEquals("Unit price cannot be negative", ex.getMessage());
+    }
+
+    @Test
+    @DisplayName("27. resolvePrice: price ausente e amount ausente lança IllegalArgumentException")
+    void test27_resolvePrice_missingPriceAndAmount_throwsException() {
+        List<String> row = Arrays.asList("2026-03-15", "BUY", "AAPL", "Apple Inc.", "10", "", "0", "USD", "");
+
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+            mapper.map(row, defaultMapping(), defaultDialect, null, false, defaultAccount)
+        );
+        assertEquals("Missing unit price (or amount)", ex.getMessage());
+    }
+
+    @Test
+    @DisplayName("28. resolvePrice: price ausente, deduzido de amount sem taxas embutidas")
+    void test28_resolvePrice_derivedFromAmount_feesNotIncluded() {
+        mockResolvedInstrument();
+        List<String> row = Arrays.asList("2026-03-15", "BUY", "AAPL", "Apple Inc.", "10", "", "15.00", "USD", "-1000.00");
+
+        Transaction tx = mapper.map(row, defaultMapping(), defaultDialect, null, false, defaultAccount);
+
+        BigDecimal expected = new BigDecimal("1000.00").divide(new BigDecimal("10"), 8, RoundingMode.HALF_UP);
+        assertEquals(expected, tx.getPricePerUnit());
+    }
+
+    @Test
+    @DisplayName("29. resolvePrice: deduzido de amount, taxas embutidas para BUY (gross - fees)")
+    void test29_resolvePrice_derivedFromAmount_feesIncluded_buy() {
+        mockResolvedInstrument();
+        List<String> row = Arrays.asList("2026-03-15", "BUY", "AAPL", "Apple Inc.", "10", "", "5.00", "USD", "-105.00");
+
+        Transaction tx = mapper.map(row, defaultMapping(), defaultDialect, null, true, defaultAccount);
+
+        BigDecimal expected = new BigDecimal("100.00").divide(new BigDecimal("10"), 8, RoundingMode.HALF_UP);
+        assertEquals(expected, tx.getPricePerUnit());
+    }
+
+    @Test
+    @DisplayName("30. resolvePrice: deduzido de amount, taxas embutidas para SELL (gross + fees)")
+    void test30_resolvePrice_derivedFromAmount_feesIncluded_sell() {
+        mockResolvedInstrument();
+        List<String> row = Arrays.asList("2026-03-15", "SELL", "AAPL", "Apple Inc.", "10", "", "5.00", "USD", "95.00");
+
+        Transaction tx = mapper.map(row, defaultMapping(), defaultDialect, null, true, defaultAccount);
+
+        BigDecimal expected = new BigDecimal("100.00").divide(new BigDecimal("10"), 8, RoundingMode.HALF_UP);
+        assertEquals(expected, tx.getPricePerUnit());
+    }
 
 }
