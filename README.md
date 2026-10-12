@@ -55,16 +55,16 @@ mvn test
 
 ### Executando Testes de uma Classe Específica
 ```bash
-# Testes da classe TransactionRowMapper (Arthur Sena)
+# Testes da classe TransactionRowMapper (Arthur Monteiro)
 mvn test -Dtest=TransactionRowMapperTest
 
 # Testes da classe FamilyViewService (Carolina Falcão)
 mvn test -Dtest=FamilyViewServiceTest
 
-# Testes da classe LoanAmortizationService (Paulo Vaz)
+# Testes da classe LoanAmortizationService (Paulo Cesar)
 mvn test -Dtest=LoanAmortizationServiceTest
 
-# Testes da classe FinaryImportService (Vivian Santos)
+# Testes da classe FinaryImportService (Vivian Souza)
 mvn test -Dtest=FinaryImportServiceTest
 ```
 
