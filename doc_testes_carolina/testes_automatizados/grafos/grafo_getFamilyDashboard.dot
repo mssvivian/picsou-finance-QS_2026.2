@@ -1,0 +1,87 @@
+digraph G {
+    graph [rankdir=TB, bgcolor="white", pad="0.4", nodesep="0.4", ranksep="0.5"];
+    node [fontname="Helvetica, Arial, sans-serif", fontsize=10, penwidth=1.5];
+    edge [fontname="Helvetica, Arial, sans-serif", fontsize=9, color="#37474F", penwidth=1.2];
+
+    // Nodes
+    start [label="① Início\ngetFamilyDashboard", shape=ellipse, style="filled", fillcolor="#C8E6C9", color="#2E7D32"];
+    n1 [label="② Buscar allMembers\nno repositório", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+    d1 [label="③ D1: Próximo\nmembro?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    d2 [label="④ D2: member.id ==\nviewerMemberId?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+
+    // Contas
+    n2 [label="⑤ Buscar accountSettings\n(membro e 'ACCOUNT')", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+    d3 [label="⑥ D3: accountSettings\n!= null?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    d4 [label="⑦ D4: sharingLevel\n!= NONE?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    d5 [label="⑧ D5: level\n== ALL?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    b_all [label="Contas: ALL\n(findAllByMemberId...)", shape=box, style="filled,rounded", fillcolor="#FFF9C4", color="#FBC02D"];
+    b_man [label="Contas: MANUAL\n(findByIdInAndMemberId)", shape=box, style="filled,rounded", fillcolor="#FFF9C4", color="#FBC02D"];
+    shares [label="accessResolver.sharesFor\n(uma chamada p/ membro)", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+    d6 [label="⑨ D6: Próxima\nconta?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    calc_acc [label="Pesar saldo (weigh)\ne adicionar a sharedAccounts", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+
+    // Metas
+    n3 [label="⑩ Buscar goalSettings\n(membro e 'GOAL')", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+    d7 [label="⑪ D7: goalSettings\n!= null?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    d8 [label="⑫ D8: sharingLevel\n!= NONE?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    d9 [label="⑬ D9: level\n== ALL?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    g_all [label="Metas: ALL\n(findAllByMemberId...)", shape=box, style="filled,rounded", fillcolor="#FFF9C4", color="#FBC02D"];
+    g_man [label="Metas: MANUAL\n(findByIdInAndMemberId)", shape=box, style="filled,rounded", fillcolor="#FFF9C4", color="#FBC02D"];
+    d10 [label="⑭ D10: Próxima meta\n(acumula contas)?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    g_shares [label="accessResolver.sharesFor\n(contas das metas)", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+    d11 [label="⑮ D11: Próxima\nmeta?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    d12 [label="⑯ D12: Próximo\ncontribuidor?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    d13 [label="⑰ D13: Total\naportes > 0?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    add_contrib [label="Adicionar ContributionInfo\nà lista", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+    add_goal [label="Criar SharedGoalInfo\ne add a sharedGoals", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+
+    // Fim
+    calc_total [label="⑱ Calcular totalNetWorth\n(soma saldo das contas)", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+    end_dash [label="⑲ Retornar\nFamilyDashboardResponse", shape=ellipse, style="filled", fillcolor="#C8E6C9", color="#2E7D32"];
+
+    // Edges
+    start -> n1;
+    n1 -> d1;
+
+    d1 -> d2 [label="Sim"];
+    d1 -> calc_total [label="Não (Fim)"];
+    calc_total -> end_dash;
+
+    d2 -> d1 [label="Sim (Pula self)", color="#E53935", style="dashed"];
+    d2 -> n2 [label="Não"];
+
+    n2 -> d3;
+    d3 -> d4 [label="Sim"];
+    d3 -> n3 [label="Não"];
+    d4 -> d5 [label="Sim"];
+    d4 -> n3 [label="Não (NONE)"];
+    d5 -> b_all [label="Sim (ALL)"];
+    d5 -> b_man [label="Não (MANUAL)"];
+    b_all -> shares;
+    b_man -> shares;
+    shares -> d6;
+    d6 -> calc_acc [label="Sim"];
+    calc_acc -> d6;
+    d6 -> n3 [label="Não (Fim contas)"];
+
+    n3 -> d7;
+    d7 -> d8 [label="Sim"];
+    d7 -> d1 [label="Não"];
+    d8 -> d9 [label="Sim"];
+    d8 -> d1 [label="Não (NONE)"];
+    d9 -> g_all [label="Sim (ALL)"];
+    d9 -> g_man [label="Não (MANUAL)"];
+    g_all -> d10;
+    g_man -> d10;
+    d10 -> d10 [label="Sim"];
+    d10 -> g_shares [label="Não"];
+    g_shares -> d11;
+    d11 -> d1 [label="Não (Fim metas)"];
+    d11 -> d12 [label="Sim"];
+    d12 -> d13 [label="Sim"];
+    d12 -> add_goal [label="Não (Fim contr.)"];
+    add_goal -> d11;
+    d13 -> add_contrib [label="Sim (> 0)"];
+    d13 -> d12 [label="Não (<= 0)"];
+    add_contrib -> d12;
+}
