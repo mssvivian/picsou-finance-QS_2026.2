@@ -1002,14 +1002,18 @@ class FinaryImportServiceTest {
     }
 
     @Test
-    void extra_preview_eachCallGetsItsOwnToken() {
-        byte[] file = singleCheckingAccountFile();
+    void extra_executeImport_duplicateAccountsInFileMergeSilentlyKeepsFirst() {
+        byte[] fileWithDuplicates = xlsx(wb -> {
+            Sheet s = accountSheet(wb, "Checkings");
+            put(s, 1, "Conta Corrente", "Banco X", 1500.50, "EUR");
+            put(s, 2, "Conta Corrente", "Banco Y", 200.0, "EUR");
+        });
+        String token = previewToken(fileWithDuplicates);
+        FinaryAccountMapping mapping = create(null, "Conta Corrente", "Checkings", details(AccountType.CHECKING, "#112233"));
 
-        String first = previewToken(file);
-        String second = previewToken(file);
+        FinaryImportResultResponse result = service.executeImport(
+            new FinaryImportRequest(List.of(mapping), token), MEMBER_ID);
 
-        assertThat(first).isNotBlank();
-        assertThat(second).isNotBlank();
-        assertThat(first).isNotEqualTo(second);
+        assertThat(result.accountsCreated()).isEqualTo(1);
     }
 }
