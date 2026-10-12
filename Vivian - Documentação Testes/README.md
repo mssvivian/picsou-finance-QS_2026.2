@@ -1,5 +1,5 @@
 # Documentação de Testes — Vivian Souza
-
+**Disciplina:** Qualidade de Software (COS482) — UFRJ 2026.2  
 **Módulo / Classe Analisada:** `FinaryImportService` (`picsou-backend`)
 
 ---
@@ -14,18 +14,18 @@ Vivian - Documentação Testes/
 ├── README.md                                  # Índice geral e sumário executivo (este arquivo)
 │
 ├── testes-manuais/                            # Testes Funcionais (Caixa-Preta / TestLink)
-│   ├── README.md                              # Documentação dos casos de teste funcionais e execuções
+│   ├── README.md                              # Documentação do ciclo do teste, issue e mitigação
 │   ├── finary_testlink_dummy.xlsx             # Planilha de dados de entrada utilizada nos testes
-│   ├── Vivian - Pré-visualização... (CREATE_NEW).xml # Exportação XML oficial do TestLink
-│   ├── finary-teste-sucesso/                  # Execução 1: Caso de sucesso (7 contas + 5 transações)
-│   │   ├── ExecuçãoSucessoFinary.html         # Relatório HTML oficial do TestLink
-│   │   └── *.png                              # Capturas de tela comprobatórias de cada passo
-│   └── finary-test-falha/                     # Execução 2: Caso de falha (arquivo corrompido/inválido)
-│       ├── ExecuçãoFalhaFinary.html           # Relatório HTML oficial do TestLink
-│       └── *.png                              # Capturas de tela do erro e validação
+│   ├── Vivian - Pré-visualização... (CREATE_NEW).xml # Exportação XML oficial do caso dd-3 do TestLink
+│   ├── finary-test-falha/                     # 1ª Execução: Falha bloqueante no passo 3 (HTTP 415) -> Issue #2 no GitHub
+│   │   ├── ExecuçãoFalhaFinary.html           # Relatório HTML oficial do TestLink
+│   │   └── *.png                              # Capturas de tela comprobatórias do erro
+│   └── finary-teste-sucesso/                  # 2ª Execução: Re-teste pós-mitigação (Commit 9231231dca) -> 100% Passed
+│       ├── ExecuçãoSucessoFinary.html         # Relatório HTML oficial do TestLink
+│       └── *.png                              # Capturas de tela comprovando todos os 9 passos
 │
 └── testes-automatizados/                      # Testes Estruturais (Caixa-Branca / McCabe)
-    ├── README.md                              # Guia completo dos grafos e suite JUnit 5
+    ├── README.md                              # Guia rápido da suíte JUnit 5 e comandos do terminal
     ├── GUIA_GRAFOS_FLUXO_CONTROLE.md          # Como ler, interpretar e auditar cada gráfico
     └── grafos/                                # Arquivos de imagem (PNG) e código fonte (DOT)
         ├── cfg_parseXlsx.png                  # Grafo do parse XLSX (V(G) = 22)
@@ -42,11 +42,11 @@ Vivian - Documentação Testes/
 
 | Dimensão de Qualidade | Métrica / Alvo | Valor Obtido | Status |
 |---|---|---|---|
+| **Testes Manuais de Caixa-Preta (TestLink)** | Caso de teste E2E ponta a ponta (`dd-3`) | **1 Caso com ciclo completo de defeito** (1ª Execução: Falha / Abertura da Issue #2 / Commit mitigador / 2ª Execução: Sucesso) | ✅ Ciclo de QA concluído |
 | **Complexidade Ciclomática Ponderada (WMC)** | $\sum V(G)$ de todos os métodos | **44** | Analisado e coberto |
 | **Caminhos Básicos de McCabe Cobertos** | Cobertura de ramos independentes | **44 / 44 (100%)** | ✅ Sucesso total |
 | **Testes Unitários Automatizados (JUnit 5)** | Testes de caminhos básicos + extras | **50 testes** | ✅ 47 passando, 3 de defeito |
-| **Defeitos Identificados (Bugs Conhecidos)** | Testes de regressão `@Disabled` | **3 Issues documentadas** | ⚠️ Issues #8, #9 e #10 |
-| **Testes Manuais de Caixa-Preta (TestLink)** | Execuções completas com evidências | **1 Sucesso + 1 Falha** | ✅ Evidências anexadas |
+| **Defeitos Identificados em Caixa-Branca** | Testes de regressão `@Disabled` | **3 Issues documentadas** | ⚠️ Issues documentadas com reprodução |
 
 ---
 
