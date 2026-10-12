@@ -69,6 +69,10 @@ digraph CFG_ParseXlsx {
     tx_name_empty [label="description = ''", fillcolor="#e0e7ff", color="#4338ca"];
     tx_name_val [label="description = name.trim()", fillcolor="#f1f5f9"];
 
+    d_tx_type_null [label="type == null?\nLinha 250", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    tx_type_empty [label="type = ''", fillcolor="#e0e7ff", color="#4338ca"];
+    tx_type_val [label="type = type.trim()", fillcolor="#f1f5f9"];
+
     d_tx_cat_null [label="category == null?\nLinha 251", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
     tx_cat_empty [label="category = ''", fillcolor="#e0e7ff", color="#4338ca"];
     tx_cat_val [label="category = category.trim()", fillcolor="#f1f5f9"];
@@ -84,7 +88,7 @@ digraph CFG_ParseXlsx {
 
     // Fluxo Contas
     entry -> init -> loop_cat;
-    loop_cat -> d_sheet_null [label=" Próxima cat [p22]", color="#2563eb", fontcolor="#2563eb"];
+    loop_cat -> d_sheet_null [label=" Próxima cat", color="#2563eb"];
     loop_cat -> tx_sheet_check [label=" Fim das abas", color="#16a34a", penwidth=1.6];
 
     d_sheet_null -> sheet_absent [label=" Sim [p02]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
@@ -139,9 +143,9 @@ digraph CFG_ParseXlsx {
     tx_row_absent -> loop_tx_rows;
     d_tx_row_null -> try_tx [label=" Não", color="#2563eb"];
 
-    try_tx -> catch_date [label=" Data inválida [p20]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    try_tx -> catch_date [label=" Data inválida [p21]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
     catch_date -> loop_tx_rows;
-    try_tx -> catch_tx_err [label=" Erro geral [p21]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    try_tx -> catch_tx_err [label=" Erro geral [p22]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
     catch_tx_err -> loop_tx_rows;
     try_tx -> d_tx_date_null [label=" OK", color="#16a34a"];
 
@@ -159,15 +163,20 @@ digraph CFG_ParseXlsx {
 
     d_tx_name_null -> tx_name_empty [label=" Sim [p17]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
     d_tx_name_null -> tx_name_val [label=" Não", color="#16a34a"];
-    tx_name_empty -> d_tx_cat_null;
-    tx_name_val -> d_tx_cat_null;
+    tx_name_empty -> d_tx_type_null;
+    tx_name_val -> d_tx_type_null;
 
-    d_tx_cat_null -> tx_cat_empty [label=" Sim [p18]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    d_tx_type_null -> tx_type_empty [label=" Sim [p18]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    d_tx_type_null -> tx_type_val [label=" Não", color="#16a34a"];
+    tx_type_empty -> d_tx_cat_null;
+    tx_type_val -> d_tx_cat_null;
+
+    d_tx_cat_null -> tx_cat_empty [label=" Sim [p19]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
     d_tx_cat_null -> tx_cat_val [label=" Não", color="#16a34a"];
     tx_cat_empty -> d_tx_curr_null;
     tx_cat_val -> d_tx_curr_null;
 
-    d_tx_curr_null -> tx_curr_eur [label=" Sim [p19]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    d_tx_curr_null -> tx_curr_eur [label=" Sim [p20]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
     d_tx_curr_null -> tx_curr_val [label=" Não", color="#16a34a"];
     tx_curr_eur -> add_tx;
     tx_curr_val -> add_tx;

@@ -1,0 +1,4 @@
+Date,Side,Ticker,Name,Quantity,UnitPrice,Fees,Currency,TotalAmount
+2026-03-15,BUY,AAPL,Apple Inc.,0,150.00,0.00,USD,-1500.00
+2026-03-16,BUY,MSFT,Microsoft Corp.,-5,400.00,0.00,USD,-2000.00
+2026-03-17,BUY,GOOGL,Alphabet Inc.,,180.00,0.00,USD,-1800.00
