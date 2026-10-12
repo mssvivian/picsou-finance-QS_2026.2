@@ -412,4 +412,64 @@ class TransactionRowMapperTest {
         assertEquals(expected, tx.getPricePerUnit());
     }
 
+    // GRUPO DE TESTES 4: método cell()
+    
+    @Test
+    @DisplayName("31. cell: índice mapeado como nulo retorna null com segurança")
+    void test31_cell_nullIndex_returnsNullSafely() {
+        List<String> row = Arrays.asList("2026-03-15", "BUY", "AAPL", "Apple Inc.", "10", "150.00", "0", "USD", "-1500.00");
+        ColumnMappingDto mapping = new ColumnMappingDto(null, 1, 2, 3, 4, 5, 6, 7, 8);
+
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+            mapper.map(row, mapping, defaultDialect, null, false, defaultAccount)
+        );
+        assertEquals("Missing date", ex.getMessage());
+    }
+
+    @Test
+    @DisplayName("32. cell: índice negativo retorna null com segurança")
+    void test32_cell_negativeIndex_returnsNullSafely() {
+        List<String> row = Arrays.asList("2026-03-15", "BUY", "AAPL", "Apple Inc.", "10", "150.00", "0", "USD", "-1500.00");
+        ColumnMappingDto mapping = new ColumnMappingDto(-1, 1, 2, 3, 4, 5, 6, 7, 8);
+
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+            mapper.map(row, mapping, defaultDialect, null, false, defaultAccount)
+        );
+        assertEquals("Missing date", ex.getMessage());
+    }
+
+    @Test
+    @DisplayName("33. cell: índice maior ou igual ao tamanho da lista retorna null")
+    void test33_cell_indexOutOfBounds_returnsNullSafely() {
+        List<String> shortRow = Arrays.asList("2026-03-15", "BUY");
+        ColumnMappingDto mapping = new ColumnMappingDto(0, 1, 5, 3, 4, 5, 6, 7, 8);
+
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+            mapper.map(shortRow, mapping, defaultDialect, null, false, defaultAccount)
+        );
+        assertEquals("Missing or non-positive quantity", ex.getMessage());
+    }
+
+    @Test
+    @DisplayName("34. cell: valor da célula nulo dentro dos limites retorna null")
+    void test34_cell_nullElementInList_returnsNull() {
+        List<String> rowWithNull = Arrays.asList(null, "BUY", "AAPL", "Apple Inc.", "10", "150.00", "0", "USD", "-1500.00");
+
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+            mapper.map(rowWithNull, defaultMapping(), defaultDialect, null, false, defaultAccount)
+        );
+        assertEquals("Missing date", ex.getMessage());
+    }
+
+    @Test
+    @DisplayName("35. cell: valor com espaços é devidamente aparado (trim)")
+    void test35_cell_stringWithWhitespace_isTrimmed() {
+        mockResolvedInstrument();
+        List<String> row = Arrays.asList("  2026-03-15  ", "  BUY  ", " AAPL ", " Apple ", " 10 ", " 150.00 ", " 0 ", " USD ", " -1500.00 ");
+
+        Transaction tx = mapper.map(row, defaultMapping(), defaultDialect, null, false, defaultAccount);
+
+        assertEquals("USD", tx.getNativeCurrency());
+        assertEquals(LocalDate.of(2026, 3, 15), tx.getDate());
+    }
 }
