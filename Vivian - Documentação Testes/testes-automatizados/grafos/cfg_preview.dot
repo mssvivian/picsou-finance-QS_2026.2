@@ -1,0 +1,24 @@
+digraph CFG_Preview {
+
+    rankdir=TB;
+    bgcolor="transparent";
+    node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f8fafc", color="#64748b", penwidth=1.2];
+    edge [fontname="Helvetica", fontsize=9, color="#475569", penwidth=1.2, arrowsize=0.8];
+
+
+    entry [label="Entrada: preview(file, memberId)\nLinha 60", shape=ellipse, fillcolor="#dcfce7", color="#16a34a"];
+    try_block [label="Tenta abrir planilha:\nWorkbookFactory.create(file.getInputStream())\nLinhas 61-63", fillcolor="#f1f5f9"];
+    d1 [label="IOException lançada?\n(Arquivo corrompido?)", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    catch_err [label="catch (IOException e):\nthrow IllegalArgumentException\nLinha 92", fillcolor="#fee2e2", color="#dc2626"];
+    process_ok [label="Processa contas e transações\nreturn FinaryPreviewResponse\nLinhas 65-89", fillcolor="#dcfce7", color="#16a34a"];
+    
+    end_err [label="Saída (Exceção)", shape=ellipse, fillcolor="#fee2e2", color="#dc2626"];
+    end_ok [label="Saída (Normal)", shape=ellipse, fillcolor="#dcfce7", color="#16a34a"];
+
+    entry -> try_block;
+    try_block -> d1;
+    d1 -> catch_err [label=" Corrompido [p02]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    d1 -> process_ok [label=" Válido [p01]", color="#16a34a", fontcolor="#16a34a", penwidth=1.6];
+    catch_err -> end_err;
+    process_ok -> end_ok;
+}

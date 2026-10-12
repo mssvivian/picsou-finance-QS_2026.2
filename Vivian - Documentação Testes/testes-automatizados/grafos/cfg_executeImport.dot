@@ -1,0 +1,89 @@
+digraph CFG_ExecuteImport {
+
+    rankdir=TB;
+    bgcolor="transparent";
+    node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f8fafc", color="#64748b", penwidth=1.2];
+    edge [fontname="Helvetica", fontsize=9, color="#475569", penwidth=1.2, arrowsize=0.8];
+
+
+    entry [label="Entrada: executeImport(req, memberId)\nLinha 100", shape=ellipse, fillcolor="#dcfce7", color="#16a34a"];
+    d_token [label="parsed == null?\n(Preview expirado?)\nLinha 102", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    throw_exp [label="throw IllegalArgumentException\nLinha 103", fillcolor="#fee2e2", color="#dc2626"];
+    end_err [label="Saída (Exceção)", shape=ellipse, fillcolor="#fee2e2", color="#dc2626"];
+
+    init_vars [label="memberRepository.findById(memberId)\nInicializa contadores\nLinhas 106-121", fillcolor="#f1f5f9"];
+
+    loop_map [label="for (mapping : req.mappings())\nLinha 123", shape=diamond, fillcolor="#bae6fd", color="#0284c7"];
+    end_loop [label="cache.remove(token)\nreturn FinaryImportResultResponse\nLinhas 180-184", fillcolor="#dbeafe", color="#2563eb"];
+    end_ok [label="Saída (Sucesso)", shape=ellipse, fillcolor="#dcfce7", color="#16a34a"];
+
+    d_finary_id [label="mapping.finaryId() != null?\nLinha 125", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    use_id [label="Chave = finaryId\nLinha 126", fillcolor="#e0e7ff", color="#4338ca"];
+    use_cat_name [label="Chave = slug(cat + name)\nLinha 127", fillcolor="#e0e7ff", color="#4338ca"];
+    get_acc [label="finaryAcc = finaryByKey.get(key)\nLinha 124", fillcolor="#f1f5f9"];
+    
+    d_finary_null [label="finaryAcc == null?\n(Conta ausente no arquivo?)\nLinha 129", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    ignore_acc [label="continue (ignora mapping)\nLinha 129", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_action_skip [label="action == SKIP?\nLinha 133", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    act_skip [label="accountsSkipped++; continue;\nLinhas 134-135", fillcolor="#fef3c7", color="#d97706"];
+    
+    d_action_map [label="action == MAP_EXISTING?\nLinha 136", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    act_map [label="account = findByIdAndMemberId(...)\naccountsMapped++;\nLinhas 137-141", fillcolor="#dcfce7", color="#16a34a"];
+    
+    d_action_create [label="action == CREATE_NEW?\nLinha 142", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    act_none [label="action é null/desconhecida\naccount permanece null!\nLinha 131", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_color [label="newAccount.color() != null?\nLinha 155", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    color_custom [label="Cor = det.color()\nLinha 155", fillcolor="#e0e7ff", color="#4338ca"];
+    color_default [label="Cor = defaultColorForType()\nLinha 155", fillcolor="#e0e7ff", color="#4338ca"];
+    save_acc [label="accountRepository.save(account)\naccountsCreated++;\nLinhas 147-160", fillcolor="#dcfce7", color="#16a34a"];
+
+    join_action [label="account definido\n(objeto OU null)", fillcolor="#f1f5f9"];
+    d_acc_not_null [label="account != null?\nLinha 163", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    
+    do_reconstruct [label="reconstructSnapshots(...)\nimportTransactions(...)\nimported.add(...)\nLinhas 165-176", fillcolor="#dcfce7", color="#16a34a"];
+
+    entry -> d_token;
+    d_token -> throw_exp [label=" Sim [p02]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    throw_exp -> end_err;
+    d_token -> init_vars [label=" Não", color="#2563eb", fontcolor="#2563eb"];
+    init_vars -> loop_map;
+
+    loop_map -> end_loop [label=" Fim do loop [p01]", color="#16a34a", fontcolor="#16a34a", penwidth=1.6];
+    end_loop -> end_ok;
+    loop_map -> d_finary_id [label=" Próximo mapping", color="#2563eb", fontcolor="#2563eb"];
+
+    d_finary_id -> use_id [label=" Sim [p03]", color="#16a34a", fontcolor="#16a34a", penwidth=1.6];
+    d_finary_id -> use_cat_name [label=" Não [p04]", color="#2563eb", fontcolor="#2563eb", penwidth=1.6];
+    use_id -> get_acc;
+    use_cat_name -> get_acc;
+    get_acc -> d_finary_null;
+
+    d_finary_null -> ignore_acc [label=" Sim [p05]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    ignore_acc -> loop_map [label=" volta ao loop", color="#64748b"];
+    d_finary_null -> d_action_skip [label=" Não", color="#2563eb", fontcolor="#2563eb"];
+
+    d_action_skip -> act_skip [label=" Sim [p06]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    act_skip -> loop_map [label=" volta ao loop", color="#64748b"];
+
+    d_action_skip -> d_action_map [label=" Não", color="#2563eb", fontcolor="#2563eb"];
+    d_action_map -> act_map [label=" Sim [p07]", color="#16a34a", fontcolor="#16a34a", penwidth=1.6];
+    act_map -> join_action;
+
+    d_action_map -> d_action_create [label=" Não", color="#2563eb", fontcolor="#2563eb"];
+    d_action_create -> act_none [label=" Não (action null) [p10]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    act_none -> join_action;
+
+    d_action_create -> d_color [label=" Sim", color="#16a34a", fontcolor="#16a34a"];
+    d_color -> color_custom [label=" Sim [p08]", color="#16a34a", fontcolor="#16a34a", penwidth=1.6];
+    d_color -> color_default [label=" Não [p09]", color="#2563eb", fontcolor="#2563eb", penwidth=1.6];
+    color_custom -> save_acc;
+    color_default -> save_acc;
+    save_acc -> join_action;
+
+    join_action -> d_acc_not_null;
+    d_acc_not_null -> do_reconstruct [label=" Sim", color="#16a34a", fontcolor="#16a34a", penwidth=1.6];
+    d_acc_not_null -> loop_map [label=" Não", color="#dc2626", fontcolor="#dc2626"];
+    do_reconstruct -> loop_map [label=" próximo item", color="#64748b"];
+}

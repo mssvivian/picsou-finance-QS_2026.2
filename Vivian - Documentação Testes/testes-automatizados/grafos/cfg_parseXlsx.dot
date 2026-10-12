@@ -1,0 +1,177 @@
+digraph CFG_ParseXlsx {
+
+    rankdir=TB;
+    bgcolor="transparent";
+    node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f8fafc", color="#64748b", penwidth=1.2];
+    edge [fontname="Helvetica", fontsize=9, color="#475569", penwidth=1.2, arrowsize=0.8];
+
+
+    entry [label="Entrada: parseXlsx(workbook)\nLinha 192", shape=ellipse, fillcolor="#dcfce7", color="#16a34a"];
+    init [label="accounts = new ArrayList()\ntransactions = new ArrayList()\nLinhas 193-194", fillcolor="#f1f5f9"];
+    
+    // --- PARTE 1: CONTAS ---
+    loop_cat [label="for (categoryName : KNOWN_CATEGORIES)\nLinha 197", shape=diamond, fillcolor="#bae6fd", color="#0284c7"];
+    d_sheet_null [label="sheet == null?\nLinha 199", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    sheet_absent [label="Aba não existe (continue)\nLinha 199", fillcolor="#fee2e2", color="#dc2626"];
+    
+    loop_rows [label="for (i = 1; i <= sheet.getLastRowNum(); i++)\nLinha 201", shape=diamond, fillcolor="#bae6fd", color="#0284c7"];
+    empty_sheet [label="Aba só com cabeçalho", fillcolor="#fee2e2", color="#dc2626"];
+    
+    d_row_null [label="row == null?\nLinha 203", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    row_absent [label="Linha nula (continue)\nLinha 203", fillcolor="#fee2e2", color="#dc2626"];
+    
+    try_acc [label="try: leitura colunas 0..3\nLinhas 205-210", fillcolor="#f1f5f9"];
+    catch_acc [label="catch (Exception e):\nlog.warn(malformed)\nLinha 221", fillcolor="#fee2e2", color="#dc2626"];
+    
+    d_acc_name_null [label="name == null?\nLinha 211", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    skip_acc_name_null [label="Descarta conta sem nome", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_acc_name_blank [label="name.isBlank()?\nLinha 211", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    skip_acc_name_blank [label="Descarta conta com nome branco", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_acc_bal_null [label="balance == null?\nLinha 211", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    skip_acc_bal_null [label="Descarta saldo não-numérico", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_acc_inst_null [label="institution == null?\nLinha 214", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    inst_empty [label="institution = ''", fillcolor="#e0e7ff", color="#4338ca"];
+    inst_val [label="institution = institution.trim()", fillcolor="#f1f5f9"];
+
+    d_acc_curr_null [label="currency == null?\nLinha 217", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    curr_eur [label="currency = 'EUR'", fillcolor="#e0e7ff", color="#4338ca"];
+    curr_val [label="currency = currency.trim()", fillcolor="#f1f5f9"];
+
+    add_acc [label="accounts.add(ParsedFinaryAccount)\nLinhas 212-218", fillcolor="#dcfce7", color="#16a34a"];
+
+    // --- PARTE 2: TRANSAÇÕES ---
+    tx_sheet_check [label="txSheet = getSheet('Transactions')\ntxSheet != null?\nLinhas 227-228", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    tx_absent [label="Sem aba Transactions\nLinha 228", fillcolor="#fee2e2", color="#dc2626"];
+    
+    loop_tx_rows [label="for (i = 1; i <= txSheet.getLastRowNum(); i++)\nLinha 229", shape=diamond, fillcolor="#bae6fd", color="#0284c7"];
+    empty_tx_sheet [label="Aba Transactions só cabeçalho", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_tx_row_null [label="row == null?\nLinha 231", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    tx_row_absent [label="Linha tx nula (continue)\nLinha 231", fillcolor="#fee2e2", color="#dc2626"];
+
+    try_tx [label="try: leitura colunas 0..7\nLinhas 233-242", fillcolor="#f1f5f9"];
+    catch_date [label="catch (DateTimeParseException):\nlog.warn(unparseable date)\nLinha 256", fillcolor="#fee2e2", color="#dc2626"];
+    catch_tx_err [label="catch (Exception e):\nlog.warn(malformed tx)\nLinha 258", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_tx_date_null [label="dateStr == null?\nLinha 243", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    skip_tx_date [label="Descarta tx sem data", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_tx_amt_null [label="amount == null?\nLinha 243", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    skip_tx_amt [label="Descarta tx sem valor", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_tx_acc_null [label="accountName == null?\nLinha 243", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    skip_tx_acc [label="Descarta tx sem conta", fillcolor="#fee2e2", color="#dc2626"];
+
+    d_tx_name_null [label="name == null?\nLinha 248", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    tx_name_empty [label="description = ''", fillcolor="#e0e7ff", color="#4338ca"];
+    tx_name_val [label="description = name.trim()", fillcolor="#f1f5f9"];
+
+    d_tx_cat_null [label="category == null?\nLinha 251", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    tx_cat_empty [label="category = ''", fillcolor="#e0e7ff", color="#4338ca"];
+    tx_cat_val [label="category = category.trim()", fillcolor="#f1f5f9"];
+
+    d_tx_curr_null [label="currency == null?\nLinha 252", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    tx_curr_eur [label="currency = 'EUR'", fillcolor="#e0e7ff", color="#4338ca"];
+    tx_curr_val [label="currency = currency.trim()", fillcolor="#f1f5f9"];
+
+    add_tx [label="transactions.add(ParsedFinaryTransaction)\nLinhas 245-253", fillcolor="#dcfce7", color="#16a34a"];
+
+    wb_close [label="workbook.close()\nreturn ParsedFinaryData\nLinhas 263-264", fillcolor="#dbeafe", color="#2563eb"];
+    end_ok [label="Fim com Sucesso", shape=ellipse, fillcolor="#dcfce7", color="#16a34a"];
+
+    // Fluxo Contas
+    entry -> init -> loop_cat;
+    loop_cat -> d_sheet_null [label=" Próxima cat [p22]", color="#2563eb", fontcolor="#2563eb"];
+    loop_cat -> tx_sheet_check [label=" Fim das abas", color="#16a34a", penwidth=1.6];
+
+    d_sheet_null -> sheet_absent [label=" Sim [p02]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    sheet_absent -> loop_cat;
+    d_sheet_null -> loop_rows [label=" Não", color="#16a34a"];
+
+    loop_rows -> empty_sheet [label=" Sem linhas [p03]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    empty_sheet -> loop_cat;
+    loop_rows -> d_row_null [label=" Linha i", color="#2563eb"];
+
+    d_row_null -> row_absent [label=" Sim [p04]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    row_absent -> loop_rows;
+    d_row_null -> try_acc [label=" Não", color="#2563eb"];
+
+    try_acc -> catch_acc [label=" Erro [p10]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    catch_acc -> loop_rows;
+    try_acc -> d_acc_name_null [label=" OK", color="#16a34a"];
+
+    d_acc_name_null -> skip_acc_name_null [label=" Sim [p05]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    skip_acc_name_null -> loop_rows;
+    d_acc_name_null -> d_acc_name_blank [label=" Não", color="#16a34a"];
+
+    d_acc_name_blank -> skip_acc_name_blank [label=" Sim [p06]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    skip_acc_name_blank -> loop_rows;
+    d_acc_name_blank -> d_acc_bal_null [label=" Não", color="#16a34a"];
+
+    d_acc_bal_null -> skip_acc_bal_null [label=" Sim [p07]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    skip_acc_bal_null -> loop_rows;
+    d_acc_bal_null -> d_acc_inst_null [label=" Não", color="#16a34a"];
+
+    d_acc_inst_null -> inst_empty [label=" Sim [p08]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    d_acc_inst_null -> inst_val [label=" Não", color="#16a34a"];
+    inst_empty -> d_acc_curr_null;
+    inst_val -> d_acc_curr_null;
+
+    d_acc_curr_null -> curr_eur [label=" Sim [p09]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    d_acc_curr_null -> curr_val [label=" Não", color="#16a34a"];
+    curr_eur -> add_acc;
+    curr_val -> add_acc;
+    add_acc -> loop_rows [label=" add [p01]", color="#16a34a"];
+
+    // Fluxo Transações
+    tx_sheet_check -> tx_absent [label=" Não [p11]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    tx_absent -> wb_close;
+    tx_sheet_check -> loop_tx_rows [label=" Sim", color="#16a34a"];
+
+    loop_tx_rows -> empty_tx_sheet [label=" Sem linhas [p12]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    empty_tx_sheet -> wb_close;
+    loop_tx_rows -> d_tx_row_null [label=" Linha i", color="#2563eb"];
+
+    d_tx_row_null -> tx_row_absent [label=" Sim [p13]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    tx_row_absent -> loop_tx_rows;
+    d_tx_row_null -> try_tx [label=" Não", color="#2563eb"];
+
+    try_tx -> catch_date [label=" Data inválida [p20]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    catch_date -> loop_tx_rows;
+    try_tx -> catch_tx_err [label=" Erro geral [p21]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    catch_tx_err -> loop_tx_rows;
+    try_tx -> d_tx_date_null [label=" OK", color="#16a34a"];
+
+    d_tx_date_null -> skip_tx_date [label=" Sim [p14]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    skip_tx_date -> loop_tx_rows;
+    d_tx_date_null -> d_tx_amt_null [label=" Não", color="#16a34a"];
+
+    d_tx_amt_null -> skip_tx_amt [label=" Sim [p15]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    skip_tx_amt -> loop_tx_rows;
+    d_tx_amt_null -> d_tx_acc_null [label=" Não", color="#16a34a"];
+
+    d_tx_acc_null -> skip_tx_acc [label=" Sim [p16]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    skip_tx_acc -> loop_tx_rows;
+    d_tx_acc_null -> d_tx_name_null [label=" Não", color="#16a34a"];
+
+    d_tx_name_null -> tx_name_empty [label=" Sim [p17]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    d_tx_name_null -> tx_name_val [label=" Não", color="#16a34a"];
+    tx_name_empty -> d_tx_cat_null;
+    tx_name_val -> d_tx_cat_null;
+
+    d_tx_cat_null -> tx_cat_empty [label=" Sim [p18]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    d_tx_cat_null -> tx_cat_val [label=" Não", color="#16a34a"];
+    tx_cat_empty -> d_tx_curr_null;
+    tx_cat_val -> d_tx_curr_null;
+
+    d_tx_curr_null -> tx_curr_eur [label=" Sim [p19]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    d_tx_curr_null -> tx_curr_val [label=" Não", color="#16a34a"];
+    tx_curr_eur -> add_tx;
+    tx_curr_val -> add_tx;
+    add_tx -> loop_tx_rows [label=" add [p01]", color="#16a34a"];
+
+    wb_close -> end_ok;
+}

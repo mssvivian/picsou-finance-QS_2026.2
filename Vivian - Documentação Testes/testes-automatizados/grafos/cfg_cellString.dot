@@ -1,0 +1,30 @@
+digraph CFG_CellString {
+
+    rankdir=TB;
+    bgcolor="transparent";
+    node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f8fafc", color="#64748b", penwidth=1.2];
+    edge [fontname="Helvetica", fontsize=9, color="#475569", penwidth=1.2, arrowsize=0.8];
+
+
+    entry [label="Entrada: cellString(row, col)\nLinha 267", shape=ellipse, fillcolor="#dcfce7", color="#16a34a"];
+    d1 [label="cell == null?\nLinha 269", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    ret_null [label="return null;\nLinha 269", fillcolor="#fee2e2", color="#dc2626"];
+    d2 [label="switch (cell.getCellType())\nLinha 270", shape=diamond, fillcolor="#bae6fd", color="#0284c7"];
+    ret_str [label="case STRING:\nreturn cell.getStringCellValue()\nLinha 271", fillcolor="#dcfce7", color="#16a34a"];
+    ret_num [label="case NUMERIC:\nreturn String.valueOf((long)...)\nLinha 272", fillcolor="#fef3c7", color="#d97706"];
+    ret_def [label="default:\nreturn null;\nLinha 273", fillcolor="#fee2e2", color="#dc2626"];
+
+    end_node [label="Fim do Método", shape=ellipse, fillcolor="#e2e8f0", color="#475569"];
+
+    entry -> d1;
+    d1 -> ret_null [label=" Sim [p01]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    d1 -> d2 [label=" Não", color="#2563eb", fontcolor="#2563eb"];
+    d2 -> ret_str [label=" case STRING [p02]", color="#16a34a", fontcolor="#16a34a", penwidth=1.6];
+    d2 -> ret_num [label=" case NUMERIC [p03]", color="#d97706", fontcolor="#d97706", penwidth=1.6];
+    d2 -> ret_def [label=" default [p04]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    
+    ret_null -> end_node;
+    ret_str -> end_node;
+    ret_num -> end_node;
+    ret_def -> end_node;
+}
