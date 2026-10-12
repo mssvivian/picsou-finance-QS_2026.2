@@ -472,4 +472,51 @@ class TransactionRowMapperTest {
         assertEquals("USD", tx.getNativeCurrency());
         assertEquals(LocalDate.of(2026, 3, 15), tx.getDate());
     }
+
+     // GRUPO DE TESTES 5: parseDecimal e parseDate
+    
+    @Test
+    @DisplayName("36. parseDecimal: string alfanumérica inválida lança NumberFormatException encapsulada")
+    void test36_parseDecimal_malformedString_throwsIllegalArgumentException() {
+        List<String> row = Arrays.asList("2026-03-15", "BUY", "AAPL", "Apple Inc.", "dez_acoes", "150.00", "0", "USD", "-1500.00");
+
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+            mapper.map(row, defaultMapping(), defaultDialect, null, false, defaultAccount)
+        );
+        assertTrue(ex.getMessage().contains("Invalid quantity 'dez_acoes'"));
+        assertTrue(ex.getCause() instanceof NumberFormatException);
+    }
+
+    @Test
+    @DisplayName("37. parseDecimal: valor válido é convertido com sucesso em BigDecimal")
+    void test37_parseDecimal_validString_parsedCorrectly() {
+        mockResolvedInstrument();
+        List<String> row = Arrays.asList("2026-03-15", "BUY", "AAPL", "Apple Inc.", "15.75", "150.00", "0", "USD", "-2362.50");
+
+        Transaction tx = mapper.map(row, defaultMapping(), defaultDialect, null, false, defaultAccount);
+
+        assertEquals(new BigDecimal("15.75"), tx.getQuantity());
+    }
+
+    @Test
+    @DisplayName("38. parseDate: formato de data incompatível lança DateTimeParseException encapsulada")
+    void test38_parseDate_malformedDate_throwsIllegalArgumentException() {
+        List<String> row = Arrays.asList("2026/03/15", "BUY", "AAPL", "Apple Inc.", "10", "150.00", "0", "USD", "-1500.00");
+
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, () ->
+            mapper.map(row, defaultMapping(), defaultDialect, null, false, defaultAccount)
+        );
+        assertTrue(ex.getMessage().contains("Invalid date '2026/03/15'"));
+    }
+
+    @Test
+    @DisplayName("39. parseDate: data compatível com o padrão do dialeto é convertida com sucesso")
+    void test39_parseDate_validDate_parsedCorrectly() {
+        mockResolvedInstrument();
+        List<String> row = Arrays.asList("2026-12-31", "BUY", "AAPL", "Apple Inc.", "10", "150.00", "0", "USD", "-1500.00");
+
+        Transaction tx = mapper.map(row, defaultMapping(), defaultDialect, null, false, defaultAccount);
+
+        assertEquals(LocalDate.of(2026, 12, 31), tx.getDate());
+    }
 }
