@@ -1,4 +1,4 @@
-# Especificação de Testes Manuais: Mapeamento de Transações CSV (`TransactionRowMapper`)
+# Especificação de Testes Manuais: Mapeamento de Transações CSV `TransactionRowMapper`
 
 Este documento formaliza os casos de teste manuais para o módulo de importação de arquivos CSV do sistema **Picsou Finance**. Os casos aqui descritos cobrem os cenários de negócio, regras de integridade e tratamentos de exceção implementados na classe `TransactionRowMapper`.
 
