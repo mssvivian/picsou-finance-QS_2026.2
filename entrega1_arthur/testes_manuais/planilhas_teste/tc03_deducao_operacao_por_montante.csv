@@ -1,0 +1,4 @@
+Date,Side,Ticker,Name,Quantity,UnitPrice,Fees,Currency,TotalAmount
+2026-03-15,,AAPL,Apple Inc.,10,150.00,0.00,USD,-1500.00
+2026-03-16,,MSFT,Microsoft Corp.,5,400.00,0.00,USD,2000.00
+2026-03-17,   ,AMZN,Amazon.com Inc.,2,190.00,0.00,USD,-380.00
