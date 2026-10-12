@@ -71,7 +71,9 @@ A transação é criada e persistida no banco de dados com os seguintes dados:
 Verificar se linhas de transação com quantidade vazia, igual a zero ou com valor negativo são devidamente identificadas e rejeitadas pela validação de integridade.
 
 #### Pré-condições
-1. Assistente de importação CSV aberto em uma conta de investimentos.
+1. Usuário autenticado na aplicação Picsou Finance.
+2. Pelo menos uma conta manual de investimentos cadastrada com moeda padrão `EUR`.
+3. Ficheiro CSV de teste disponível contendo linha de quantidade nula/negativa.
 
 #### Etapas de Execução
 
@@ -99,7 +101,9 @@ Exibição visível da mensagem de erro de validação: `"Missing or non-positiv
 Validar a heurística que infere automaticamente o tipo de operação (compra ou venda) a partir do sinal numérico do montante total quando a coluna `side` estiver vazia ou omitida.
 
 #### Pré-condições
-1. Arquivo CSV configurado com a coluna de operação (`side`) em branco e com linhas alternando montantes negativos e positivos.
+1. Usuário autenticado na aplicação Picsou Finance.
+2. Pelo menos uma conta manual de investimentos cadastrada com moeda padrão `EUR`.
+3. Arquivo CSV configurado com a coluna de operação (`side`) em branco e com linhas alternando montantes negativos e positivos.
 
 #### Etapas de Execução
 
@@ -127,8 +131,10 @@ Ambas as transações são criadas com sucesso na tabela de transações, regist
 Validar o cálculo matemático do preço unitário a partir do valor bruto ajustado pelas taxas quando a coluna `unitPrice` não for fornecida e a flag `feesIncluded` estiver habilitada.
 
 #### Pré-condições
-1. Arquivo de importação contendo transação sem coluna de preço unitário mapeada.
-2. Opção "Taxas já incluídas no total" (`feesIncluded = true`) disponível no assistente.
+1. Usuário autenticado na aplicação Picsou Finance.
+2. Pelo menos uma conta manual de investimentos cadastrada com moeda padrão `EUR`.
+3. Arquivo de importação contendo transação sem coluna de preço unitário mapeada.
+4. Opção "Taxas já incluídas no total" (`feesIncluded = true`) disponível no assistente.
 
 #### Etapas de Execução
 
@@ -152,7 +158,9 @@ A transação é registrada no sistema com o campo `price_per_unit` calculado ex
 Garantir que, na ausência de informação explícita de moeda na linha do arquivo CSV, a transação herde a moeda padrão configurada na conta bancária/corretora associada.
 
 #### Pré-condições
-1. Conta de destino no sistema previamente criada com moeda nativa configurada como `EUR`.
+1. Usuário autenticado na aplicação Picsou Finance.
+2. Pelo menos uma conta manual de investimentos criada com moeda nativa configurada como `EUR`.
+3. Ficheiro CSV de teste disponível com coluna de moeda da transação não preenchida.
 
 #### Etapas de Execução
 
