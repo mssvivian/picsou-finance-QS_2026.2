@@ -32,7 +32,9 @@ entrega1_arthur/
 │   │   │   └── *.png
 │   │   └── tc05
 │   │        └── *.png
-│   │            
+│   │
+│   ├── relatorio_testlink.pdf                   # Relatório gerado pelo TestLink
+│   │                                                     
 │   └── especificação_testes_manuais.md          # Especificação dos testes manuais (pré-condições, resultados, etc.)
 │
 └── testes_unitários/                            # Testes Unitários (Caixa-Branca / JUnit 5 / Mockito)
