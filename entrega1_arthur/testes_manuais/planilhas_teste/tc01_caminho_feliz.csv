@@ -1,0 +1,3 @@
+Date,Side,Ticker,Name,Quantity,UnitPrice,Fees,Currency,TotalAmount
+2026-03-15,BUY,AAPL,Apple Inc.,10,150.00,5.00,USD,-1505.00
+2026-03-16,SELL,MSFT,Microsoft Corp.,5,420.00,2.50,USD,2097.50
