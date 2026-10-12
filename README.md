@@ -10,22 +10,20 @@
 
 ## 👥 Integrantes e Matriz de Entregas
 
-A tabela abaixo resume as classes críticas selecionadas para análise de complexidade ciclomática $V(G)$, desenvolvimento de testes unitários automatizados (com cobertura JaCoCo), testes manuais no TestLink e as respectivas pastas e branches de entrega:
+A tabela abaixo resume as classes críticas selecionadas para análise de complexidade ciclomática $V(G)$, desenvolvimento de testes unitários automatizados, testes manuais no TestLink e as respectivas pastas e branches de entrega:
 
-| Integrante | Classe Analisada | Complexidade | Suíte de Testes Unitários | Pasta de Entrega | Cenários TestLink | Branch / Status |
-| :--- | :--- | :---: | :--- | :--- | :--- | :--- |
-| **Arthur Sena** | [`TransactionRowMapper`](backend/src/main/java/com/picsou/imports/TransactionRowMapper.java) | $V(G)_{max} = 15$<br>($WMC = 39$) | [`TransactionRowMapperTest`](backend/src/test/java/com/picsou/imports/TransactionRowMapperTest.java) | [`entrega1_arthur/`](entrega1_arthur/) ([README](entrega1_arthur/README.md)) | `dd-2`: Importação de arquivo CSV com transações de investimento | `main` (via [PR #16](https://github.com/mssvivian/picsou-finance-QS_2026.2/pull/16)) |
-| **Carolina Falcão** | [`FamilyViewService`](backend/src/main/java/com/picsou/service/FamilyViewService.java) | $V(G) = 14$<br>($WMC = 24$) | [`FamilyViewServiceTest`](backend/src/test/java/com/picsou/service/FamilyViewServiceTest.java) | [`doc_testes_carolina/`](doc_testes_carolina/) ([README](doc_testes_carolina/testes_manuais/README.md)) | `dd-4`: Criação e compartilhamento de meta familiar | [`feat/teste_FamilyViewService_carolina`](https://github.com/mssvivian/picsou-finance-QS_2026.2/tree/feat/teste_FamilyViewService_carolina) |
-| **Paulo Vaz** | [`LoanAmortizationService`](backend/src/main/java/com/picsou/service/LoanAmortizationService.java) | $V(G) = 14$<br>($WMC = 30$) | [`LoanAmortizationServiceTest`](backend/src/test/java/com/picsou/service/LoanAmortizationServiceTest.java) | [`entrega1/`](entrega1/) | `dd-5`, `dd-6`, `dd-7`: Cálculo e recálculo de empréstimos | [`feat/teste_LoanAmortizationService_paulo`](https://github.com/mssvivian/picsou-finance-QS_2026.2/tree/feat/teste_LoanAmortizationService_paulo) |
-| **Vivian Santos** | [`FinaryImportService`](backend/src/main/java/com/picsou/service/FinaryImportService.java) | $V(G) = 22$<br>($WMC = 44$) | [`FinaryImportServiceTest`](backend/src/test/java/com/picsou/service/FinaryImportServiceTest.java) | [`Vivian - Documentação Testes/`](Vivian%20-%20Documentação%20Testes/) ([README](Vivian%20-%20Documentação%20Testes/README.md)) | `dd-3`: Pré-visualização e importação com criação de novas contas | `main` (via [PR #17](https://github.com/mssvivian/picsou-finance-QS_2026.2/pull/17)) |
-
-> 📌 **Status das Branches:** As entregas de **Arthur Sena** e **Vivian Santos** já foram integradas à `main` via PRs [#16](https://github.com/mssvivian/picsou-finance-QS_2026.2/pull/16) e [#17](https://github.com/mssvivian/picsou-finance-QS_2026.2/pull/17). As entregas de **Carolina Falcão** e **Paulo Vaz** estão disponíveis em suas respectivas feature branches e já possuem suas pastas presentes na árvore do projeto.
+| Integrante | Classe Analisada | Complexidade | Suíte de Testes Unitários | Pasta de Entrega / Relatório | Cenários TestLink |
+| :--- | :--- | :---: | :--- | :--- | :--- |
+| **Arthur Sena** | [`TransactionRowMapper`](backend/src/main/java/com/picsou/imports/TransactionRowMapper.java) | $V(G)_{max} = 15$<br>($WMC = 39$) | [`TransactionRowMapperTest`](backend/src/test/java/com/picsou/imports/TransactionRowMapperTest.java) | [`entrega1_arthur/`](entrega1_arthur/) ([README](entrega1_arthur/README.md)) | `dd-2`: Importação de arquivo CSV com transações de investimento |
+| **Carolina Falcão** | [`FamilyViewService`](backend/src/main/java/com/picsou/service/FamilyViewService.java) | $V(G) = 14$<br>($WMC = 24$) | [`FamilyViewServiceTest`](backend/src/test/java/com/picsou/service/FamilyViewServiceTest.java) | [`doc_testes_carolina/`](doc_testes_carolina/) ([README](doc_testes_carolina/README.md)) | `dd-4`: Criação e compartilhamento de meta familiar |
+| **Paulo Vaz** | [`LoanAmortizationService`](backend/src/main/java/com/picsou/service/LoanAmortizationService.java) | $V(G) = 14$<br>($WMC = 30$) | [`LoanAmortizationServiceTest`](backend/src/test/java/com/picsou/service/LoanAmortizationServiceTest.java) | [`entrega1/`](entrega1/) ([README](entrega1/paulo/README.md)) | `dd-5`, `dd-6`, `dd-7`: Cálculo e recálculo de empréstimos |
+| **Vivian Santos** | [`FinaryImportService`](backend/src/main/java/com/picsou/service/FinaryImportService.java) | $V(G) = 22$<br>($WMC = 44$) | [`FinaryImportServiceTest`](backend/src/test/java/com/picsou/service/FinaryImportServiceTest.java) | [`Vivian - Documentação Testes/`](Vivian%20-%20Documentação%20Testes/) ([README](Vivian%20-%20Documentação%20Testes/README.md)) | `dd-3`: Pré-visualização e importação com criação de novas contas |
 
 ---
 
 ## 🐛 Issues e Falhas Registradas no GitHub
 
-Durante a elaboração dos testes manuais no TestLink e a criação dos testes unitários com análise de fluxo de controle, foram identificados e reportados os seguintes bugs no GitHub Issues do repositório:
+Durante a elaboração dos testes manuais e dos testes unitários com análise de fluxo de controle, foram identificados e reportados os seguintes bugs no GitHub Issues do repositório:
 
 | Issue | Responsável | Título / Descrição | Tipo |
 | :---: | :--- | :--- | :---: |
@@ -67,12 +65,6 @@ mvn test -Dtest=LoanAmortizationServiceTest
 mvn test -Dtest=FinaryImportServiceTest
 ```
 
-### Gerando Relatório de Cobertura de Código (JaCoCo)
-```bash
-cd backend
-mvn test jacoco:report
-```
-O relatório HTML estará disponível em: `backend/target/site/jacoco/index.html`.
 
 ---
 
