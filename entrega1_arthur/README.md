@@ -14,14 +14,14 @@ entrega1_arthur/
 ├── README.md                                  # Índice geral (este arquivo)
 │
 ├── testes_manuais/                            # Testes Manuais (Caixa-Preta / TestLink)
-│   ├── planilhas_teste                        # Planilhas de importação para reprodução dos testes
+│   ├── planilhas_teste/                       # Planilhas de importação para reprodução dos testes
 │   │   ├── tc01_caminho_feliz.csv
 │   │   ├── tc02_quantidade_invalida.csv
 │   │   ├── tc03_deducao_operacao_por_montante.csv
 │   │   ├── tc04_preco_calculado_com_taxas.csv
 │   │   └── tc05_moeda_conversao.csv
 │   │ 
-│   ├── prints                                  # Registros dos testes realizados
+│   ├── prints/                                 # Registros dos testes realizados
 │   │   ├── tc01
 │   │   │   └── *.png
 │   │   ├── tc02
