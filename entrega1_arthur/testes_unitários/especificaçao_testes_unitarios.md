@@ -1,6 +1,6 @@
 # Especificação de Testes Unitários: `TransactionRowMapper`
 
-Este documento formaliza a cobertura estrutural da classe `TransactionRowMapper`, detalhando a **Complexidade Ciclomática ($V(G)$)** de cada método e o comportamento verificado por cada um dos 39 testes unitários da suíte JUnit 5.
+Este documento formaliza a cobertura estrutural da classe `TransactionRowMapper`, detalhando a **Complexidade Ciclomática (V(G))** de cada método e o comportamento verificado por cada um dos 39 testes unitários da suíte JUnit 5.
 
 ---
 
