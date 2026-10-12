@@ -6,6 +6,8 @@
 ### **Universidade Federal do Rio de Janeiro (COPPE / UFRJ) — 2026.2**
 **Grupo DinDin** | **Sistema sob Teste:** Picsou Finance
 
+**Link para o Relatório e Plano de Testes:** https://docs.google.com/document/d/174YfA8uADoj7lZSMK4G4zfYv5K7SVFhMg249277UQ0E/edit?usp=sharing 
+
 ---
 
 ## 👥 Integrantes e Matriz de Entregas
