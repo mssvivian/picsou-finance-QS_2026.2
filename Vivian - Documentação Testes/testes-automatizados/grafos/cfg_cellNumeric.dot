@@ -1,0 +1,27 @@
+digraph CFG_CellNumeric {
+
+    rankdir=TB;
+    bgcolor="transparent";
+    node [fontname="Helvetica", fontsize=10, shape=box, style="rounded,filled", fillcolor="#f8fafc", color="#64748b", penwidth=1.2];
+    edge [fontname="Helvetica", fontsize=9, color="#475569", penwidth=1.2, arrowsize=0.8];
+
+
+    entry [label="Entrada: cellNumeric(row, col)\nLinha 281", shape=ellipse, fillcolor="#dcfce7", color="#16a34a"];
+    d1 [label="cell == null?\nLinha 283", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    ret_null_1 [label="return null;\nLinha 283", fillcolor="#fee2e2", color="#dc2626"];
+    d2 [label="cell.getCellType() == NUMERIC?\nLinha 284", shape=diamond, fillcolor="#fef08a", color="#ca8a04"];
+    ret_val [label="return BigDecimal.valueOf(...)\nLinha 285", fillcolor="#dcfce7", color="#16a34a"];
+    ret_null_2 [label="return null;\nLinha 287", fillcolor="#fee2e2", color="#dc2626"];
+    
+    end_node [label="Fim do Método", shape=ellipse, fillcolor="#e2e8f0", color="#475569"];
+
+    entry -> d1;
+    d1 -> ret_null_1 [label=" Sim [p01]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    d1 -> d2 [label=" Não", color="#2563eb", fontcolor="#2563eb"];
+    d2 -> ret_val [label=" Sim [p03]", color="#16a34a", fontcolor="#16a34a", penwidth=1.6];
+    d2 -> ret_null_2 [label=" Não [p02]", color="#dc2626", fontcolor="#dc2626", penwidth=1.6];
+    
+    ret_null_1 -> end_node;
+    ret_null_2 -> end_node;
+    ret_val -> end_node;
+}
