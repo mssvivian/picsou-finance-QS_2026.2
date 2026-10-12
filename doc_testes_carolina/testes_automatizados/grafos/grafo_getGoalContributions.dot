@@ -1,0 +1,49 @@
+digraph G2 {
+    graph [rankdir=TB, bgcolor="white", pad="0.4", nodesep="0.4", ranksep="0.5"];
+    node [fontname="Helvetica, Arial, sans-serif", fontsize=10, penwidth=1.5];
+    edge [fontname="Helvetica, Arial, sans-serif", fontsize=9, color="#37474F", penwidth=1.2];
+
+    // Nodes
+    start_gc [label="① Início\ngetGoalContributions", shape=ellipse, style="filled", fillcolor="#C8E6C9", color="#2E7D32"];
+    n_find [label="② goalRepository\n.findById(goalId)", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+    e_find [label="③ Meta\nencontrada?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    throw_404 [label="④ Lança\nResourceNotFoundException", shape=box, style="filled,rounded", fillcolor="#FFCDD2", color="#C62828"];
+    g1 [label="⑤ G1: ownerId !=\nviewerMemberId?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+
+    // isGoalVisibleTo
+    v1 [label="⑥ V1: goalSettings\n== null?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    throw_403 [label="⑨ Lança\nAccessDeniedException", shape=box, style="filled,rounded", fillcolor="#FFCDD2", color="#C62828"];
+    v2 [label="⑦ V2: sharingLevel\n== NONE?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    v3 [label="⑧ V3: sharingLevel\n== ALL?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    v_exists [label="Meta em\nSharedResource?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+
+    // Loop
+    loop_members [label="⑩ G3: Próximo membro\nem allMembers?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    g4 [label="⑪ G4: Total\naportes > 0?", shape=diamond, style="filled", fillcolor="#E1F5FE", color="#0288D1"];
+    add_resp [label="⑫ Adiciona\nContributionBreakdown", shape=box, style="filled,rounded", fillcolor="#EDE7F6", color="#512DA8"];
+    ret_contrib [label="⑬ Retornar lista de\ncontribuições", shape=ellipse, style="filled", fillcolor="#C8E6C9", color="#2E7D32"];
+
+    // Edges
+    start_gc -> n_find;
+    n_find -> e_find;
+    e_find -> throw_404 [label="Não", color="#C62828"];
+    e_find -> g1 [label="Sim"];
+
+    g1 -> loop_members [label="Não (Viewer é Dono)", color="#2E7D32"];
+    g1 -> v1 [label="Sim (Terceiro)"];
+
+    v1 -> throw_403 [label="Sim", color="#C62828"];
+    v1 -> v2 [label="Não"];
+    v2 -> throw_403 [label="Sim (NONE)", color="#C62828"];
+    v2 -> v3 [label="Não"];
+    v3 -> loop_members [label="Sim (ALL)", color="#2E7D32"];
+    v3 -> v_exists [label="Não (MANUAL)"];
+    v_exists -> throw_403 [label="Não", color="#C62828"];
+    v_exists -> loop_members [label="Sim (Compartilhada)", color="#2E7D32"];
+
+    loop_members -> g4 [label="Sim"];
+    loop_members -> ret_contrib [label="Não (Fim)"];
+    g4 -> add_resp [label="Sim (> 0)"];
+    g4 -> loop_members [label="Não (<= 0)"];
+    add_resp -> loop_members;
+}
