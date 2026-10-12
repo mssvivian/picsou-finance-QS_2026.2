@@ -22,7 +22,7 @@
  *
  *  + 6 testes extras (prefixo extra_), fora da contagem de CC:
  *    - 3 testes documentam defeitos conhecidos marcados com @Disabled
- *      (Issues #1, #2 e #3 do GitHub);
+ *      (Issues #8, #9 e #10 do GitHub);
  *    - 3 testes cobrem robustez adicional de tokens e validações de membros.
  *
  *  Convenção de nomes: <metodo>_pNN_<caminho coberto>
@@ -908,8 +908,8 @@ class FinaryImportServiceTest {
 
     // ═════════════ EXTRAS (fora da contagem de CC) ═════════════
 
-    // ── Defeito 1 / Issue #1: Colisão de contas com mesmo nome e categoria ──
-    @Disabled("Defeito conhecido: ver Issue #1 no GitHub. Contas homônimas na mesma categoria colidem gerando mesmo finaryId e descarte da 2ª conta.")
+    // ── Defeito 1 / Issue #8: Colisão de contas com mesmo nome e categoria ──
+    @Disabled("Defeito conhecido: ver Issue #8 no GitHub. Contas homônimas na mesma categoria colidem gerando mesmo finaryId e descarte da 2ª conta.")
     @Test
     void extra_preview_twoAccountsWithSameNameAndCategoryMustGetDistinctIds() {
         // Dois "Livret A" em bancos diferentes, na mesma aba. O id é só categoria + nome,
@@ -939,8 +939,8 @@ class FinaryImportServiceTest {
             .containsExactly(100.0, 200.0);
     }
 
-    // ── Defeito 2 / Issue #2: Descarte silencioso de transações com formato de data não-ISO ──
-    @Disabled("Defeito conhecido: ver Issue #2 no GitHub. Transações com formato de data não-ISO (ex: 31/12/2024) são descartadas silenciosamente sem avisar o usuário via warnings.")
+    // ── Defeito 2 / Issue #9: Descarte silencioso de transações com formato de data não-ISO ──
+    @Disabled("Defeito conhecido: ver Issue #9 no GitHub. Transações com formato de data não-ISO (ex: 31/12/2024) são descartadas silenciosamente sem avisar o usuário via warnings.")
     @Test
     void extra_preview_unparseableDateShouldNotBeSilentlyDiscarded() {
         // Transação com formato comum francês/brasileiro (dd/MM/yyyy)
@@ -958,8 +958,8 @@ class FinaryImportServiceTest {
             .isEqualTo(1);
     }
 
-    // ── Defeito 3 / Issue #3: Células do tipo FORMULA caem no switch default e retornam null ──
-    @Disabled("Defeito conhecido: ver Issue #3 no GitHub. Células do tipo FORMULA caem no switch default e retornam null em cellString.")
+    // ── Defeito 3 / Issue #10: Células do tipo FORMULA caem no switch default e retornam null ──
+    @Disabled("Defeito conhecido: ver Issue #10 no GitHub. Células do tipo FORMULA caem no switch default e retornam null em cellString.")
     @Test
     void extra_cellString_formulaCellShouldEvaluateCachedStringResult() {
         Workbook wb = new XSSFWorkbook();
