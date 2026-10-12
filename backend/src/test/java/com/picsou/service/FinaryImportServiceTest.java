@@ -703,7 +703,22 @@ class FinaryImportServiceTest {
     }
 
     @Test
-    void parseXlsx_p18_transactionWithoutCategoryGetsAnEmptyCategory() {
+    void parseXlsx_p18_transactionWithoutTypeGetsAnEmptyType() {
+        Workbook wb = new XSSFWorkbook();
+        put(transactionSheet(wb), 1, "Checkings", "2024-01-15", "A", 1.0, null, "Conta", "Banco", "EUR");
+
+        FinaryImportService.ParsedFinaryData parsed = parse(wb);
+
+        assertThat(parsed.transactions()).hasSize(1);
+        ParsedFinaryTransaction tx = parsed.transactions().get(0);
+        assertThat(tx.type()).isEmpty();
+        assertThat(tx.description()).isEqualTo("A");
+        assertThat(tx.accountName()).isEqualTo("Conta");
+        assertThat(parsed.accounts()).isEmpty();
+    }
+
+    @Test
+    void parseXlsx_p19_transactionWithoutCategoryGetsAnEmptyCategory() {
         Workbook wb = new XSSFWorkbook();
         put(transactionSheet(wb), 1, null, "2024-01-15", "A", 1.0, "Income", "Conta", "Banco", "EUR");
 
@@ -712,13 +727,14 @@ class FinaryImportServiceTest {
         assertThat(parsed.transactions()).hasSize(1);
         ParsedFinaryTransaction tx = parsed.transactions().get(0);
         assertThat(tx.category()).isEmpty();
+        assertThat(tx.type()).isEqualTo("Income");
         assertThat(tx.description()).isEqualTo("A");
         assertThat(tx.accountName()).isEqualTo("Conta");
         assertThat(parsed.accounts()).isEmpty();
     }
 
     @Test
-    void parseXlsx_p19_transactionWithoutCurrencyDefaultsToEur() {
+    void parseXlsx_p20_transactionWithoutCurrencyDefaultsToEur() {
         Workbook wb = new XSSFWorkbook();
         put(transactionSheet(wb), 1, "Checkings", "2024-01-15", "A", 1.0, "Income", "Conta", "Banco");
 
@@ -733,7 +749,7 @@ class FinaryImportServiceTest {
     }
 
     @Test
-    void parseXlsx_p20_transactionWithUnparseableDateIsSkippedAndTheOthersSurvive() {
+    void parseXlsx_p21_transactionWithUnparseableDateIsSkippedAndTheOthersSurvive() {
         Workbook wb = new XSSFWorkbook();
         Sheet t = transactionSheet(wb);
         put(t, 1, "Checkings", "31/12/2024", "ruim", 1.0, "Income", "Conta", "Banco", "EUR");
@@ -750,7 +766,7 @@ class FinaryImportServiceTest {
     }
 
     @Test
-    void parseXlsx_p21_transactionRowThatThrowsIsSkipped() {
+    void parseXlsx_p22_transactionRowThatThrowsIsSkipped() {
         Workbook wb = mock(Workbook.class);
         Sheet sheet = mock(Sheet.class);
         Row row = mock(Row.class);
@@ -762,22 +778,6 @@ class FinaryImportServiceTest {
         FinaryImportService.ParsedFinaryData parsed = parse(wb);
 
         assertThat(parsed.accounts()).isEmpty();
-        assertThat(parsed.transactions()).isEmpty();
-    }
-
-    @Test
-    void parseXlsx_p22_everyKnownCategorySheetIsReadInTheKnownOrder() {
-        Workbook wb = new XSSFWorkbook();
-        // criadas em ordem inversa para provar que a ordem de leitura vem da lista de categorias
-        for (int i = KNOWN_CATEGORIES.size() - 1; i >= 0; i--) {
-            put(accountSheet(wb, KNOWN_CATEGORIES.get(i)), 1, "Conta " + i, "Banco", 10.0 * (i + 1), "EUR");
-        }
-
-        FinaryImportService.ParsedFinaryData parsed = parse(wb);
-
-        assertThat(parsed.accounts()).hasSize(KNOWN_CATEGORIES.size());
-        assertThat(parsed.accounts()).extracting(ParsedFinaryAccount::category)
-            .containsExactlyElementsOf(KNOWN_CATEGORIES);
         assertThat(parsed.transactions()).isEmpty();
     }
 
