@@ -1,3 +1,85 @@
+<!-- ===================================================================== -->
+<!-- TRABALHO 1 - QUALIDADE DE SOFTWARE (COS482) - GRUPO DINDIN           -->
+<!-- ===================================================================== -->
+
+# 💰 Trabalho 1 — Qualidade de Software (COS482)
+### **Universidade Federal do Rio de Janeiro (COPPE / UFRJ) — 2026.2**
+**Grupo DinDin** | **Sistema sob Teste:** Picsou Finance
+
+---
+
+## 👥 Integrantes e Matriz de Entregas
+
+A tabela abaixo resume as classes críticas selecionadas para análise de complexidade ciclomática $V(G)$, desenvolvimento de testes unitários automatizados (com cobertura JaCoCo), testes manuais no TestLink e as respectivas pastas e branches de entrega:
+
+| Integrante | Classe Analisada | Complexidade | Suíte de Testes Unitários | Pasta de Entrega | Cenários TestLink | Branch |
+| :--- | :--- | :---: | :--- | :--- | :--- | :--- |
+| **Arthur Sena** | [`TransactionRowMapper`](backend/src/main/java/com/picsou/imports/TransactionRowMapper.java) | $WMC = 39$ | [`TransactionRowMapperTest`](backend/src/test/java/com/picsou/imports/TransactionRowMapperTest.java) | [`entrega1_arthur/`](entrega1_arthur/) | `dd-2`: Importação de arquivo CSV com transações de investimento | [`feat/teste_TransactionRowMapper_arthur`](https://github.com/mssvivian/picsou-finance-QS_2026.2/tree/feat/teste_TransactionRowMapper_arthur) |
+| **Carolina Falcão** | [`FamilyViewService`](backend/src/main/java/com/picsou/service/FamilyViewService.java) | $V(G) = 14$<br>($WMC = 24$) | [`FamilyViewServiceTest`](backend/src/test/java/com/picsou/service/FamilyViewServiceTest.java) | [`doc_testes_carolina/`](doc_testes_carolina/) | `dd-4`: Criação e compartilhamento de meta familiar | [`feat/teste_FamilyViewService_carolina`](https://github.com/mssvivian/picsou-finance-QS_2026.2/tree/feat/teste_FamilyViewService_carolina) |
+| **Paulo Vaz** | [`LoanAmortizationService`](backend/src/main/java/com/picsou/service/LoanAmortizationService.java) | $V(G) = 14$<br>($WMC = 30$) | [`LoanAmortizationServiceTest`](backend/src/test/java/com/picsou/service/LoanAmortizationServiceTest.java) | [`entrega1/`](entrega1/) | `dd-5`, `dd-6`, `dd-7`: Cálculo e recálculo de empréstimos | [`feat/teste_LoanAmortizationService_paulo`](https://github.com/mssvivian/picsou-finance-QS_2026.2/tree/feat/teste_LoanAmortizationService_paulo) |
+| **Vivian Santos** | [`FinaryImportService`](backend/src/main/java/com/picsou/service/FinaryImportService.java) | $V(G) = 22$<br>($WMC = 44$) | [`FinaryImportServiceTest`](backend/src/test/java/com/picsou/service/FinaryImportServiceTest.java) | [`Vivian - Documentação Testes/`](Vivian%20-%20Documentação%20Testes/) | `dd-3`: Pré-visualização e importação com criação de novas contas | [`feat/teste_FinaryImportService_vivian`](https://github.com/mssvivian/picsou-finance-QS_2026.2/tree/feat/teste_FinaryImportService_vivian) |
+
+> 📌 **Nota sobre Branches e Links:** Enquanto as branches individuais não forem completamente mescladas na `main`, você pode acessar a documentação e os testes diretamente pelas branches no repositório GitHub através dos links da coluna *Branch*.
+
+---
+
+## 🐛 Issues e Falhas Registradas no GitHub
+
+Durante a elaboração dos testes manuais no TestLink e a criação dos testes unitários com análise de fluxo de controle, foram identificados e reportados os seguintes bugs no GitHub Issues do repositório:
+
+| Issue | Responsável | Título / Descrição | Tipo |
+| :---: | :--- | :--- | :---: |
+| [#14](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/14) | Arthur Sena | **[BUG] TransactionRowMapper: preço unitário fica zerado**<br>Mapeamento incorreto de colunas zerando o preço unitário de ativos importados via CSV. | Mapeamento CSV |
+| [#15](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/15) | Arthur Sena | **[BUG] TransactionRowMapper: taxas superiores ao montante**<br>Inversão de campos resultando em valores de taxa superiores ao próprio montante negociado. | Mapeamento CSV |
+| [#4](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/4) | Paulo Vaz | **[BUG-PCV-01] LoanAmortizationService: capitais das parcelas automáticas somam 999,99 para principal 1000**<br>Erro de arredondamento com truncamento de centavos no cálculo de amortização de empréstimos. | Lógica / Arredondamento |
+| [#5](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/5) | Paulo Vaz | **[BUG-PCV-02] LoanAmortizationService: parcela automática omite o seguro mensal**<br>Omissão do seguro na composição das parcelas calculadas automaticamente. | Regra de Negócio |
+| [#2](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/2) | Vivian Santos | **[BUG] HTTP 415 Unsupported Media Type when uploading Finary XLSX file from UI**<br>Falha na conversão de Content-Type multipart/form-data durante o upload de planilhas. | Interface / API |
+| [#8](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/8) | Vivian Santos | **[BUG] Importação Finary: Colisão de IDs e perda de dados quando contas na mesma categoria compartilham o mesmo nome**<br>Geração não-determinística de IDs gerando sobrescrita de contas homônimas. | Integridade de Dados |
+| [#9](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/9) | Vivian Santos | **[BUG] Importação Finary: Descarte silencioso de transações com datas em formatos comuns**<br>Falta de suporte a múltiplos formatos de data ISO/Europeu resultando em transações ignoradas sem aviso. | Parsing / Dados |
+| [#10](https://github.com/mssvivian/picsou-finance-QS_2026.2/issues/10) | Vivian Santos | **[BUG] Importação Finary: Células do Excel com tipo FORMULA avaliam para null em cellString**<br>Células computadas via fórmula são lidas como string nula em vez do valor avaliado. | Integração Excel |
+
+---
+
+## 🚀 Como Executar os Testes Automatizados
+
+### Pré-requisitos
+- **Java 21 (JDK 21)**
+- **Maven 3.9+** (ou executar via container Docker)
+
+### Executando Todos os Testes
+```bash
+cd backend
+mvn test
+```
+
+### Executando Testes de uma Classe Específica
+```bash
+# Testes da classe TransactionRowMapper (Arthur Sena)
+mvn test -Dtest=TransactionRowMapperTest
+
+# Testes da classe FamilyViewService (Carolina Falcão)
+mvn test -Dtest=FamilyViewServiceTest
+
+# Testes da classe LoanAmortizationService (Paulo Vaz)
+mvn test -Dtest=LoanAmortizationServiceTest
+
+# Testes da classe FinaryImportService (Vivian Santos)
+mvn test -Dtest=FinaryImportServiceTest
+```
+
+### Gerando Relatório de Cobertura de Código (JaCoCo)
+```bash
+cd backend
+mvn test jacoco:report
+```
+O relatório HTML estará disponível em: `backend/target/site/jacoco/index.html`.
+
+---
+
+<!-- ===================================================================== -->
+<!-- DOCUMENTAÇÃO ORIGINAL DO PROJETO PICSOU                               -->
+<!-- ===================================================================== -->
+
 <div align="center">
 
 # Picsou
