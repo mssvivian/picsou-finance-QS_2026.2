@@ -200,7 +200,7 @@ Todos os grafos gerados e disponibilizados na pasta [`grafos/`](grafos/) foram p
 #### Como ler o fluxo:
 O grafo é estruturado em duas grandes partes sequenciais:
 1. **Parte 1 (Contas - 10 Categorias):**
-   * Itera pelas 10 categorias conhecidas `[p22]`.
+   * Itera pelas 10 categorias conhecidas. `[p01]`
    * Verifica se a aba existe (`sheet == null?`) $\implies$ se não existir `[p02]`, continua.
    * Itera pelas linhas da aba:
      * Linha nula `[p04]` $\implies$ pula.
@@ -213,9 +213,9 @@ O grafo é estruturado em duas grandes partes sequenciais:
    * Aba vazia só com cabeçalho `[p12]` $\implies$ encerra.
    * Itera pelas linhas da aba:
      * Linha nula `[p13]` $\implies$ pula.
-     * Bloco `try-catch`: data não parseável `[p20]` $\implies$ captura `DateTimeParseException`; erro geral `[p21]` $\implies$ captura `Exception`.
+     * Bloco `try-catch`: data não parseável `[p21]` $\implies$ captura `DateTimeParseException`; erro geral `[p22]` $\implies$ captura `Exception`.
      * Validações obrigatórias: data nula `[p14]`, valor nulo `[p15]`, conta vinculada nula `[p16]` $\implies$ descarta.
-     * Fallbacks: nome nulo `[p17]` vira descrição vazia, categoria nula `[p18]` vira `""`, moeda nula `[p19]` vira `"EUR"`.
+     * Fallbacks: nome nulo `[p17]` vira descrição vazia, tipo nulo `[p18]` vira tipo vazio `""`, categoria nula `[p19]` vira `""`, moeda nula `[p20]` vira `"EUR"`.
 3. Fecha o workbook (`workbook.close()`) e retorna os dados parseados.
 
 #### Mapeamento dos Testes:
@@ -238,11 +238,11 @@ O grafo é estruturado em duas grandes partes sequenciais:
 | `p15` | `parseXlsx_p15_transactionWithoutAmountIsSkipped` | Transação com valor nulo é descartada. |
 | `p16` | `parseXlsx_p16_transactionWithoutAccountNameIsSkipped` | Transação sem conta de vínculo é descartada. |
 | `p17` | `parseXlsx_p17_transactionWithoutNameGetsAnEmptyDescription` | Nome nulo na transação gera descrição vazia `""`. |
-| `p18` | `parseXlsx_p18_transactionWithoutCategoryGetsAnEmptyCategory` | Categoria nula gera categoria vazia `""`. |
-| `p19` | `parseXlsx_p19_transactionWithoutCurrencyDefaultsToEur` | Moeda ausente na transação assume `"EUR"`. |
-| `p20` | `parseXlsx_p20_transactionWithUnparseableDateIsSkippedAndTheOthersSurvive` | Data em formato inválido cai no `catch (DateTimeParseException)`. |
-| `p21` | `parseXlsx_p21_transactionRowThatThrowsIsSkipped` | Linha corrompida de transação cai no `catch (Exception)`. |
-| `p22` | `parseXlsx_p22_everyKnownCategorySheetIsReadInTheKnownOrder` | Todas as 10 abas são lidas na ordem declarada. |
+| `p18` | `parseXlsx_p18_transactionWithoutTypeGetsAnEmptyType` | Tipo nulo na transação gera tipo vazio `""`. |
+| `p19` | `parseXlsx_p19_transactionWithoutCategoryGetsAnEmptyCategory` | Categoria nula gera categoria vazia `""`. |
+| `p20` | `parseXlsx_p20_transactionWithoutCurrencyDefaultsToEur` | Moeda ausente na transação assume `"EUR"`. |
+| `p21` | `parseXlsx_p21_transactionWithUnparseableDateIsSkippedAndTheOthersSurvive` | Data em formato inválido cai no `catch (DateTimeParseException)`. |
+| `p22` | `parseXlsx_p22_transactionRowThatThrowsIsSkipped` | Linha corrompida de transação cai no `catch (Exception)`. |
 
 ---
 
